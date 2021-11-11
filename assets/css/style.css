@@ -1,3 +1,8 @@
+:root {
+	--theme-rgb: 102, 102, 204;
+	--highlight-rgb: 255, 255, 159;
+}
+
 .navbar-brand {
 	display: flex;
 	align-items: center;
@@ -88,6 +93,96 @@
 	}
 }
 
+section:not(:first-child) {
+	margin-top: -5.25rem;
+	padding-top: calc(5.25rem + 2rem);
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.title h1, .title .h1,
+.title h2, .title .h2,
+.title h3, .title .h3,
+.title h4, .title .h4,
+.title h5, .title .h5,
+.title h6, .title .h6 {
+	margin-bottom: 0;
+	font-weight: bolder;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.title .bar {
+	--bar-height: 1px;
+	width: 100%;
+	height: var(--bar-height) !important;
+	background-color: rgba(var(--theme-rgb), 1);
+	margin: auto 0;
+}
+
+.title .bar-h-1 {
+	--bar-height: 1px;
+}
+
+.title .bar-h-2 {
+	--bar-height: 2px;
+}
+
+.title .bar-h-3 {
+	--bar-height: 3px;
+}
+
+.title .bar-h-4 {
+	--bar-height: 4px;
+}
+
+.title .bar-h-5 {
+	--bar-height: 5px;
+}
+
+article {
+	text-indent: 2em;
+}
+
+article p:last-child {
+	margin-bottom: 0;
+}
+
+svg.rotate-180 {
+	transform: rotate(-180deg);
+}
+
+ul.list-unstyled li i {
+	padding-right: 0.5rem;
+}
+
+.quote-block {
+	width: 100%;
+	max-width: 30rem;
+	margin: 1rem auto 0 auto;
+	padding: 0.75rem 0.75rem;
+	background-color: rgba(var(--bs-light-rgb), .125);
+	border-left: 0.5rem solid rgba(var(--theme-rgb), 1);
+}
+
+.quote-block p {
+	white-space: nowrap;
+	margin-bottom: 0;
+}
+
+.quote-block svg {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.text-light ul li b {
+	color:rgba(var(--highlight-rgb), var(--bs-text-opacity));
+}
+
 .cover {
 	background-position: center;
 	background-repeat: no-repeat;
@@ -101,4 +196,12 @@
 	bottom: 0;
 	left: 0;
 	padding-top: 5.25rem;
+}
+
+img.me {
+	display: flex;
+	width: 100%;
+	max-width: 30rem;
+	margin-left: auto;
+	margin-right: auto;
 }
