@@ -1,6 +1,7 @@
 :root {
 	--rgb-purple: 102, 102, 204;
 	--rgb-yellow: 255, 255, 159;
+	--rgb-dark: 33, 37, 41;
 	--rgb-light: 248, 249, 250;
 	--rgb-theme: var(--rgb-purple);
 }
@@ -197,6 +198,7 @@ ul.list-unstyled li i {
 	height: 1.5rem;
 }
 
+.text-light ul li.b,
 .text-light ul li b {
 	color:rgba(var(--rgb-yellow), var(--bs-text-opacity));
 }
@@ -222,4 +224,144 @@ ul.list-unstyled li i {
 	max-width: 30rem;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#skills h5,
+#skills .h5 {
+	font-size: 1.1rem;
+}
+
+#skills ul {
+	margin-bottom: 0.8rem;
+}
+
+#skills .skill-bar {
+	--rgb-skill-bar-background: var(--rgb-light);
+	width: 100%;
+	margin-bottom: 0.8rem;
+	background-color: rgba(var(--rgb-skill-bar-background), var(--bs-bg-opacity));
+}
+
+#skills .bg-dark .skill-bar {
+	--rgb-skill-bar-background: var(--rgb-dark);
+}
+
+#skills .bg-light .skill-bar {
+	--rgb-skill-bar-background: var(--rgb-light);
+}
+
+#skills .skill-bar .skill-bar-progress {
+	--bar-value: 0;
+	--rgb-skill-bar-forground: var(--rgb-theme);
+	--rgb-skill-bar-text: var(--rgb-dark);
+	width: var(--bar-value);
+	display: flex;
+	padding: 0.15rem 1rem;
+	background-color: rgba(var(--rgb-skill-bar-forground), var(--bs-bg-opacity));
+	color: rgba(var(--rgb-skill-bar-text), var(--bs-text-opacity));
+}
+
+#skills .text-dark .skill-bar .skill-bar-progress {
+	--rgb-skill-bar-text: var(--rgb-dark);
+}
+
+#skills .text-light .skill-bar .skill-bar-progress {
+	--rgb-skill-bar-text: var(--rgb-light);
+}
+
+#skills .skill-bar .skill-bar-progress .skill-bar-key {
+	margin-right: auto;
+	font-size: 1.05rem;
+	font-weight: bolder;
+	white-space: nowrap;
+}
+
+#skills .skill-bar .skill-bar-progress .skill-bar-value {
+	margin-left: 1.5rem;
+	font-size: 1.05rem;
+	white-space: nowrap;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-0 {
+	--bar-value: 0%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-5 {
+	--bar-value: 5%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-10 {
+	--bar-value: 10%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-15 {
+	--bar-value: 15%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-20 {
+	--bar-value: 20%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-25 {
+	--bar-value: 25%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-30 {
+	--bar-value: 30%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-35 {
+	--bar-value: 35%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-40 {
+	--bar-value: 40%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-45 {
+	--bar-value: 45%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-50 {
+	--bar-value: 50%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-55 {
+	--bar-value: 55%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-60 {
+	--bar-value: 60%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-65 {
+	--bar-value: 65%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-70 {
+	--bar-value: 70%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-75 {
+	--bar-value: 75%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-80 {
+	--bar-value: 80%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-85 {
+	--bar-value: 85%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-90 {
+	--bar-value: 90%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-95 {
+	--bar-value: 95%;
+}
+
+#skills .skill-bar .skill-bar-progress.skill-bar-100 {
+	--bar-value: 100%;
 }
