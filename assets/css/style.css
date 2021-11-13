@@ -201,13 +201,13 @@ ul.list-unstyled li i {
 	color:rgba(var(--rgb-yellow), var(--bs-text-opacity));
 }
 
-.cover {
+#home .cover {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
-.mask {
+#home .mask {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -216,7 +216,7 @@ ul.list-unstyled li i {
 	padding-top: 5.25rem;
 }
 
-img.me {
+#about img.me {
 	display: flex;
 	width: 100%;
 	max-width: 30rem;
