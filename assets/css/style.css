@@ -112,8 +112,16 @@ section:not(:first-child) {
 .title h6, .title .h6 {
 	margin-bottom: 0;
 	font-weight: bolder;
-	text-transform: uppercase;
 	white-space: nowrap;
+}
+
+.title h1,
+.title h2,
+.title h3,
+.title h4,
+.title h5,
+.title h6 {
+	text-transform: uppercase;
 }
 
 .title .bar {
@@ -121,7 +129,15 @@ section:not(:first-child) {
 	width: 100%;
 	height: var(--bar-height) !important;
 	background-color: rgba(var(--theme-rgb), 1);
-	margin: auto 0;
+	margin: auto 1rem;
+}
+
+.title .bar:first-child {
+	margin-left: 0;
+}
+
+.title .bar:last-child {
+	margin-right: 0;
 }
 
 .title .bar-h-1 {
