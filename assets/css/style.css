@@ -128,9 +128,9 @@ section:not(:first-child) {
 }
 
 .title .bar {
-	--bar-height: 1px;
+	--h-title-bar: 0px;
 	width: 100%;
-	height: var(--bar-height) !important;
+	height: var(--h-title-bar) !important;
 	background-color: rgba(var(--rgb-theme), 1);
 	margin: auto 1rem;
 }
@@ -144,23 +144,23 @@ section:not(:first-child) {
 }
 
 .title .bar-h-1 {
-	--bar-height: 1px;
+	--h-title-bar: 1px;
 }
 
 .title .bar-h-2 {
-	--bar-height: 2px;
+	--h-title-bar: 2px;
 }
 
 .title .bar-h-3 {
-	--bar-height: 3px;
+	--h-title-bar: 3px;
 }
 
 .title .bar-h-4 {
-	--bar-height: 4px;
+	--h-title-bar: 4px;
 }
 
 .title .bar-h-5 {
-	--bar-height: 5px;
+	--h-title-bar: 5px;
 }
 
 article {
