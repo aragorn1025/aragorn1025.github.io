@@ -180,6 +180,10 @@ article p:last-child {
 	margin-bottom: 0;
 }
 
+svg {
+	fill: currentColor;
+}
+
 svg.rotate-180 {
 	transform: rotate(-180deg);
 }
