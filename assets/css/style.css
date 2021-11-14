@@ -1,9 +1,15 @@
 :root {
+	--h-header: 5.25rem;					/* The height of the navigation header which should be calculated after the navigation header is changed. */
+	--h-section-gap: 2rem;					/* The height of the gap between sections. */
 	--rgb-purple: 102, 102, 204;
 	--rgb-yellow: 255, 255, 159;
 	--rgb-dark: 33, 37, 41;
 	--rgb-light: 248, 249, 250;
 	--rgb-theme: var(--rgb-purple);
+}
+
+main {
+	overflow-x: hidden;
 }
 
 .navbar-brand {
@@ -96,9 +102,12 @@
 	}
 }
 
+section {
+	padding-top: var(--h-header);
+}
+
 section:not(:first-child) {
-	margin-top: -5.25rem;
-	padding-top: calc(5.25rem + 2rem);
+	margin-top: calc(var(--h-header) * (-1) + var(--h-section-gap));
 }
 
 .title {
@@ -179,6 +188,10 @@ ul.list-unstyled li i {
 	padding-right: 0.5rem;
 }
 
+.mw-75 {
+	max-width: 75%;
+}
+
 .quote-block {
 	width: 100%;
 	max-width: 30rem;
@@ -204,18 +217,19 @@ ul.list-unstyled li i {
 }
 
 #home .cover {
+	width: 100%;
+	height: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
 #home .mask {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	padding-top: 5.25rem;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
 }
 
 #about img.me {
