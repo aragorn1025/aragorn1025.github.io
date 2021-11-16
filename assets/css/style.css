@@ -107,7 +107,7 @@ section {
 }
 
 section:not(:first-child) {
-	margin-top: calc(var(--h-header) * (-1) + var(--h-section-gap));
+	margin-top: calc(var(--h-header) * -1 + var(--h-section-gap));
 }
 
 .title {
