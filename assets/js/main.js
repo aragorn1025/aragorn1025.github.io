@@ -9,3 +9,9 @@ function getAge(year, month, day) {
 	}
 	return y;
 }
+
+function setTooltip(target) {
+	$(target).prop("title", function() {
+		return $(this).text().replaceAll('\t', '').replaceAll('\n', ' ');
+	});
+}

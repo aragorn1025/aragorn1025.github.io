@@ -671,6 +671,41 @@ ul.list-unstyled li i {
 	--bar-value: 100%;
 }
 
+#portfolio .card {
+	transition: border 0.5s ease-in-out;
+	background-color: rgba(var(--rgb-dark), 0.25);
+	color:rgba(var(--rgb-light), var(--bs-text-opacity));
+}
+
+#portfolio .card:hover {
+	border-color: rgba(var(--rgb-theme), 0.75);
+}
+
+#portfolio .card img {
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
+#portfolio .card .card-body .card-title {
+	margin-bottom: 0;
+	padding-bottom: 0.5rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#portfolio .card .card-body p.card-text {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+#portfolio .card .card-body a.btn {
+	background-color: rgba(var(--rgb-theme), 1);
+	color: rgba(var(--rgb-light), var(--bs-text-opacity));
+}
+
 #contact .contact-card {
 	display: flex;
 	align-items: center;
