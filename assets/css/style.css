@@ -739,6 +739,15 @@ ul.list-unstyled li i {
 	font-size: 1rem;
 }
 
+#contact .contact-card .content p a {
+	color: rgba(var(--rgb-light), var(--bs-text-opacity));
+	text-decoration: none;
+}
+
+#contact .contact-card .content p a:hover {
+	color: rgba(var(--rgb-yellow), var(--bs-text-opacity));
+}
+
 #contact label {
 	color:rgba(var(--rgb-dark), 0.5);
 }
