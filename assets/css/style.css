@@ -1,8 +1,8 @@
 :root {
-	--h-header: 5.25rem;					/* The height of the navigation header which should be calculated after the navigation header is changed. */
-	--h-section-gap: 2rem;					/* The height of the gap between sections. */
-	--w-timeline: 8px;						/* The width of the timeline. */
-	--r-timeline-point: 10px;				/* The radius of the timeline point. */
+	--h-header: 5.25rem; /* The height of the navigation header which should be calculated after the navigation header is changed. */
+	--h-section-gap: 2rem; /* The height of the gap between sections. */
+	--w-timeline: 8px; /* The width of the timeline. */
+	--r-timeline-point: 10px; /* The radius of the timeline point. */
 	--timeline-sm-ml: calc(max(var(--w-timeline), var(--r-timeline-point) * (1 + 0.6) * 2));
 	--rgb-purple: 102, 102, 204;
 	--rgb-violet: 152, 152, 254;
@@ -297,7 +297,7 @@ ul.list-unstyled li i {
 	max-width: 30rem;
 	margin: 1rem auto 0 auto;
 	padding: 0.75rem 0.75rem;
-	background-color: rgba(var(--rgb-light), .125);
+	background-color: rgba(var(--rgb-light), 0.125);
 	border-left: 0.5rem solid rgba(var(--rgb-theme), 1);
 }
 
@@ -315,7 +315,7 @@ ul.list-unstyled li i {
 .text-light ol li b,
 .text-light ul li.b,
 .text-light ul li b {
-	color:rgba(var(--rgb-yellow), var(--bs-text-opacity));
+	color: rgba(var(--rgb-yellow), var(--bs-text-opacity));
 }
 
 .timeline {
@@ -326,7 +326,7 @@ ul.list-unstyled li i {
 }
 
 .timeline::before {
-	content: '';
+	content: "";
 	position: absolute;
 	top: 0;
 	left: calc((var(--timeline-sm-ml) - var(--w-timeline)) / 2);
@@ -371,7 +371,7 @@ ul.list-unstyled li i {
 	border-radius: 50%;
 	box-shadow: 0 0 0 calc(var(--r-timeline-point) * 0.6) rgba(var(--rgb-yellow), 0.25);
 	background-color: rgba(var(--rgb-yellow), 1);
-	content: '';
+	content: "";
 }
 
 .timeline .timeline-block .timeline-anchor .timeline-tag .h1,
@@ -513,7 +513,7 @@ ul.list-unstyled li i {
 #home .cover {
 	width: 100%;
 	height: 100%;
-	background-image: url('../img/home.jpg');
+	background-image: url("../img/home.jpg");
 	background-attachment: scroll;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -684,7 +684,7 @@ ul.list-unstyled li i {
 #portfolio .card {
 	transition: border-color 0.5s ease-in-out;
 	background-color: rgba(var(--rgb-dark), 0.25);
-	color:rgba(var(--rgb-light), var(--bs-text-opacity));
+	color: rgba(var(--rgb-light), var(--bs-text-opacity));
 }
 
 #portfolio .card:hover {
@@ -733,7 +733,7 @@ ul.list-unstyled li i {
 	display: flex;
 	width: 3.5rem;
 	height: 3.5rem;
-	margin:  0 1.5rem 0 0;
+	margin: 0 1.5rem 0 0;
 	border-radius: 50%;
 	background-color: rgba(var(--rgb-theme), 1);
 	align-items: center;
@@ -765,7 +765,7 @@ ul.list-unstyled li i {
 }
 
 #contact label {
-	color:rgba(var(--rgb-dark), 0.5);
+	color: rgba(var(--rgb-dark), 0.5);
 }
 
 #contact textarea {

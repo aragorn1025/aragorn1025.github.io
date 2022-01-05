@@ -11,7 +11,7 @@ function getAge(year, month, day) {
 }
 
 function setTooltip(target) {
-	$(target).prop("title", function() {
-		return $(this).text().replaceAll('\t', '').replaceAll('\n', ' ');
+	$(target).prop("title", function () {
+		return $(this).text().replaceAll("\t", "").replaceAll("\n", " ");
 	});
 }
