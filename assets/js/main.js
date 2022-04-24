@@ -40,7 +40,7 @@ function getDayDiffString(date) {
   return diff + " year" + (diff <= 1 ? "" : "s")
 }
 
-function getLastUpdatedString(year = 2022, month = 4, day = 12, hour = 23) {
+function getLastUpdatedString(year, month, day, hour) {
   var date = new Date(year, month - 1, day, hour, 0, 0);
   return "Last updated at " + getDateString(date) + " (" + getDayDiffString(date) + " ago).";
 }
