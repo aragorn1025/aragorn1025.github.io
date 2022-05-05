@@ -1,0 +1,45 @@
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+  padding: 0.125rem 0;
+}
+
+.navbar-brand i {
+  font-size: 3rem;
+  margin: -0.75rem 1rem -0.75rem 0;
+}
+
+.navbar-brand:hover,
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.125rem;
+}
+
+@media (min-width: 576px) {
+  .navbar-nav {
+    margin-left: auto;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .nav-item {
+    margin: 0.25rem;
+    padding: 0.375rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  .nav-item {
+    margin: 0.25rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 991px) {
+  .nav-item {
+    margin: 0.5rem 0.5rem 0 0.5rem;
+    padding: 0.25rem;
+  }
+}

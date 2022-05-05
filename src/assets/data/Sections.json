@@ -1,0 +1,27 @@
+[
+	{
+		"name": "home",
+		"iconClassName": "house-door",
+		"isActive": true
+	},
+	{
+		"name": "about",
+		"iconClassName": "book"
+	},
+	{
+		"name": "skills",
+		"iconClassName": "pen"
+	},
+	{
+		"name": "resume",
+		"iconClassName": "card-checklist"
+	},
+	{
+		"name": "portfolio",
+		"iconClassName": "grid"
+	},
+	{
+		"name": "contact",
+		"iconClassName": "person-bounding-box"
+	}
+]

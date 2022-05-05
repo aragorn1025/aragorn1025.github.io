@@ -1,0 +1,283 @@
+import React from 'react';
+
+import { getLastUpdatedString } from '../../utils/utils';
+
+function Skills() {
+  return (
+    <section id="skills">
+      <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
+        <div className="title">
+          <h1 className="mx-auto">Skills</h1>
+        </div>
+        <div className="d-flex">
+          <h6 className="ms-auto">{getLastUpdatedString(2022, 4, 24, 13)}</h6>
+        </div>
+        <div className="row">
+          <div className="col-12 col-xl-6">
+            <div className="row">
+              <div className="title">
+                <div className="h3">Backend</div>
+                <div className="bar bar-h-3" />
+              </div>
+              <div className="col-12 col-md-7">
+                <div className="title">
+                  <div className="h5">Programming Languages</div>
+                  <div className="bar bar-h-1" />
+                </div>
+                <div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-85">
+                      <div className="skill-bar-key">Python</div>
+                      <div className="skill-bar-value">85%</div>
+                    </div>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-70">
+                      <div className="skill-bar-key">Java</div>
+                      <div className="skill-bar-value">70%</div>
+                    </div>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-60">
+                      <div className="skill-bar-key">Go</div>
+                      <div className="skill-bar-value">60%</div>
+                    </div>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-50">
+                      <div className="skill-bar-key">PHP</div>
+                      <div className="skill-bar-value">50%</div>
+                    </div>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-30">
+                      <div className="skill-bar-key">C / C++</div>
+                      <div className="skill-bar-value">30%</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="title">
+                  <div className="h5">Frameworks</div>
+                  <div className="bar bar-h-1" />
+                </div>
+                <div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-75">
+                      <div className="skill-bar-key">Flask</div>
+                      <div className="skill-bar-value">75%</div>
+                    </div>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-60">
+                      <div className="skill-bar-key">FastAPI</div>
+                      <div className="skill-bar-value">60%</div>
+                    </div>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-60">
+                      <div className="skill-bar-key">Gin</div>
+                      <div className="skill-bar-value">60%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-5">
+                <div className="title">
+                  <div className="h5">Data Science Libraries</div>
+                  <div className="bar bar-h-1" />
+                </div>
+                <ul>
+                  <li className="b">NumPy</li>
+                  <li>pandas</li>
+                  <li className="b">matplotlib</li>
+                  <li className="b">OpenCV</li>
+                  <li>scikit-learn</li>
+                  <li className="b">PyTorch</li>
+                  <li>TensorFlow</li>
+                  <li>Keras</li>
+                </ul>
+                <div className="title">
+                  <div className="h5">Others</div>
+                  <div className="bar bar-h-1" />
+                </div>
+                <ul>
+                  <li className="b">Anaconda</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-xl-6">
+            <div className="row">
+              <div className="title">
+                <div className="h3">Frontend</div>
+                <div className="bar bar-h-3" />
+              </div>
+              <div className="col-12 col-md-7">
+                <div className="title">
+                  <div className="h5">Programming Languages</div>
+                  <div className="bar bar-h-1" />
+                </div>
+                <div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-70">
+                      <div className="skill-bar-key">HTML</div>
+                      <div className="skill-bar-value">70%</div>
+                    </div>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-60">
+                      <div className="skill-bar-key">JavaScripts</div>
+                      <div className="skill-bar-value">60%</div>
+                    </div>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-50">
+                      <div className="skill-bar-key">CSS</div>
+                      <div className="skill-bar-value">50%</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="title">
+                  <div className="h5">Frameworks</div>
+                  <div className="bar bar-h-1" />
+                </div>
+                <div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-75">
+                      <div className="skill-bar-key">Bootstrap</div>
+                      <div className="skill-bar-value">75%</div>
+                    </div>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-50">
+                      <div className="skill-bar-key">React</div>
+                      <div className="skill-bar-value">50%</div>
+                    </div>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-50">
+                      <div className="skill-bar-key">Vue.js</div>
+                      <div className="skill-bar-value">50%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-5">
+                <div className="title">
+                  <div className="h5">Libraries</div>
+                  <div className="bar bar-h-1" />
+                </div>
+                <ul>
+                  <li>Material UI</li>
+                  <li>Ant Design</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-xl-6">
+            <div className="row">
+              <div className="title">
+                <div className="h3">General</div>
+                <div className="bar bar-h-3" />
+              </div>
+              <div className="col-12 col-md-7">
+                <div className="title">
+                  <div className="h5">Basic</div>
+                  <div className="bar bar-h-1" />
+                </div>
+                <div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-70">
+                      <div className="skill-bar-key">Linux</div>
+                      <div className="skill-bar-value">70%</div>
+                    </div>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-50">
+                      <div className="skill-bar-key">Shell Script</div>
+                      <div className="skill-bar-value">50%</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="title">
+                  <div className="h5">DevOps</div>
+                  <div className="bar bar-h-1" />
+                </div>
+                <div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-80">
+                      <div className="skill-bar-key">Git</div>
+                      <div className="skill-bar-value">80%</div>
+                    </div>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-60">
+                      <div className="skill-bar-key">Docker</div>
+                      <div className="skill-bar-value">60%</div>
+                    </div>
+                  </div>
+                  <div className="skill-bar">
+                    <div className="skill-bar-progress skill-bar-15">
+                      <div className="skill-bar-key">Kubernetes</div>
+                      <div className="skill-bar-value">15%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-5">
+                <div className="title">
+                  <div className="h5">Web Servers</div>
+                  <div className="bar bar-h-1" />
+                </div>
+                <ul>
+                  <li>AMP packages</li>
+                  <li>Nginx</li>
+                  <li>Apache</li>
+                </ul>
+                <div className="title">
+                  <div className="h5">Cloud Providers</div>
+                  <div className="bar bar-h-1" />
+                </div>
+                <ul className="mb-0">
+                  <li>Google Cloud Platform</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-xl-6">
+            <div className="row">
+              <div className="title">
+                <div className="h3">Software Engineering</div>
+                <div className="bar bar-h-3" />
+              </div>
+              <div className="col-12">
+                <div className="title">
+                  <div className="h5">Software Development</div>
+                  <div className="bar bar-h-1" />
+                </div>
+                <ul>
+                  <li>Object-oriented Programming</li>
+                  <li>Agile</li>
+                </ul>
+              </div>
+              <div className="col-12">
+                <div className="title">
+                  <div className="h5">Computer Vision</div>
+                  <div className="bar bar-h-1" />
+                </div>
+                <ul className="mb-xl-0">
+                  <li>Image Processing</li>
+                  <li>Deep Learning</li>
+                  <li>Machine Learning</li>
+                  <li>Artificial Intelligence</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Skills;
