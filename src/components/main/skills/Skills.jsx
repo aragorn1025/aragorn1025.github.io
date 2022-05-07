@@ -1,29 +1,34 @@
 import React from 'react';
 
+import BarTitle from '../../common/title/BarTitle';
+import Title from '../../common/title/Title';
 import { getLastUpdatedString } from '../../utils/utils';
 
 function Skills() {
   return (
     <section id="skills">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
-        <div className="title">
-          <h1 className="mx-auto">Skills</h1>
-        </div>
+        <Title
+          text="Skills"
+          toUppercase
+        />
         <div className="d-flex">
           <h6 className="ms-auto">{getLastUpdatedString(2022, 4, 24, 13)}</h6>
         </div>
         <div className="row">
           <div className="col-12 col-xl-6">
             <div className="row">
-              <div className="title">
-                <div className="h3">Backend</div>
-                <div className="bar bar-h-3" />
-              </div>
+              <BarTitle
+                mainText="Backend"
+                mainLevel={3}
+                barLevel={3}
+              />
               <div className="col-12 col-md-7">
-                <div className="title">
-                  <div className="h5">Programming Languages</div>
-                  <div className="bar bar-h-1" />
-                </div>
+                <BarTitle
+                  mainText="Programming Languages"
+                  mainLevel={5}
+                  barLevel={1}
+                />
                 <div>
                   <div className="skill-bar">
                     <div className="skill-bar-progress skill-bar-85">
@@ -56,10 +61,11 @@ function Skills() {
                     </div>
                   </div>
                 </div>
-                <div className="title">
-                  <div className="h5">Frameworks</div>
-                  <div className="bar bar-h-1" />
-                </div>
+                <BarTitle
+                  mainText="Frameworks"
+                  mainLevel={5}
+                  barLevel={1}
+                />
                 <div>
                   <div className="skill-bar">
                     <div className="skill-bar-progress skill-bar-75">
@@ -82,10 +88,11 @@ function Skills() {
                 </div>
               </div>
               <div className="col-12 col-md-5">
-                <div className="title">
-                  <div className="h5">Data Science Libraries</div>
-                  <div className="bar bar-h-1" />
-                </div>
+                <BarTitle
+                  mainText="Data Science Libraries"
+                  mainLevel={5}
+                  barLevel={1}
+                />
                 <ul>
                   <li className="b">NumPy</li>
                   <li>pandas</li>
@@ -96,10 +103,11 @@ function Skills() {
                   <li>TensorFlow</li>
                   <li>Keras</li>
                 </ul>
-                <div className="title">
-                  <div className="h5">Others</div>
-                  <div className="bar bar-h-1" />
-                </div>
+                <BarTitle
+                  mainText="Others"
+                  mainLevel={5}
+                  barLevel={1}
+                />
                 <ul>
                   <li className="b">Anaconda</li>
                 </ul>
@@ -108,15 +116,17 @@ function Skills() {
           </div>
           <div className="col-12 col-xl-6">
             <div className="row">
-              <div className="title">
-                <div className="h3">Frontend</div>
-                <div className="bar bar-h-3" />
-              </div>
+              <BarTitle
+                mainText="Frontend"
+                mainLevel={3}
+                barLevel={3}
+              />
               <div className="col-12 col-md-7">
-                <div className="title">
-                  <div className="h5">Programming Languages</div>
-                  <div className="bar bar-h-1" />
-                </div>
+                <BarTitle
+                  mainText="Programming Languages"
+                  mainLevel={5}
+                  barLevel={1}
+                />
                 <div>
                   <div className="skill-bar">
                     <div className="skill-bar-progress skill-bar-70">
@@ -137,10 +147,11 @@ function Skills() {
                     </div>
                   </div>
                 </div>
-                <div className="title">
-                  <div className="h5">Frameworks</div>
-                  <div className="bar bar-h-1" />
-                </div>
+                <BarTitle
+                  mainText="Frameworks"
+                  mainLevel={5}
+                  barLevel={1}
+                />
                 <div>
                   <div className="skill-bar">
                     <div className="skill-bar-progress skill-bar-75">
@@ -163,10 +174,11 @@ function Skills() {
                 </div>
               </div>
               <div className="col-12 col-md-5">
-                <div className="title">
-                  <div className="h5">Libraries</div>
-                  <div className="bar bar-h-1" />
-                </div>
+                <BarTitle
+                  mainText="Libraries"
+                  mainLevel={5}
+                  barLevel={1}
+                />
                 <ul>
                   <li>Material UI</li>
                   <li>Ant Design</li>
@@ -176,15 +188,17 @@ function Skills() {
           </div>
           <div className="col-12 col-xl-6">
             <div className="row">
-              <div className="title">
-                <div className="h3">General</div>
-                <div className="bar bar-h-3" />
-              </div>
+              <BarTitle
+                mainText="General"
+                mainLevel={3}
+                barLevel={3}
+              />
               <div className="col-12 col-md-7">
-                <div className="title">
-                  <div className="h5">Basic</div>
-                  <div className="bar bar-h-1" />
-                </div>
+                <BarTitle
+                  mainText="Basic"
+                  mainLevel={5}
+                  barLevel={1}
+                />
                 <div>
                   <div className="skill-bar">
                     <div className="skill-bar-progress skill-bar-70">
@@ -199,10 +213,11 @@ function Skills() {
                     </div>
                   </div>
                 </div>
-                <div className="title">
-                  <div className="h5">DevOps</div>
-                  <div className="bar bar-h-1" />
-                </div>
+                <BarTitle
+                  mainText="DevOps"
+                  mainLevel={5}
+                  barLevel={1}
+                />
                 <div>
                   <div className="skill-bar">
                     <div className="skill-bar-progress skill-bar-80">
@@ -225,19 +240,21 @@ function Skills() {
                 </div>
               </div>
               <div className="col-12 col-md-5">
-                <div className="title">
-                  <div className="h5">Web Servers</div>
-                  <div className="bar bar-h-1" />
-                </div>
+                <BarTitle
+                  mainText="Web Servers"
+                  mainLevel={5}
+                  barLevel={1}
+                />
                 <ul>
                   <li>AMP packages</li>
                   <li>Nginx</li>
                   <li>Apache</li>
                 </ul>
-                <div className="title">
-                  <div className="h5">Cloud Providers</div>
-                  <div className="bar bar-h-1" />
-                </div>
+                <BarTitle
+                  mainText="Cloud Providers"
+                  mainLevel={5}
+                  barLevel={1}
+                />
                 <ul className="mb-0">
                   <li>Google Cloud Platform</li>
                 </ul>
@@ -246,25 +263,28 @@ function Skills() {
           </div>
           <div className="col-12 col-xl-6">
             <div className="row">
-              <div className="title">
-                <div className="h3">Software Engineering</div>
-                <div className="bar bar-h-3" />
-              </div>
+              <BarTitle
+                mainText="Software Engineering"
+                mainLevel={3}
+                barLevel={3}
+              />
               <div className="col-12">
-                <div className="title">
-                  <div className="h5">Software Development</div>
-                  <div className="bar bar-h-1" />
-                </div>
+                <BarTitle
+                  mainText="Software Development"
+                  mainLevel={5}
+                  barLevel={1}
+                />
                 <ul>
                   <li>Object-oriented Programming</li>
                   <li>Agile</li>
                 </ul>
               </div>
               <div className="col-12">
-                <div className="title">
-                  <div className="h5">Computer Vision</div>
-                  <div className="bar bar-h-1" />
-                </div>
+                <BarTitle
+                  mainText="Computer Vision"
+                  mainLevel={5}
+                  barLevel={1}
+                />
                 <ul className="mb-xl-0">
                   <li>Image Processing</li>
                   <li>Deep Learning</li>

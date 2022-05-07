@@ -1,18 +1,25 @@
 import React from 'react';
 
+import BarTitle from '../../common/title/BarTitle';
+import Title from '../../common/title/Title';
+
 function Contact() {
   return (
     <section id="contact">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
-        <div className="title">
-          <h1 className="mx-auto">Contact</h1>
-        </div>
+        <Title
+          text="Contact"
+          toUppercase
+        />
         <div>
-          <div className="title">
-            <h3>Contact Information</h3>
-            <div className="bar bar-h-3" />
-            <h6>Get in Touch with Me</h6>
-          </div>
+          <BarTitle
+            mainText="Contact Information"
+            subText="Contact me"
+            mainLevel={3}
+            subLevel={6}
+            barLevel={3}
+            toUppercase
+          />
           <div className="row g-3">
             <div className="col-12 col-md-6">
               <div className="contact-card">

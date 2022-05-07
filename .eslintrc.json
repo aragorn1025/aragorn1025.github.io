@@ -28,6 +28,26 @@
                 "warnOnUnassignedImports": true
             }
         ],
+        "object-curly-newline": [
+            "error",
+            {
+                "ExportDeclaration": {
+                    "multiline": true
+                },
+                "ImportDeclaration": {
+                    "multiline": true
+                }
+            }
+        ],
+        "react/forbid-prop-types": [
+            "error",
+            {
+                "forbid": [
+                    "any",
+                    "array"
+                ]
+            }
+        ],
         "react/jsx-props-no-spreading": [
             "error",
             {

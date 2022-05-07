@@ -1,22 +1,27 @@
 import React from 'react';
 
+import BarTitle from '../../common/title/BarTitle';
+import Title from '../../common/title/Title';
 import { getLastUpdatedString } from '../../utils/utils';
 
 function Resume() {
   return (
     <section id="resume">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
-        <div className="title">
-          <h1 className="mx-auto">Resume</h1>
-        </div>
+        <Title
+          text="Resume"
+          toUppercase
+        />
         <div className="d-flex">
           <h6 className="ms-auto">{getLastUpdatedString(2022, 4, 12, 23)}</h6>
         </div>
         <div>
-          <div className="title">
-            <h3>Education</h3>
-            <div className="bar bar-h-3" />
-          </div>
+          <BarTitle
+            mainText="Education"
+            mainLevel={3}
+            barLevel={3}
+            toUppercase
+          />
           <div className="timeline mb-3">
             <div className="timeline-block">
               <div className="timeline-anchor">
@@ -73,10 +78,12 @@ function Resume() {
               </div>
             </div>
           </div>
-          <div className="title">
-            <h3>Experience</h3>
-            <div className="bar bar-h-3" />
-          </div>
+          <BarTitle
+            mainText="Experience"
+            mainLevel={3}
+            barLevel={3}
+            toUppercase
+          />
           <div className="timeline">
             <div className="timeline-block">
               <div className="timeline-anchor">

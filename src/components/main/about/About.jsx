@@ -2,6 +2,8 @@ import React from 'react';
 
 import me from '../../../assets/images/me.jpg';
 import QuotationBlock from '../../common/quote-block/QuotationBlock';
+import BarTitle from '../../common/title/BarTitle';
+import Title from '../../common/title/Title';
 
 import './About.css';
 
@@ -23,15 +25,19 @@ function About() {
   return (
     <section id="about">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
-        <div className="title">
-          <h1 className="mx-auto">About</h1>
-        </div>
+        <Title
+          text="About"
+          toUppercase
+        />
         <div className="row">
-          <div className="title">
-            <h3>Information</h3>
-            <div className="bar bar-h-3" />
-            <h6>Learn more about me</h6>
-          </div>
+          <BarTitle
+            mainText="Information"
+            subText="Learn more about me"
+            mainLevel={3}
+            subLevel={6}
+            barLevel={3}
+            toUppercase
+          />
           <div className="col-12 col-lg-4">
             <img
               className="me"
