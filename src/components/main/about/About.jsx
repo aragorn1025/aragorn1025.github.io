@@ -1,9 +1,9 @@
 import React from 'react';
 
 import me from '../../../assets/images/me.jpg';
+import QuotationBlock from '../../common/quote-block/QuotationBlock';
 
 import './About.css';
-import QuoteBlock from './quote-block/QuoteBlock';
 
 function getAge(year, month, day) {
   const today = new Date();
@@ -38,8 +38,8 @@ function About() {
               src={me}
               alt="Aragorn Dai"
             />
-            <QuoteBlock
-              quote="Perfection is not attainable, but if we chase perfection we can catch excellence."
+            <QuotationBlock
+              sentence="Perfection is not attainable, but if we chase perfection we can catch excellence."
               from="Vince Lombardi"
             />
           </div>
