@@ -5,3 +5,11 @@ img.me {
   margin-left: auto;
   margin-right: auto;
 }
+
+article {
+  text-indent: 2em;
+}
+
+article p:last-child {
+  margin-bottom: 0;
+}

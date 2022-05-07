@@ -26,14 +26,6 @@ section:not(:first-child) {
   margin-top: calc(var(--h-header) * -1 + var(--h-section-gap));
 }
 
-article {
-  text-indent: 2em;
-}
-
-article p:last-child {
-  margin-bottom: 0;
-}
-
 a.button {
   position: relative;
   display: inline-block;

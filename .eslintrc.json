@@ -52,7 +52,9 @@
             "error",
             {
                 "exceptions": [
-                    "Home"
+                    "About",
+                    "Home",
+                    "QuotationBlock"
                 ]
             }
         ]

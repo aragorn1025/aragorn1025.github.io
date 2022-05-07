@@ -1,5 +1,6 @@
 import React from 'react';
 
+import aboutProps from '../../assets/data/About.json';
 import homeProps from '../../assets/data/Home.json';
 
 import './Main.css';
@@ -14,7 +15,7 @@ function Main() {
   return (
     <main className="bg-dark bg-opacity-50 text-dark text-opacity-50">
       <Home {...homeProps} />
-      <About />
+      <About {...aboutProps} />
       <Skills />
       <Resume />
       <Portfolio />
