@@ -22,11 +22,18 @@
             "error",
             {
                 "alphabetize": {
-                    "order": "asc",
-                    "caseInsensitive": false
+                    "order": "asc"
                 },
                 "newlines-between": "always",
                 "warnOnUnassignedImports": true
+            }
+        ],
+        "react/jsx-props-no-spreading": [
+            "error",
+            {
+                "exceptions": [
+                    "Home"
+                ]
             }
         ]
     }
