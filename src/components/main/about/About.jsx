@@ -7,7 +7,7 @@ import BarTitle from '../../common/title/BarTitle';
 import Title from '../../common/title/Title';
 import getFunction from '../Functions';
 
-import './About.css';
+import styles from './About.module.css';
 
 function getValue(type, value) {
   switch (type) {
@@ -15,28 +15,31 @@ function getValue(type, value) {
     case 'string':
       return value;
     case 'link':
-      if (value.text === undefined || value.text === '') {
-        return <a href={value.reference}>{value.reference}</a>;
-      }
-      return <a href={value.reference}>{value.text}</a>;
+      return (
+        <a
+          href={value.reference}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {value.text === undefined || value.text === '' ? value.reference : value.text}
+        </a>
+      );
     case 'function':
       return getFunction(value.name)(...Object.values(value.arguments));
     case 'array(number)':
     case 'array(string)':
-    case 'array(link)':
       return (
         <ul>
           {value.map((element) => (
-            <li key={element}>
-              <i className="bi bi-tag" />
-              {element}
-            </li>
+            <li key={element}>{element}</li>
           ))}
         </ul>
       );
+    case 'array(link)':
     case 'array(function)':
+      throw new Error('Type is not implemented yet.');
     default:
-      throw new Error('Unknown type');
+      throw new Error('Unknown type.');
   }
 }
 
@@ -60,7 +63,7 @@ function About(props) {
           />
           <div className="col-12 col-lg-4">
             <img
-              className="me"
+              className={styles.me}
               src={me}
               alt={name}
             />
@@ -68,23 +71,15 @@ function About(props) {
           </div>
           <div className="col-12 col-lg-8 pt-3 pt-lg-0">
             <h3 className="mb-3 fw-bold text-capitalize">{name}</h3>
-            <div className="row">
-              {info.map(({ key, children, className }) => (
-                <ul
-                  key={key}
-                  className={`list-unstyled ${className}`}
-                >
-                  {children.map((child) => (
-                    <li key={child.key}>
-                      <i className="bi bi-caret-right" />
-                      <b>{`${child.key.toCapitalize()} `}</b>
-                      {getValue(child.type, child.value)}
-                    </li>
-                  ))}
-                </ul>
+            <ul className={styles.info}>
+              {info.map(({ key, type, value }) => (
+                <li key={key}>
+                  <b>{`${key.toCapitalize()} `}</b>
+                  {getValue(type, value)}
+                </li>
               ))}
-            </div>
-            <article>
+            </ul>
+            <article className={styles.autobiography}>
               {autobiography.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -105,50 +100,44 @@ About.propTypes = {
   info: PropTypes.arrayOf(
     PropTypes.shape({
       key: PropTypes.string.isRequired,
-      children: PropTypes.arrayOf(
+      type: PropTypes.oneOf([
+        'number',
+        'string',
+        'link',
+        'function',
+        'array(number)',
+        'array(string)',
+        'array(link)',
+        'array(function)',
+      ]).isRequired,
+      value: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
         PropTypes.shape({
-          key: PropTypes.string.isRequired,
-          type: PropTypes.oneOf([
-            'number',
-            'string',
-            'link',
-            'function',
-            'array(number)',
-            'array(string)',
-            'array(link)',
-            'array(function)',
-          ]).isRequired,
-          value: PropTypes.oneOfType([
-            PropTypes.number,
-            PropTypes.string,
-            PropTypes.shape({
-              reference: PropTypes.string.isRequired,
-              text: PropTypes.string,
-              className: PropTypes.string,
-            }),
-            PropTypes.shape({
-              name: PropTypes.string.isRequired,
-              arguments: PropTypes.object,
-            }),
-            PropTypes.arrayOf(PropTypes.number),
-            PropTypes.arrayOf(PropTypes.string),
-            PropTypes.arrayOf(
-              PropTypes.shape({
-                reference: PropTypes.string.isRequired,
-                text: PropTypes.string,
-                className: PropTypes.string,
-              }),
-            ),
-            PropTypes.arrayOf(
-              PropTypes.shape({
-                name: PropTypes.string.isRequired,
-                arguments: PropTypes.object,
-              }),
-            ),
-          ]).isRequired,
+          reference: PropTypes.string.isRequired,
+          text: PropTypes.string,
+          className: PropTypes.string,
         }),
-      ).isRequired,
-      className: PropTypes.string,
+        PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          arguments: PropTypes.object,
+        }),
+        PropTypes.arrayOf(PropTypes.number),
+        PropTypes.arrayOf(PropTypes.string),
+        PropTypes.arrayOf(
+          PropTypes.shape({
+            reference: PropTypes.string.isRequired,
+            text: PropTypes.string,
+            className: PropTypes.string,
+          }),
+        ),
+        PropTypes.arrayOf(
+          PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            arguments: PropTypes.object,
+          }),
+        ),
+      ]).isRequired,
     }),
   ).isRequired,
   autobiography: PropTypes.arrayOf(PropTypes.string).isRequired,

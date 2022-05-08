@@ -125,10 +125,6 @@ svg.rotate-180 {
   transform: rotate(-180deg);
 }
 
-ul.list-unstyled li i {
-  padding-right: 0.5rem;
-}
-
 .text-light ol li.b,
 .text-light ol li b,
 .text-light ul li.b,

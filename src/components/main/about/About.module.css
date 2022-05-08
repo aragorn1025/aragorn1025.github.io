@@ -1,0 +1,51 @@
+img.me {
+  display: flex;
+  width: 100%;
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul.info,
+ul.info ul {
+  padding-left: 1.5rem;
+  list-style: none;
+}
+
+ul.info li {
+  position: relative;
+}
+
+ul.info li::before {
+  position: absolute;
+  top: 0;
+  left: -1.5rem;
+  content: '';
+  font-family: 'bootstrap-icons';
+}
+
+ul.info > li::before {
+  content: '\F234';
+}
+
+ul.info ul > li::before {
+  content: '\F5B0';
+}
+
+ul.info li a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+ul.info li a:hover {
+  color: currentColor;
+  text-decoration: underline;
+}
+
+article.autobiography {
+  text-indent: 2em;
+}
+
+article.autobiography p:last-child {
+  margin-bottom: 0;
+}

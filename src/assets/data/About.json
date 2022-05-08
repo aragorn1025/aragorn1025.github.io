@@ -6,71 +6,59 @@
 	},
 	"info": [
 		{
-			"key": "left-column",
-			"children": [
-				{
-					"key": "age",
-					"type": "function",
-					"value": {
-						"name": "getAge",
-						"arguments": {
-							"year": 1994,
-							"month": 10,
-							"day": 25
-						}
-					}
-				},
-				{
-					"key": "gender",
-					"type": "string",
-					"value": "Male"
-				},
-				{
-					"key": "home",
-					"type": "string",
-					"value": "Taipei, Taiwan"
-				},
-				{
-					"key": "website",
-					"type": "link",
-					"value": {
-						"reference": "https://aragorn1025.github.io/"
-					}
-				},
-				{
-					"key": "education",
-					"type": "string",
-					"value": "National Central University, Taiwan"
-				},
-				{
-					"key": "major",
-					"type": "string",
-					"value": "Computer Science & Information Engineering"
-				},
-				{
-					"key": "degree",
-					"type": "string",
-					"value": "Master"
+			"key": "age",
+			"type": "function",
+			"value": {
+				"name": "getAge",
+				"arguments": {
+					"year": 1994,
+					"month": 10,
+					"day": 25
 				}
-			],
-			"className": "mb-0 mb-xxl-3 col-12 col-xxl-7"
+			}
 		},
 		{
-			"key": "right-column",
-			"children": [
-				{
-					"key": "focus",
-					"type": "array(string)",
-					"value": [
-						"Artificial Intelligence",
-						"Deep Learning",
-						"Machine Learning",
-						"Image Processing",
-						"Software Engineering"
-					]
-				}
-			],
-			"className": "col-12 col-xxl-5"
+			"key": "gender",
+			"type": "string",
+			"value": "Male"
+		},
+		{
+			"key": "home",
+			"type": "string",
+			"value": "Taipei, Taiwan"
+		},
+		{
+			"key": "website",
+			"type": "link",
+			"value": {
+				"reference": "https://aragorn1025.github.io/"
+			}
+		},
+		{
+			"key": "education",
+			"type": "string",
+			"value": "National Central University, Taiwan"
+		},
+		{
+			"key": "major",
+			"type": "string",
+			"value": "Computer Science & Information Engineering"
+		},
+		{
+			"key": "degree",
+			"type": "string",
+			"value": "Master"
+		},
+		{
+			"key": "focus",
+			"type": "array(string)",
+			"value": [
+				"Artificial Intelligence",
+				"Deep Learning",
+				"Machine Learning",
+				"Image Processing",
+				"Software Engineering"
+			]
 		}
 	],
 	"autobiography": [
