@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BarTitle from '../../common/title/BarTitle';
+import BarTitle from '../../common/bar-title/BarTitle';
 import Title from '../../common/title/Title';
 
 function Contact() {
@@ -9,7 +9,7 @@ function Contact() {
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
         <Title
           text="Contact"
-          toUppercase
+          toUpperCase
         />
         <div>
           <BarTitle
@@ -18,7 +18,7 @@ function Contact() {
             mainLevel={3}
             subLevel={6}
             barLevel={3}
-            toUppercase
+            toUpperCase
           />
           <div className="row g-3">
             <div className="col-12 col-md-6">

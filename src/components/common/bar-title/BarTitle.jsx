@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import './Title.css';
+import styles from './BarTitle.module.css';
 
 function BarTitle(props) {
-  const { mainText, subText, mainLevel, subLevel, barLevel, toUppercase } = props;
+  const { mainText, subText, mainLevel, subLevel, barLevel, toUpperCase } = props;
   const MainTag = `h${mainLevel}`;
   const SubTag = `h${subLevel}`;
-  const tagClassName = `mx-auto${toUppercase ? ' uppercase' : ''}`;
+  const mainChild = toUpperCase ? mainText.toUpperCase() : mainText;
+  const subChild = toUpperCase ? subText.toUpperCase() : subText;
   return (
-    <div className="title">
-      {mainText !== '' && <MainTag className={tagClassName}>{mainText}</MainTag>}
-      <div className={`bar bar-h-${barLevel}`} />
-      {subText !== '' && <SubTag className={tagClassName}>{subText}</SubTag>}
+    <div className={styles['bar-title']}>
+      {mainText !== '' && <MainTag>{mainChild}</MainTag>}
+      <div className={`${styles.bar} ${styles[`bar-h-${barLevel}`]}`} />
+      {subText !== '' && <SubTag>{subChild}</SubTag>}
     </div>
   );
 }
@@ -23,7 +24,7 @@ BarTitle.propTypes = {
   mainLevel: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   subLevel: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   barLevel: PropTypes.oneOf([1, 2, 3, 4, 5]),
-  toUppercase: PropTypes.bool,
+  toUpperCase: PropTypes.bool,
 };
 
 BarTitle.defaultProps = {
@@ -32,7 +33,7 @@ BarTitle.defaultProps = {
   mainLevel: 1,
   subLevel: 4,
   barLevel: 1,
-  toUppercase: false,
+  toUpperCase: false,
 };
 
 export default BarTitle;

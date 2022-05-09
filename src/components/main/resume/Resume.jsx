@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BarTitle from '../../common/title/BarTitle';
+import BarTitle from '../../common/bar-title/BarTitle';
 import Title from '../../common/title/Title';
 import { getLastUpdatedString } from '../../utils/utils';
 
@@ -10,7 +10,7 @@ function Resume() {
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
         <Title
           text="Resume"
-          toUppercase
+          toUpperCase
         />
         <div className="d-flex">
           <h6 className="ms-auto">{getLastUpdatedString(2022, 4, 12, 23)}</h6>
@@ -20,7 +20,7 @@ function Resume() {
             mainText="Education"
             mainLevel={3}
             barLevel={3}
-            toUppercase
+            toUpperCase
           />
           <div className="timeline mb-3">
             <div className="timeline-block">
@@ -82,7 +82,7 @@ function Resume() {
             mainText="Experience"
             mainLevel={3}
             barLevel={3}
-            toUppercase
+            toUpperCase
           />
           <div className="timeline">
             <div className="timeline-block">

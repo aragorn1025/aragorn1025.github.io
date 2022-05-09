@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import './Title.css';
+import styles from './Title.module.css';
 
 function Title(props) {
-  const { text, level, toUppercase } = props;
+  const { text, level, toUpperCase } = props;
   const Tag = `h${level}`;
+  const child = toUpperCase ? text.toUpperCase() : text;
   return (
-    <div className="title">
-      <Tag className={`mx-auto${toUppercase ? ' uppercase' : ''}`}>{text}</Tag>
+    <div className={styles.title}>
+      <Tag>{child}</Tag>
     </div>
   );
 }
@@ -16,12 +17,12 @@ function Title(props) {
 Title.propTypes = {
   text: PropTypes.string.isRequired,
   level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
-  toUppercase: PropTypes.bool,
+  toUpperCase: PropTypes.bool,
 };
 
 Title.defaultProps = {
   level: 1,
-  toUppercase: false,
+  toUpperCase: false,
 };
 
 export default Title;

@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import me from '../../../assets/images/me.jpg';
+import BarTitle from '../../common/bar-title/BarTitle';
 import QuotationBlock from '../../common/quote-block/QuotationBlock';
-import BarTitle from '../../common/title/BarTitle';
 import Title from '../../common/title/Title';
 import getFunction from '../Functions';
 
@@ -50,7 +50,7 @@ function About(props) {
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
         <Title
           text="About"
-          toUppercase
+          toUpperCase
         />
         <div className="row">
           <BarTitle
@@ -59,7 +59,7 @@ function About(props) {
             mainLevel={3}
             subLevel={6}
             barLevel={3}
-            toUppercase
+            toUpperCase
           />
           <div className="col-12 col-lg-4">
             <img

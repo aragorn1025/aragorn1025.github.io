@@ -12,9 +12,9 @@ function Home(props) {
     >
       <div className={styles.cover}>
         <div className={styles.mask}>
-          <div>
-            <h1 className="my-0 py-2 text-center fw-bolder">{title}</h1>
-            {subtitle !== '' && <h4 className="my-0 py-2 text-center">{subtitle}</h4>}
+          <div className={styles.content}>
+            <h1>{title}</h1>
+            {subtitle !== '' && <h4>{subtitle}</h4>}
           </div>
         </div>
       </div>

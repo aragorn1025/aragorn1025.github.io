@@ -7,7 +7,7 @@ import portfolio10 from '../../../assets/images/portfolio_10.png';
 import portfolio11 from '../../../assets/images/portfolio_11.png';
 import portfolio12 from '../../../assets/images/portfolio_12.png';
 import portfolio20 from '../../../assets/images/portfolio_20.png';
-import BarTitle from '../../common/title/BarTitle';
+import BarTitle from '../../common/bar-title/BarTitle';
 import Title from '../../common/title/Title';
 
 /*
@@ -24,14 +24,14 @@ function Portfolio() {
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
         <Title
           text="Portfolio"
-          toUppercase
+          toUpperCase
         />
         <div>
           <BarTitle
             subText="My Works"
             subLevel={6}
             barLevel={3}
-            toUppercase
+            toUpperCase
           />
           <div className="row g-3">
             <div className="col-12 col-md-6 col-xl-4">
