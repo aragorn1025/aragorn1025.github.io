@@ -5,7 +5,8 @@ LABEL maintainer="aragorn1025 tzjie.dai@gmail.com" \
 WORKDIR /home/node/app
 COPY package.json ./
 COPY package-lock.json ./
-RUN npm install
+RUN apk add --no-cache git openssh-client && \
+    npm install
 
 EXPOSE 3000
 CMD [ "npm", "run", "start" ]
