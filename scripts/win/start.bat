@@ -4,7 +4,7 @@
 @set PATH_HOST=%~dp0..\..
 @set PATH_CONTAINER=/home/node/app
 
-@docker build -t %IMAGE_NAME% -f "%PATH_HOST%\scripts\Dockerfile" "%PATH_HOST%"
+@docker build -t %IMAGE_NAME% -f "%PATH_HOST%\Dockerfile" "%PATH_HOST%"
 @docker run -dit ^
     -v "%PATH_HOST%\public":%PATH_CONTAINER%/public ^
     -v "%PATH_HOST%\src":%PATH_CONTAINER%/src ^
