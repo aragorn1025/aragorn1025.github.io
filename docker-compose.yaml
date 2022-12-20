@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+
+  web-server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: aragorn1025.github.io
+    container_name: aragorn1025.github.io
+    working_dir: /home/node/app
+    ports:
+      - 3000:3000
