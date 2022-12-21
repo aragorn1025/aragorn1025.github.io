@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# docker
+.dockerignore
+Dockerfile
+docker-compose*
+
+# git
+.git/
+.gitignore
+
+# production
+build/
+
+# misc
+scripts/
+Makefile
+README.md
+.eslintrc.json
+.prettierrc
