@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+
+  web-server:
+    ports:
+      - 3000:3000
+    volumes:
+      - ./public/:/home/node/app/public/
+      - ./src/:/home/node/app/src/
+      - ./package-lock.json:/home/node/app/package-lock.json
+      - ./package.json:/home/node/app/package.json
