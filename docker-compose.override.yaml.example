@@ -6,6 +6,7 @@ services:
     ports:
       - 3000:3000
     volumes:
+      - ./.git/:/home/node/app/.git/
       - ./public/:/home/node/app/public/
       - ./src/:/home/node/app/src/
       - ./.eslintrc.json:/home/node/app/.eslintrc.json
@@ -13,4 +14,3 @@ services:
       - ./.prettierrc:/home/node/app/.prettierrc
       - ./package-lock.json:/home/node/app/package-lock.json
       - ./package.json:/home/node/app/package.json
-      - ~/.ssh/:/root/.ssh/:ro
