@@ -16,6 +16,8 @@ prepare:
 	docker compose exec web-server mkdir -p /root/.ssh
 	docker compose cp $(HOME_PATH)/.gitconfig  web-server:/root/
 	docker compose cp $(HOME_PATH)/.ssh/$(GIT_SSH_KEY_FILE) web-server:/root/.ssh/
+	docker compose cp $(HOME_PATH)/.ssh/known_hosts web-server:/root/.ssh/
+	docker compose cp $(HOME_PATH)/.ssh/known_hosts.old web-server:/root/.ssh/
 	docker compose exec web-server chmod 400 /root/.ssh/$(GIT_SSH_KEY_FILE)
 .PHONY: prepare
 
