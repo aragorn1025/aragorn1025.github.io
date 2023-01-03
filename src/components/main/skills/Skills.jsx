@@ -13,7 +13,7 @@ function Skills() {
           toUpperCase
         />
         <div className="d-flex">
-          <h6 className="ms-auto">{getLastUpdatedString(2022, 4, 24, 13)}</h6>
+          <h6 className="ms-auto">{getLastUpdatedString(2023, 1, 3, 23)}</h6>
         </div>
         <div className="row">
           <div className="col-12 col-xl-6">
@@ -33,13 +33,13 @@ function Skills() {
                   <div className="skill-bar">
                     <div className="skill-bar-progress skill-bar-85">
                       <div className="skill-bar-key">Python</div>
-                      <div className="skill-bar-value">85%</div>
+                      <div className="skill-bar-value">75%</div>
                     </div>
                   </div>
                   <div className="skill-bar">
                     <div className="skill-bar-progress skill-bar-70">
                       <div className="skill-bar-key">Java</div>
-                      <div className="skill-bar-value">70%</div>
+                      <div className="skill-bar-value">60%</div>
                     </div>
                   </div>
                   <div className="skill-bar">
@@ -70,13 +70,13 @@ function Skills() {
                   <div className="skill-bar">
                     <div className="skill-bar-progress skill-bar-75">
                       <div className="skill-bar-key">Flask</div>
-                      <div className="skill-bar-value">75%</div>
+                      <div className="skill-bar-value">65%</div>
                     </div>
                   </div>
                   <div className="skill-bar">
                     <div className="skill-bar-progress skill-bar-60">
                       <div className="skill-bar-key">FastAPI</div>
-                      <div className="skill-bar-value">60%</div>
+                      <div className="skill-bar-value">75%</div>
                     </div>
                   </div>
                   <div className="skill-bar">
@@ -104,12 +104,24 @@ function Skills() {
                   <li>Keras</li>
                 </ul>
                 <BarTitle
+                  mainText="Package Management"
+                  mainLevel={5}
+                  barLevel={1}
+                />
+                <ul>
+                  <li className="b">Poetry</li>
+                  <li>Anaconda</li>
+                </ul>
+                <BarTitle
                   mainText="Others"
                   mainLevel={5}
                   barLevel={1}
                 />
                 <ul>
-                  <li className="b">Anaconda</li>
+                  <li className="b">pydantic</li>
+                  <li className="b">SQLAlchemy</li>
+                  <li className="b">Alembic</li>
+                  <li className="b">pytest</li>
                 </ul>
               </div>
             </div>
@@ -156,19 +168,19 @@ function Skills() {
                   <div className="skill-bar">
                     <div className="skill-bar-progress skill-bar-75">
                       <div className="skill-bar-key">Bootstrap</div>
-                      <div className="skill-bar-value">75%</div>
+                      <div className="skill-bar-value">60%</div>
                     </div>
                   </div>
                   <div className="skill-bar">
                     <div className="skill-bar-progress skill-bar-50">
                       <div className="skill-bar-key">React</div>
-                      <div className="skill-bar-value">50%</div>
+                      <div className="skill-bar-value">45%</div>
                     </div>
                   </div>
                   <div className="skill-bar">
                     <div className="skill-bar-progress skill-bar-50">
                       <div className="skill-bar-key">Vue.js</div>
-                      <div className="skill-bar-value">50%</div>
+                      <div className="skill-bar-value">45%</div>
                     </div>
                   </div>
                 </div>
@@ -228,7 +240,7 @@ function Skills() {
                   <div className="skill-bar">
                     <div className="skill-bar-progress skill-bar-60">
                       <div className="skill-bar-key">Docker</div>
-                      <div className="skill-bar-value">60%</div>
+                      <div className="skill-bar-value">70%</div>
                     </div>
                   </div>
                   <div className="skill-bar">
@@ -276,6 +288,7 @@ function Skills() {
                 />
                 <ul>
                   <li>Object-oriented Programming</li>
+                  <li>Domain Driven Design</li>
                   <li>Agile</li>
                 </ul>
               </div>
