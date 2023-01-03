@@ -13,7 +13,7 @@ function Resume() {
           toUpperCase
         />
         <div className="d-flex">
-          <h6 className="ms-auto">{getLastUpdatedString(2022, 4, 12, 23)}</h6>
+          <h6 className="ms-auto">{getLastUpdatedString(2023, 1, 3, 23)}</h6>
         </div>
         <div>
           <BarTitle
@@ -375,7 +375,7 @@ function Resume() {
                 <h5>LEDA-creative Technology LTD.</h5>
                 <ol>
                   <li>
-                    To develop and maintain the company&apos;s cloud AI training platform product.
+                    To develop and maintain SeaDeep, an AI training platform.
                     It&apos;s necessary to discuss the development requirements with the project
                     manager, and communicate with the frontend engineers for planning API. After
                     that, I should combine the main algorithms and the backend framework.
@@ -429,10 +429,31 @@ function Resume() {
                 <h5>M800 Taiwan Limited</h5>
                 <ol>
                   <li>
-                    To develop and maintain internal webpages, one of which is to assist product
+                    To develop the internal webpages (named as Tiffany), which assists product
                     managers more easily to deploy and release on the page according to the internal
                     git flow. The main programming languages used include Go (Gin) and JavaScript
                     (React, Vue.js).
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="timeline-block">
+              <div className="timeline-anchor">
+                <div className="timeline-tag">
+                  <div className="h5">2022 / 05 ~ Now</div>
+                </div>
+                <div className="timeline-title">
+                  <h4>Software Developer</h4>
+                </div>
+              </div>
+              <div className="timeline-content">
+                <h5>Pentium Network Technology Ltd.</h5>
+                <ol>
+                  <li>
+                    To develop and maintain MAVIS, a hybrid multi-cloud IT PAM tool, which could
+                    help IT team to manage their access permission to their servers and record all
+                    the action by developers. In this team, I work as a backend developer and the
+                    main programming languages used include Python and TypeScript.
                   </li>
                 </ol>
               </div>
