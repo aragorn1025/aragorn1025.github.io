@@ -8,11 +8,6 @@ down:
 .PHONY: down
 
 
-deploy:
-	docker compose exec web-server npm run deploy
-.PHONY: deploy
-
-
 exec:
 	docker compose exec -it web-server sh
 .PHONY: exec
