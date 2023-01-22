@@ -16,8 +16,8 @@
     "start": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
-    "predeploy": "npm run build",
     "lint": "eslint ./src --ext .js --ext .jsx --fix",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
