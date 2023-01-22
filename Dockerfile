@@ -1,4 +1,4 @@
-FROM node:18-alpine3.15
+FROM node:19-alpine3.16
 LABEL maintainer="aragorn1025 tzjie.dai@gmail.com"
 
 WORKDIR /home/node/app
