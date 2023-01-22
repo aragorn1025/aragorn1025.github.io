@@ -1,6 +1,4 @@
 # dependencies
-dist
-dist-ssr
 node_modules
 .pnp
 .pnp.js
@@ -17,6 +15,8 @@ lerna-debug.log*
 
 # production
 build
+dist
+dist-ssr
 
 # IDE related
 .vscode/*
