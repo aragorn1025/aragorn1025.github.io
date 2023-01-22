@@ -6,7 +6,7 @@
   "homepage": "https://aragorn1025.github.io",
   "scripts": {
     "start": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint ./src --ext .js --ext .jsx --fix",
     "predeploy": "npm run build",
@@ -30,6 +30,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.5.0",
+    "typescript": "^4.9.3",
     "vite": "^4.0.0"
   },
   "eslintConfig": {
