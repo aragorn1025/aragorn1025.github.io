@@ -13,4 +13,6 @@ services:
       - ./index.html:/home/node/app/index.html
       - ./package-lock.json:/home/node/app/package-lock.json
       - ./package.json:/home/node/app/package.json
-      - ./vite.config.js:/home/node/app/vite.config.js
+      - ./tsconfig.json:/home/node/app/tsconfig.json
+      - ./tsconfig.node.json:/home/node/app/tsconfig.node.json
+      - ./vite.config.ts:/home/node/app/vite.config.ts
