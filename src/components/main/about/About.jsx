@@ -6,7 +6,7 @@ import BarTitle from '../../common/bar-title/BarTitle';
 import QuotationBlock from '../../common/quote-block/QuotationBlock';
 import Title from '../../common/title/Title';
 import { capitalize } from '../../utils/utils';
-import getFunction from '../Functions';
+import getFunction from './Functions';
 
 import styles from './About.module.css';
 
