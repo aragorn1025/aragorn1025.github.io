@@ -60,38 +60,42 @@ const getAboutItem = (type: AboutItemType, value: AboutItem) => {
       return value as number;
     case 'string':
       return value as string;
-    case 'link':
-      const linkItem = value as AboutLinkItem;
+    case 'link': {
+      const item = value as AboutLinkItem;
       return (
         <a
-          href={linkItem.reference}
+          href={item.reference}
           target="_blank"
           rel="noreferrer"
         >
-          {linkItem.text === undefined ? linkItem.reference : linkItem.text}
+          {item.text === undefined ? item.reference : item.text}
         </a>
       );
-    case 'function':
-      const functionItem = value as AboutFunctionItem;
-      return getFunction(functionItem.name)(functionItem.arguments);
-    case 'array(number)':
-      const arrayNumberItem = value as number[];
+    }
+    case 'function': {
+      const item = value as AboutFunctionItem;
+      return getFunction(item.name)(item.arguments);
+    }
+    case 'array(number)': {
+      const items = value as number[];
       return (
         <ul>
-          {arrayNumberItem.map((element: number) => (
+          {items.map((element: number) => (
             <li key={element}>{element}</li>
           ))}
         </ul>
       );
-    case 'array(string)':
-      const arrayStringItem = value as string[];
+    }
+    case 'array(string)': {
+      const items = value as string[];
       return (
         <ul>
-          {arrayStringItem.map((element: string) => (
+          {items.map((element: string) => (
             <li key={element}>{element}</li>
           ))}
         </ul>
       );
+    }
     case 'array(link)':
     case 'array(function)':
       throw new Error('The AboutItemType is not implemented yet.');
