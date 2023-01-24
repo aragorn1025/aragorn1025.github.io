@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 
 import me from '../../../assets/images/me.jpg';
@@ -8,44 +7,105 @@ import Title from '../../common/title/Title';
 import { capitalize } from '../../utils/utils';
 import getFunction from './Functions';
 
-import styles from './About.module.css';
+import styles from './AboutSection.module.css';
 
-function getValue(type, value) {
+interface AboutFunctionItem {
+  name: string;
+  arguments?: object;
+}
+
+interface AboutLinkItem {
+  reference: string;
+  text?: string;
+  className?: string;
+}
+
+type AboutItemType =
+  | 'number'
+  | 'string'
+  | 'function'
+  | 'link'
+  | 'array(number)'
+  | 'array(string)'
+  | 'array(function)'
+  | 'array(link)';
+
+type AboutItem =
+  | number
+  | string
+  | AboutFunctionItem
+  | AboutLinkItem
+  | number[]
+  | string[]
+  | AboutFunctionItem[]
+  | AboutLinkItem[];
+
+export interface AboutSectionProps {
+  name: string;
+  quotation: {
+    sentence: string;
+    from?: string;
+  };
+  info: {
+    key: string;
+    type: AboutItemType;
+    value: AboutItem;
+  }[];
+  autobiography: string[];
+}
+
+const getAboutItem = (type: AboutItemType, value: AboutItem) => {
   switch (type) {
     case 'number':
+      return value as number;
     case 'string':
-      return value;
+      return value as string;
     case 'link':
+      const linkItem = value as AboutLinkItem;
       return (
         <a
-          href={value.reference}
+          href={linkItem.reference}
           target="_blank"
           rel="noreferrer"
         >
-          {value.text === undefined || value.text === '' ? value.reference : value.text}
+          {linkItem.text === undefined ? linkItem.reference : linkItem.text}
         </a>
       );
     case 'function':
-      return getFunction(value.name)(...Object.values(value.arguments));
+      const functionItem = value as AboutFunctionItem;
+      return getFunction(functionItem.name)(functionItem.arguments);
     case 'array(number)':
-    case 'array(string)':
+      const arrayNumberItem = value as number[];
       return (
         <ul>
-          {value.map((element) => (
+          {arrayNumberItem.map((element: number) => (
+            <li key={element}>{element}</li>
+          ))}
+        </ul>
+      );
+    case 'array(string)':
+      const arrayStringItem = value as string[];
+      return (
+        <ul>
+          {arrayStringItem.map((element: string) => (
             <li key={element}>{element}</li>
           ))}
         </ul>
       );
     case 'array(link)':
     case 'array(function)':
-      throw new Error('Type is not implemented yet.');
+      throw new Error('The AboutItemType is not implemented yet.');
     default:
       throw new Error('Unknown type.');
   }
-}
+};
 
-function About(props) {
-  const { name, quotation, info, autobiography } = props;
+const AboutSection: React.FunctionComponent<AboutSectionProps> = ({
+  name,
+  quotation,
+  info,
+  autobiography,
+}) => {
   return (
     <section id="about">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
@@ -76,7 +136,7 @@ function About(props) {
               {info.map(({ key, type, value }) => (
                 <li key={key}>
                   <b>{`${capitalize(key)} `}</b>
-                  {getValue(type, value)}
+                  {getAboutItem(type, value)}
                 </li>
               ))}
             </ul>
@@ -90,58 +150,6 @@ function About(props) {
       </div>
     </section>
   );
-}
-
-About.propTypes = {
-  name: PropTypes.string.isRequired,
-  quotation: PropTypes.shape({
-    sentence: PropTypes.string.isRequired,
-    from: PropTypes.string,
-  }).isRequired,
-  info: PropTypes.arrayOf(
-    PropTypes.shape({
-      key: PropTypes.string.isRequired,
-      type: PropTypes.oneOf([
-        'number',
-        'string',
-        'link',
-        'function',
-        'array(number)',
-        'array(string)',
-        'array(link)',
-        'array(function)',
-      ]).isRequired,
-      value: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-        PropTypes.shape({
-          reference: PropTypes.string.isRequired,
-          text: PropTypes.string,
-          className: PropTypes.string,
-        }),
-        PropTypes.shape({
-          name: PropTypes.string.isRequired,
-          arguments: PropTypes.object,
-        }),
-        PropTypes.arrayOf(PropTypes.number),
-        PropTypes.arrayOf(PropTypes.string),
-        PropTypes.arrayOf(
-          PropTypes.shape({
-            reference: PropTypes.string.isRequired,
-            text: PropTypes.string,
-            className: PropTypes.string,
-          }),
-        ),
-        PropTypes.arrayOf(
-          PropTypes.shape({
-            name: PropTypes.string.isRequired,
-            arguments: PropTypes.object,
-          }),
-        ),
-      ]).isRequired,
-    }),
-  ).isRequired,
-  autobiography: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default About;
+export default AboutSection;
