@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import './NavLink.css';
+import { capitalize } from '../../utils/utils';
 
 function NavLink(props) {
   const { name, iconClassName, isActive } = props;
@@ -12,7 +13,7 @@ function NavLink(props) {
       href={`#${name.toLowerCase()}`}
     >
       {iconClassName !== '' && <i className={`nav-icon bi bi-${iconClassName}`} />}
-      <div className="nav-text">{name.toCapitalize()}</div>
+      <div className="nav-text">{capitalize(name)}</div>
     </a>
   );
 }

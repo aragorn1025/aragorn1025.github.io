@@ -5,6 +5,7 @@ import me from '../../../assets/images/me.jpg';
 import BarTitle from '../../common/bar-title/BarTitle';
 import QuotationBlock from '../../common/quote-block/QuotationBlock';
 import Title from '../../common/title/Title';
+import { capitalize } from '../../utils/utils';
 import getFunction from '../Functions';
 
 import styles from './About.module.css';
@@ -74,7 +75,7 @@ function About(props) {
             <ul className={styles.info}>
               {info.map(({ key, type, value }) => (
                 <li key={key}>
-                  <b>{`${key.toCapitalize()} `}</b>
+                  <b>{`${capitalize(key)} `}</b>
                   {getValue(type, value)}
                 </li>
               ))}

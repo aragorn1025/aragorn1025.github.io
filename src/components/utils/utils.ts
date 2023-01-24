@@ -1,10 +1,6 @@
-/* eslint-disable-next-line no-extend-native */
-Object.defineProperty(String.prototype, 'toCapitalize', {
-  value() {
-    return this.substring(0, 1).toUpperCase() + this.substring(1).toLowerCase();
-  },
-  enumerable: false,
-});
+const capitalize = (text: string) => {
+  return text.substring(0, 1).toUpperCase() + text.substring(1).toLowerCase();
+};
 
 const getDateString = (date: Date) => {
   const m = `0${date.getMonth() + 1}`.slice(-2);
@@ -44,4 +40,4 @@ const getLastUpdatedString = (year: number, month: number, day: number, hour: nu
   return `Last updated at ${getDateString(date)} (${getDayDiffString(date)} ago).`;
 };
 
-export { getDateString, getDayDiffString, getLastUpdatedString };
+export { capitalize, getDateString, getDayDiffString, getLastUpdatedString };
