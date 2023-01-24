@@ -5,7 +5,7 @@ import homeProps from '../../assets/data/Home.json';
 
 import './Main.css';
 import AboutSection, { AboutSectionProps } from './about/AboutSection';
-import Contact from './contact/Contact';
+import ContactSection from './contact/ContactSection';
 import HomeSection from './home/HomeSection';
 import PortfolioSection from './portfolio/PortfolioSection';
 import ResumeSection from './resume/ResumeSection';
@@ -19,7 +19,7 @@ const Main: React.FunctionComponent = () => {
       <SkillsSection />
       <ResumeSection />
       <PortfolioSection />
-      <Contact />
+      <ContactSection />
     </main>
   );
 };

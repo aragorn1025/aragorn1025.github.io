@@ -3,7 +3,7 @@ import React from 'react';
 import BarTitle from '../../common/bar-title/BarTitle';
 import Title from '../../common/title/Title';
 
-function Contact() {
+const ContactSection: React.FunctionComponent = () => {
   return (
     <section id="contact">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
@@ -150,6 +150,6 @@ function Contact() {
       </div>
     </section>
   );
-}
+};
 
-export default Contact;
+export default ContactSection;
