@@ -4,7 +4,7 @@ import BarTitle from '../../common/bar-title/BarTitle';
 import Title from '../../common/title/Title';
 import { getLastUpdatedString } from '../../utils/utils';
 
-function Skills() {
+const SkillsSection: React.FunctionComponent = () => {
   return (
     <section id="skills">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
@@ -311,6 +311,6 @@ function Skills() {
       </div>
     </section>
   );
-}
+};
 
-export default Skills;
+export default SkillsSection;

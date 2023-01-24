@@ -1,21 +1,17 @@
-/* eslint-disable-next-line no-extend-native */
-Object.defineProperty(String.prototype, 'toCapitalize', {
-  value() {
-    return this.substring(0, 1).toUpperCase() + this.substring(1).toLowerCase();
-  },
-  enumerable: false,
-});
+const capitalize = (text: string) => {
+  return text.substring(0, 1).toUpperCase() + text.substring(1).toLowerCase();
+};
 
-function getDateString(date) {
+const getDateString = (date: Date) => {
   const m = `0${date.getMonth() + 1}`.slice(-2);
   const d = `0${date.getDate()}`.slice(-2);
   const y = date.getFullYear();
   return `${m}-${d}-${y}`;
-}
+};
 
-function getDayDiffString(date) {
+const getDayDiffString = (date: Date) => {
   const today = new Date();
-  let diff = today - date;
+  let diff = today.getTime() - date.getTime();
   if (diff <= 0) {
     diff = 0;
   }
@@ -37,11 +33,11 @@ function getDayDiffString(date) {
   }
   diff = Math.floor(diff / 365);
   return `${diff} year${diff <= 1 ? '' : 's'}`;
-}
+};
 
-function getLastUpdatedString(year, month, day, hour) {
+const getLastUpdatedString = (year: number, month: number, day: number, hour: number) => {
   const date = new Date(year, month - 1, day, hour, 0, 0);
   return `Last updated at ${getDateString(date)} (${getDayDiffString(date)} ago).`;
-}
+};
 
-export { getDateString, getLastUpdatedString };
+export { capitalize, getDateString, getDayDiffString, getLastUpdatedString };

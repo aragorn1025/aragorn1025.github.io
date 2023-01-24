@@ -5,7 +5,7 @@ import sections from '../../assets/data/Sections.json';
 import './Header.css';
 import NavLink from './nav-link/NavLink';
 
-function Header() {
+const Header: React.FunctionComponent = () => {
   return (
     <header
       className="navbar navbar-expand-sm navbar-dark bg-dark fixed-top"
@@ -55,6 +55,6 @@ function Header() {
       </div>
     </header>
   );
-}
+};
 
 export default Header;

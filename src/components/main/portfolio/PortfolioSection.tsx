@@ -10,15 +10,7 @@ import portfolio20 from '../../../assets/images/portfolio_20.png';
 import BarTitle from '../../common/bar-title/BarTitle';
 import Title from '../../common/title/Title';
 
-/*
-function setTooltip(target) {
-  $(target).prop('title', function () {
-    return $(this).text().replaceAll('\t', '').replaceAll('\n', ' ');
-  });
-}
-*/
-
-function Portfolio() {
+const PortfolioSection: React.FunctionComponent = () => {
   return (
     <section id="portfolio">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
@@ -252,6 +244,6 @@ function Portfolio() {
       </div>
     </section>
   );
-}
+};
 
-export default Portfolio;
+export default PortfolioSection;
