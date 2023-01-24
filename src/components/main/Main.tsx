@@ -9,14 +9,14 @@ import Contact from './contact/Contact';
 import HomeSection from './home/HomeSection';
 import Portfolio from './portfolio/Portfolio';
 import Resume from './resume/Resume';
-import Skills from './skills/Skills';
+import SkillsSection from './skills/SkillsSection';
 
 const Main: React.FunctionComponent = () => {
   return (
     <main className="bg-dark bg-opacity-50 text-dark text-opacity-50">
       <HomeSection {...homeProps} />
       <AboutSection {...(aboutProps as AboutSectionProps)} />
-      <Skills />
+      <SkillsSection />
       <Resume />
       <Portfolio />
       <Contact />
