@@ -11,7 +11,7 @@ import Portfolio from './portfolio/Portfolio';
 import Resume from './resume/Resume';
 import Skills from './skills/Skills';
 
-function Main() {
+const Main: React.FunctionComponent = () => {
   return (
     <main className="bg-dark bg-opacity-50 text-dark text-opacity-50">
       <Home {...homeProps} />
@@ -22,6 +22,6 @@ function Main() {
       <Contact />
     </main>
   );
-}
+};
 
 export default Main;
