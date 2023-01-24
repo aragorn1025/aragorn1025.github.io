@@ -4,7 +4,7 @@ import BarTitle from '../../common/bar-title/BarTitle';
 import Title from '../../common/title/Title';
 import { getLastUpdatedString } from '../../utils/utils';
 
-function Resume() {
+const ResumeSection: React.FunctionComponent = () => {
   return (
     <section id="resume">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
@@ -375,14 +375,13 @@ function Resume() {
                 <h5>LEDA-creative Technology LTD.</h5>
                 <ol>
                   <li>
-                    To develop and maintain SeaDeep, an AI training platform.
-                    It&apos;s necessary to discuss the development requirements with the project
-                    manager, and communicate with the frontend engineers for planning API. After
-                    that, I should combine the main algorithms and the backend framework.
-                    Furthermore, it&apos;s also important to master technologies such as database,
-                    Docker / Kubernetes virtualization, GPU / CUDA acceleration, so that can
-                    schedule an AI training project through simple operations when using this
-                    platform.
+                    To develop and maintain SeaDeep, an AI training platform. It&apos;s necessary to
+                    discuss the development requirements with the project manager, and communicate
+                    with the frontend engineers for planning API. After that, I should combine the
+                    main algorithms and the backend framework. Furthermore, it&apos;s also important
+                    to master technologies such as database, Docker / Kubernetes virtualization, GPU
+                    / CUDA acceleration, so that can schedule an AI training project through simple
+                    operations when using this platform.
                   </li>
                   <li>
                     To develop and maintain a few micro-service tools. In addition to APIs for
@@ -471,6 +470,6 @@ function Resume() {
       </div>
     </section>
   );
-}
+};
 
-export default Resume;
+export default ResumeSection;

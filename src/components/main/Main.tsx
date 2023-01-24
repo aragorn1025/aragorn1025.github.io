@@ -8,7 +8,7 @@ import AboutSection, { AboutSectionProps } from './about/AboutSection';
 import Contact from './contact/Contact';
 import HomeSection from './home/HomeSection';
 import Portfolio from './portfolio/Portfolio';
-import Resume from './resume/Resume';
+import ResumeSection from './resume/ResumeSection';
 import SkillsSection from './skills/SkillsSection';
 
 const Main: React.FunctionComponent = () => {
@@ -17,7 +17,7 @@ const Main: React.FunctionComponent = () => {
       <HomeSection {...homeProps} />
       <AboutSection {...(aboutProps as AboutSectionProps)} />
       <SkillsSection />
-      <Resume />
+      <ResumeSection />
       <Portfolio />
       <Contact />
     </main>
