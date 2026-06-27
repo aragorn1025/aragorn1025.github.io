@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://aragorn1025.github.io",
   "scripts": {
-    "start": "vite",
+    "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint ."
