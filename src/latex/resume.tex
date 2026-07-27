@@ -1,0 +1,152 @@
+\documentclass[
+    font_size            = {10pt},
+    margin               = {0.5in},
+    section_separator    = {0.6em},
+    subsection_separator = {0.2em},
+    item_separator       = {0em},
+]{resume}
+
+\usepackage[bookmarks=false]{hyperref}
+\hypersetup{hidelinks}
+
+\begin{document}
+
+\resumetitle{
+    name       = {Tz-Jie (Aragorn) Dai},
+    email      = {\href{mailto:tzjie.dai@gmail.com}{tzjie.dai@gmail.com}},
+    phone      = {\href{tel:14582107380}{+1 458-210-7380}},
+    linkedin   = {\href{https://linkedin.com/in/aragorn1025}{aragorn1025}},
+    github     = {\href{https://github.com/aragorn1025}{aragorn1025}},
+    location   = {Corvallis, OR, US},
+    relocation = {US},
+}
+
+\begin{resumesummary}
+    Software Engineer with 5+ years of experience building production software systems,
+    specializing in backend services and system integration.
+    Experienced in developing APIs, database systems, and reliable backend workflows,
+    with additional experience integrating computer vision applications into production environments.
+    Currently seeking Software Engineer opportunities to solve challenging engineering problems and build production software systems.
+\end{resumesummary}
+
+\begin{resumeexperience}
+    \experience[
+        company  = {Oregon State University (OSU)},
+        location = {Corvallis, OR, USA},
+        title    = {Computer Vision Developer, Department of Crop and Soil Science},
+        start    = {Feb 2026},
+    ]{
+        \item Fine-tuned object detection models on various spatial resolution drone images
+        for weed detection on the real crop field, improving mAP50 from 0.684 to 0.769.
+    }
+
+    \experience[
+        company  = {Pentium Network Technology Ltd.},
+        location = {Taipei, Taiwan},
+        title    = {Software Developer, Department of Research and Development},
+        start    = {May 2022},
+        end      = {Jan 2025},
+    ]{
+        \item Designed and developed 65+ RESTful APIs (30.9\% of the platform)
+        using FastAPI, PostgreSQL, Redis, Celery, and MinIO for a B2B PAM platform.
+        Delivered backend functionality including
+        authentication, RBAC, licensing, reporting, and resource management.
+        \item Redesigned a 300+ line authentication pipeline
+        using the Chain of Responsibility pattern,
+        decomposing it into 50+ reusable components.
+        Reduced implementation time for new authentication features from weeks to hours
+        while supporting multiple identity providers, MFA, SSO, JWT/JWKs, and refresh tokens.
+        \item Improved backend reliability by developing a Redis-based distributed locking module
+        with configurable TTL, retry mechanisms, and context manager support,
+        ensuring safe concurrent execution across concurrent workloads handled by API servers and Celery workers.
+        \item Reduced CI/CD execution time from 18 to under 3 minutes
+        by optimizing multi-stage Docker image builds, reusable build artifacts, and testing workflows,
+        reducing developer wait time and accelerating development workflows.
+        \item Initiated developer technical sharing sessions, organized a Kubernetes study group, and host 20+ backend API/database schema design reviews.
+        Standardized backend documentation for API errors and background jobs,
+        improving frontend integration and long-term maintainability.
+    }
+
+    \experience[
+        company  = {M800 Taiwan Limited},
+        location = {Taipei, Taiwan},
+        title    = {Software Engineer, Department of Research and Development},
+        start    = {Jan 2022},
+        end      = {Apr 2022},
+    ]{
+        \item Built an internal deployment system using Vue.js, React, and Go Gin, integrating Jira, Jenkins, and GitLab.
+        Reduced routine release effort from 60–120 minutes to under 5 minutes, enabling PM self-service and removing routine SRE dependency.
+    }
+
+    \experience[
+        company  = {LEDA-creative Technology LTD.},
+        location = {Taoyuan, Taiwan},
+        title    = {Software Engineer, Department of Research and Development},
+        start    = {Oct 2020},
+        end      = {Sep 2021},
+    ]{
+        \item Developed model integration components for an AI training platform
+        by containerizing GPU-accelerated computer vision models, building CLI interfaces,
+        and implementing custom LabelMe dataset loaders.
+        \item Implemented MQTT-based automated model deployment workflow,
+        eliminating manual model export and USB transfer to industrial edge devices.
+        Supported computer vision solutions in food processing, electronics, and semiconductor manufacturing.
+    }
+
+    \experience[
+        company  = {National Central University (NCU)},
+        location = {Taoyuan, Taiwan},
+        title    = {Project Research Assistant},
+        start    = {Apr 2017},
+        end      = {Aug 2020},
+    ]{
+        \item Developed an AI-assisted medication verification system with a NVIDIA Jetson TX2 edge device,
+        projected to reduce pharmacist workload by 25\%.
+        Co-invented Patent TW202201424A and won Gold Medal at Taiwan Innotech Expo 2020.
+    }
+\end{resumeexperience}
+
+\begin{resumeeducation}
+    \education{
+        school   = {Oregon State University (OSU)},
+        location = {Corvallis, OR, USA},
+        degree   = {M.S.},
+        major    = {Computer Science},
+        gpa      = {4.00},
+        start    = {Sep 2025},
+    }
+
+    \education{
+        school   = {National Central University (NCU)},
+        location = {Taoyuan, Taiwan},
+        degree   = {M.S.},
+        major 	 = {Computer Science and Information Engineering},
+        gpa      = {3.53},
+        start    = {Sep 2018},
+        end      = {Jun 2020},
+    }
+
+    \education{
+        school   = {National Central University (NCU)},
+        location = {Taoyuan, Taiwan},
+        degree   = {B.S.},
+        major    = {Computer Science and Information Engineering},
+        gpa      = {3.15},
+        start    = {Sep 2013},
+        end      = {Jun 2018},
+    }
+\end{resumeeducation}
+
+\begin{resumeskill}
+    \skill[group = Languages \& Frameworks]{
+        Python, Go, Java, C++, TypeScript, SQL, Bash, FastAPI, Flask, Gin, React
+    }
+    \skill[group = Backend Systems]{
+        RESTful APIs, Async Processing, Redis, Celery, PostgreSQL, SQLAlchemy, Linux, Docker, Kubernetes
+    }
+    \skill[group = Software Engineering \& AI]{
+        Git, GitHub Actions, pytest, CI/CD, Computer Vision, Deep Learning, PyTorch, OpenCV
+    }
+\end{resumeskill}
+
+\end{document}
