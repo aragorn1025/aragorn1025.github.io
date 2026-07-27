@@ -5,10 +5,10 @@
   "type": "module",
   "homepage": "https://aragorn1025.github.io",
   "scripts": {
-    "start": "vite",
+    "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint ."
+    "lint": "eslint . && latexindent src/latex/*.tex src/latex/*.cls --local --overwrite --silent && rm -f src/latex/indent.log src/latex/*.bak"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
