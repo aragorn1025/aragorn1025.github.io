@@ -3,13 +3,10 @@
 
 % options
 \RequirePackage{l3keys2e}
-\tl_new:N \l_resume_font_tl
 \tl_new:N \l_resume_font_size_tl
 \tl_new:N \l_resume_margin_tl
 \tl_new:N \l_resume_section_spacing_tl
 \keys_define:nn{resume}{
-    font            .tl_set:N  = \l_resume_font_tl,
-    font            .initial:n = Liberation Sans,
     font_size       .tl_set:N  = \l_resume_font_size_tl,
     font_size       .initial:n = 11pt,
     margin          .tl_set:N  = \l_resume_margin_tl,
@@ -27,8 +24,16 @@
 
 % font
 \RequirePackage{fontspec}
+\RequirePackage{ifplatform}
 \defaultfontfeatures{Ligatures=TeX}
-\setmainfont{\l_resume_font_tl}
+\IfFontExistsTF{Liberation Sans}{
+    \setmainfont{Liberation Sans}
+}{
+    \setmainfont{LiberationSans-Regular.ttf}[
+        BoldFont = LiberationSans-Bold.ttf,
+        ItalicFont = LiberationSans-Italic.ttf
+    ]
+}
 
 % title
 \RequirePackage{titlesec}
