@@ -24,16 +24,8 @@
 
 % font
 \RequirePackage{fontspec}
-\RequirePackage{ifplatform}
 \defaultfontfeatures{Ligatures=TeX}
-\IfFontExistsTF{Liberation Sans}{
-    \setmainfont{Liberation Sans}
-}{
-    \setmainfont{LiberationSans-Regular.ttf}[
-        BoldFont = LiberationSans-Bold.ttf,
-        ItalicFont = LiberationSans-Italic.ttf
-    ]
-}
+\setmainfont{Liberation Sans}
 
 % title
 \RequirePackage{titlesec}
