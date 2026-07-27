@@ -28,6 +28,9 @@
 % margin
 \RequirePackage[margin=\l_resume_margin_tl]{geometry}
 
+% remove page number
+\thispagestyle{empty}
+
 % font
 \RequirePackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}

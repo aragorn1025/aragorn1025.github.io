@@ -37,6 +37,7 @@
         "texlive",
         "textbf",
         "textwidth",
+        "thispagestyle",
         "titleformat",
         "titlesec",
         "titlespacing",
