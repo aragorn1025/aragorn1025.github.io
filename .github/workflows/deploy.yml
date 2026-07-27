@@ -26,7 +26,7 @@ jobs:
       - name: Copy Resume PDF
         run: |
           mkdir -p dist/resume
-          cp src/resume.pdf dist/resume/resume.pdf
+          cp src/latex/resume.pdf dist/resume/resume.pdf
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
