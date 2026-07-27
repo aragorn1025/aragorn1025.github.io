@@ -5,14 +5,20 @@
 \RequirePackage{l3keys2e}
 \tl_new:N \l_resume_font_size_tl
 \tl_new:N \l_resume_margin_tl
-\tl_new:N \l_resume_section_spacing_tl
+\tl_new:N \l_resume_section_separator_tl
+\tl_new:N \l_resume_subsection_separator_tl
+\tl_new:N \l_resume_item_separator_tl
 \keys_define:nn{resume}{
-    font_size       .tl_set:N  = \l_resume_font_size_tl,
-    font_size       .initial:n = 10pt,
-    margin          .tl_set:N  = \l_resume_margin_tl,
-    margin          .initial:n = 0.35in,
-    section_spacing .tl_set:N  = \l_resume_section_spacing_tl,
-    section_spacing .initial:n = 1em,
+    font_size            .tl_set:N  = \l_resume_font_size_tl,
+    font_size            .initial:n = 10pt,
+    margin               .tl_set:N  = \l_resume_margin_tl,
+    margin               .initial:n = 0.35in,
+    section_separator    .tl_set:N  = \l_resume_section_separator_tl,
+    section_separator    .initial:n = 1em,
+    subsection_separator .tl_set:N  = \l_resume_subsection_separator_tl,
+    subsection_separator .initial:n = 0.5em,
+    item_separator       .tl_set:N  = \l_resume_item_separator_tl,
+    item_separator       .initial:n = 0em,
 }
 \ProcessKeysOptions{resume}
 
@@ -32,14 +38,14 @@
 \RequirePackage[normalem]{ulem}
 \NewDocumentCommand{\uhfill}{m}{\uline{#1\hfill}}
 \titleformat{\section}{\bfseries\large\uppercase}{}{0em}{\uhfill}
-\titlespacing{\section}{0pt}{\l_resume_section_spacing_tl}{*0}
+\titlespacing{\section}{0pt}{\l_resume_section_separator_tl}{*0}
 
 % unordered list
 \RequirePackage{enumitem}
 \setlist[itemize]{
-    topsep=0.1em,
-    itemsep=0em,
-    parsep=0.1em,
+    topsep=\l_resume_item_separator_tl,
+    itemsep=\l_resume_item_separator_tl,
+    parsep=0em,
     labelsep=3pt,
     leftmargin=10pt
 }
@@ -71,7 +77,7 @@
     {
         \centering
         {\huge\bfseries \l_resume_name_tl}\\
-        \vspace{0.5em}
+        \vspace{\l_resume_subsection_separator_tl}
         \l_resume_email_tl\,\,|\,\,
         \l_resume_phone_tl\,\,|\,\,
         \l_resume_location_tl\\
@@ -79,7 +85,7 @@
         GitHub:\;\l_resume_github_tl\,\,|\,\,
         Open\;to\;\l_resume_relocation_tl\;Relocation\\
         \par
-        \vspace{-0.6em}
+        \vspace{-\l_resume_subsection_separator_tl}
     }
 }
 
@@ -115,7 +121,7 @@
         \bool_if:NTF \l_resume_is_first_experience_bool {
             \bool_set_false:N \l_resume_is_first_experience_bool
         }{
-            \vspace{0.5em}
+            \vspace{\l_resume_subsection_separator_tl}
         }
         \textbf{\l_resume_experience_company_tl} \hfill
         \l_resume_experience_location_tl \\
@@ -165,7 +171,7 @@
         \bool_if:NTF \g_resume_is_first_education_bool {
             \bool_gset_false:N \g_resume_is_first_education_bool
         }{
-            \tabularnewline[0.5em]
+            \tabularnewline[\l_resume_subsection_separator_tl]
         }
         \textbf{\g_resume_education_school_tl} & &
         \g_resume_education_location_tl \tabularnewline
