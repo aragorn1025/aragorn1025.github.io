@@ -44,10 +44,6 @@
     leftmargin=10pt
 }
 
-% links
-\RequirePackage[bookmarks=false]{hyperref}
-\hypersetup{hidelinks}
-
 % paragraph indent
 \setlength{\parindent}{0pt}
 \setlength{\tabcolsep}{0pt}
@@ -76,11 +72,11 @@
         \centering
         {\huge\bfseries \l_resume_name_tl}\\
         \vspace{0.5em}
-        \href{mailto: \l_resume_email_tl}{\l_resume_email_tl}\,\,|\,\,
+        \l_resume_email_tl\,\,|\,\,
         \l_resume_phone_tl\,\,|\,\,
         \l_resume_location_tl\\
-        LinkedIn:\;\href{https://linkedin.com/in/\l_resume_linkedin_tl}{\l_resume_linkedin_tl}\,\,|\,\,
-        GitHub:\;\href{https://github.com/\l_resume_github_tl}{\l_resume_github_tl}\,\,|\,\,
+        LinkedIn:\;\l_resume_linkedin_tl\,\,|\,\,
+        GitHub:\;\l_resume_github_tl\,\,|\,\,
         Open\;to\;\l_resume_relocation_tl\;Relocation\\
         \par
         \vspace{-0.6em}
