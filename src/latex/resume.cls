@@ -40,9 +40,9 @@
 % unordered list
 \RequirePackage{enumitem}
 \setlist[itemize]{
-    topsep=0em,
+    topsep=0.1em,
     itemsep=0em,
-    parsep=0em,
+    parsep=0.1em,
     labelsep=3pt,
     leftmargin=10pt
 }
@@ -78,6 +78,7 @@
     {
         \centering
         {\huge\bfseries \l_resume_name_tl}\\
+        \vspace{0.5em}
         \href{mailto: \l_resume_email_tl}{\l_resume_email_tl}\,\,|\,\,
         \l_resume_phone_tl\,\,|\,\,
         \l_resume_location_tl\\
@@ -85,6 +86,7 @@
         GitHub:\;\href{https://github.com/\l_resume_github_tl}{\l_resume_github_tl}\,\,|\,\,
         Open\;to\;\l_resume_relocation_tl\;Relocation\\
         \par
+        \vspace{-0.6em}
     }
 }
 
