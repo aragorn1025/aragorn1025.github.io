@@ -1,0 +1,11 @@
+{
+    "ignorePaths": [
+        ".github/workflows/*.yml",
+        "src/latex/*.cls",
+        "package.json",
+        "package-lock.json"
+    ],
+    "words": [
+        "Taoyuan",
+    ]
+}
