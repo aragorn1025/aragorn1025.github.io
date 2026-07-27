@@ -1,16 +1,16 @@
 \NeedsTeXFormat{LaTeX2e}[2025/11/01]
 \ProvidesExplClass{resume}{2026/07/25}{1.0.0}{Aragorn's Resume Class}
 
-% options
+% arguments
 \RequirePackage{l3keys2e}
 \tl_new:N \l_resume_font_size_tl
 \tl_new:N \l_resume_margin_tl
 \tl_new:N \l_resume_section_spacing_tl
 \keys_define:nn{resume}{
     font_size       .tl_set:N  = \l_resume_font_size_tl,
-    font_size       .initial:n = 11pt,
+    font_size       .initial:n = 10pt,
     margin          .tl_set:N  = \l_resume_margin_tl,
-    margin          .initial:n = 0.5in,
+    margin          .initial:n = 0.35in,
     section_spacing .tl_set:N  = \l_resume_section_spacing_tl,
     section_spacing .initial:n = 1em,
 }
