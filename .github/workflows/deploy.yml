@@ -16,10 +16,11 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
-            fonts-liberation \
             fontconfig \
-            texlive-xetex \
-            texlive-latex-extra
+            fonts-liberation \
+            texlive-latex-extra \
+            texlive-plain-generic \
+            texlive-xetex
           sudo fc-cache -f -v
           npm ci
       - name: Build Website
