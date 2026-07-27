@@ -1,9 +1,9 @@
 \documentclass[
     font_size            = {10pt},
-    margin               = {0.35in},
-    section_separator    = {1.0em},
-    subsection_separator = {0.5em},
-    item_separator       = {0.0em},
+    margin               = {0.5in},
+    section_separator    = {0.6em},
+    subsection_separator = {0.2em},
+    item_separator       = {0em},
 ]{resume}
 
 \usepackage[bookmarks=false]{hyperref}
@@ -23,10 +23,10 @@
 
 \begin{resumesummary}
     Software Engineer with 5+ years of experience building production software systems,
-    specializing in scalable backend services and distributed systems.
-    Experienced in designing APIs, database systems, and software infrastructure,
-    with additional experience in computer vision applications.
-    Currently pursuing an M.S. in Computer Science at Oregon State University and seeking software engineering opportunities.
+    specializing in backend services and system integration.
+    Experienced in developing APIs, database systems, and reliable backend workflows,
+    with additional experience integrating computer vision applications into production environments.
+    Currently seeking Software Engineer opportunities to solve challenging engineering problems and build production software systems.
 \end{resumesummary}
 
 \begin{resumeexperience}
@@ -56,10 +56,9 @@
         decomposing it into 50+ reusable components.
         Reduced implementation time for new authentication features from weeks to hours
         while supporting multiple identity providers, MFA, SSO, JWT/JWKs, and refresh tokens.
-        \item Improved backend scalability and reliability
-        by developing a Redis-based distributed locking library
+        \item Improved backend reliability by developing a Redis-based distributed locking module
         with configurable TTL, retry mechanisms, and context manager support,
-        ensuring safe concurrent execution across asynchronous API servers and Celery workers.
+        ensuring safe concurrent execution across concurrent workloads handled by API servers and Celery workers.
         \item Reduced CI/CD execution time from 18 to under 3 minutes
         by optimizing multi-stage Docker image builds, reusable build artifacts, and testing workflows,
         reducing developer wait time and accelerating development workflows.
@@ -101,7 +100,7 @@
         start    = {Apr 2017},
         end      = {Aug 2020},
     ]{
-        \item Developed an AI-assisted medication verification system with a NVIDIA Jetson TX2-based edge device,
+        \item Developed an AI-assisted medication verification system with a NVIDIA Jetson TX2 edge device,
         projected to reduce pharmacist workload by 25\%.
         Co-invented Patent TW202201424A and won Gold Medal at Taiwan Innotech Expo 2020.
     }
@@ -140,13 +139,13 @@
 
 \begin{resumeskill}
     \skill[group = Languages \& Frameworks]{
-        Python, Go, Java, C++, TypeScript, SQL, Bash, FastAPI, Flask, Gin, SQLAlchemy, React
+        Python, Go, Java, C++, TypeScript, SQL, Bash, FastAPI, Flask, Gin, React
     }
-    \skill[group = Backend \& Infrastructure]{
-        Distributed Systems, Async Programming, Redis, Celery, PostgreSQL, Docker, Kubernetes, Linux
+    \skill[group = Backend Systems]{
+        RESTful APIs, Async Processing, Redis, Celery, PostgreSQL, SQLAlchemy, Linux, Docker, Kubernetes
     }
     \skill[group = Software Engineering \& AI]{
-        Git, GitHub Actions, CI/CD, Automated Testing, Pytest, Mocking, Computer Vision, Deep Learning
+        Git, GitHub Actions, pytest, CI/CD, Computer Vision, Deep Learning, PyTorch, OpenCV
     }
 \end{resumeskill}
 
