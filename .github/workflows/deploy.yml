@@ -13,9 +13,27 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v6
       - name: Install dependencies
-        run: npm ci
-      - name: Build
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            fontconfig \
+            fonts-liberation \
+            texlive-fonts-recommended \
+            texlive-latex-extra \
+            texlive-plain-generic \
+            texlive-xetex
+          sudo fc-cache -f -v
+          npm ci
+      - name: Build Website
         run: npm run build
+      - name: Generate Resume PDF
+        working-directory: src/latex
+        run: |
+          xelatex -interaction=nonstopmode -halt-on-error resume.tex
+      - name: Copy Resume PDF
+        run: |
+          mkdir -p dist/resume
+          cp src/latex/resume.pdf dist/resume/resume.pdf
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
