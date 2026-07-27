@@ -20,7 +20,6 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           latexmk_use_xelatex: true
-          os: debian
           root_file: resume.tex
           working_directory: src/latex
       - name: Copy Resume PDF
