@@ -14,8 +14,18 @@ jobs:
         uses: actions/setup-node@v6
       - name: Install dependencies
         run: npm ci
-      - name: Build
+      - name: Build Website
         run: npm run build
+      - name: Generate Resume PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          os: debian
+          root_file: src/latex/resume.tex
+          texlive_version: 2026
+      - name: Copy Resume PDF
+        run: |
+          mkdir -p dist/resume
+          cp src/resume.pdf dist/resume/resume.pdf
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
