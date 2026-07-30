@@ -1,9 +1,9 @@
 \documentclass[
     font_size            = {10pt},
     margin               = {0.5in},
-    section_separator    = {0.7em},
-    subsection_separator = {0.4em},
-    item_separator       = {0em},
+    section_separator    = {1em},
+    subsection_separator = {0.5em},
+    item_separator       = {0.05em},
 ]{resume}
 
 \begin{document}
@@ -30,11 +30,11 @@
         location = {Corvallis, OR, USA},
         title    = {Computer Vision Developer, Department of Crop and Soil Science},
         start    = {Feb 2026},
+        end      = {Present},
     ]{
-        \item Built the training and evaluation pipeline
-        for drone-based weed detection in real-world crop fields, 
-        including server infrastructure setup, dataset preprocessing, and inference workflows,
-        improving mAP50 by 12\% through dataset refinement.
+        \item Built the training and evaluation pipeline for drone-based weed detection in real crop fields,
+        including server with GPU infrastructure setup , dataset preprocessing, and standardized inference workflows;
+        reached mAP50 0.769.
     }
 
     \experience[
@@ -46,21 +46,23 @@
     ]{
         \item Designed and developed core backend features,
         including authentication, RBAC, licensing, metrics, reporting, and resource management,
-        for a B2B privileged access management platform 
+        for a B2B privileged access management platform
         using FastAPI, PostgreSQL, Redis, Celery, and MinIO.
         \item Cut integration time for a new auth feature from about 2 weeks to under a day
         by refactoring a 300-line monolithic auth flow into a Chain-of-Responsibility pipeline
         supporting MFA, JWT/JWKs, bcrypt password authentication, LDAP, and SSO with Microsoft Entra ID.
-        \item Eliminated 1--2 concurrency-related over-allocation incidents every two weeks
-        by designing a Redis-based distributed lock module with configurable TTL, retry mechanisms, and context manager support,
-        ensuring atomic resource validation across 4 API server workers and 2 Celery workers.
+        \item Eliminated over-allocation race conditions by designing a Redis-based distributed lock
+        with configurable TTL, retry mechanisms, and context manager support,
+        ensuring atomic license checks across 4 API server workers and 2 Celery workers
+        and reducing UAT incidents from 1--2 per week to 0.
         \item Reduced CI/CD execution time from 18 to under 3 minutes
         by optimizing multi-stage Docker image builds, reusable build artifacts, and testing workflows,
         reducing developer wait time and accelerating development workflows.
-        \item Championed engineer team culture improvements
-        by gaining management support for technical sharing sessions for a 20+ developer team and latest for two years,
-        and organizing an after-hours Kubernetes study group to boost knowledge sharing acroos developer team;
-        identified long-neglected engineering documentation and established a maintenance workflow for technical maintenance.
+        \item Championed engineering culture and cross-functional workflow
+        by instituting bi-weekly tech talks for a 25+-developer team across 2 years,
+        hosting 20+ backend design reviews,
+        integrating outdated documentation into review workflows to streamline PM and frontend alignment,
+        and leading an after-hours Kubernetes study group.
     }
 
     \experience[
@@ -73,7 +75,7 @@
         \item Built an internal deployment system for a 70+ developer and PM team
         using Vue.js, React, and Go Gin, integrating Jira, Jenkins, and GitLab.
         Enabled PM self-service and removed routine SRE dependency through automated release workflows,
-        reducing routine release effort from 60–120 minutes to under 5 minutes for daily releases.
+        reducing routine release effort from 60--120 minutes to under 5 minutes for daily releases.
     }
 
     \experience[
@@ -93,41 +95,36 @@
 \end{resumeexperience}
 
 \begin{resumeeducation}
-    \education{
+    \education[
         school   = {Oregon State University (OSU)},
         location = {Corvallis, OR, USA},
-        degree   = {M.S.},
-        major    = {Computer Science},
+        degree   = {M.S. in Computer Science (Minor in Artificial Intelligence)},
         gpa      = {4.00},
         start    = {Sep 2025},
         end      = {Jun 2027 (Expected)},
-        points   = {
-            \educationpoint{With a minor in Artificial Intelligence.}
-        },
-    }
+    ]{}
 
-    \education{
+    \education[
         school   = {National Central University (NCU)},
         location = {Taoyuan, Taiwan},
-        degree   = {M.S.},
-        major 	 = {Computer Science and Information Engineering},
+        degree   = {M.S. in Computer Science and Information Engineering},
         gpa      = {3.53},
         start    = {Sep 2018},
         end      = {Jun 2020},
-        points   = {
-            \educationpoint{Co-invented Patent TW202201424A and won Gold Medal at Taiwan Innotech Expo 2020.}
-        },
+    ]{
+        \item Developed an AI-assisted medication verification system with a NVIDIA Jetson TX2 edge device,
+        projected to reduce pharmacist workload by 25\%.
+        Co-invented Patent TW202201424A and won Gold Medal at Taiwan Innotech Expo 2020.
     }
 
-    \education{
+    \education[
         school   = {National Central University (NCU)},
         location = {Taoyuan, Taiwan},
-        degree   = {B.S.},
-        major    = {Computer Science and Information Engineering},
+        degree   = {B.S. in Computer Science and Information Engineering},
         gpa      = {3.15},
         start    = {Sep 2013},
         end      = {Jun 2018},
-    }
+    ]{}
 \end{resumeeducation}
 
 \begin{resumeskill}

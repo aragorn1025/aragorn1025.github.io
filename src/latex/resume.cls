@@ -94,8 +94,8 @@
         \href{mailto:\l_resume_email_tl}{\l_resume_email_tl}\,\,|\,\,
         \l_resume_phone_tl\,\,|\,\,
         \l_resume_location_tl\\
-        \href{https://linkedin.com/in/\l_resume_linkedin_tl}{linkedin.com/in/\l_resume_linkedin_tl}\,\,|\,\,
-        \href{https://github.com/\l_resume_github_tl}{github.com/\l_resume_github_tl}
+        \href{https\c_colon_str//linkedin.com/in/\l_resume_linkedin_tl}{linkedin.com/in/\l_resume_linkedin_tl}\,\,|\,\,
+        \href{https\c_colon_str//github.com/\l_resume_github_tl}{github.com/\l_resume_github_tl}
         \tl_if_empty:NF \l_resume_note_tl {
             \,\,|\,\,\l_resume_note_tl
         }\\
@@ -122,7 +122,6 @@
     title    .tl_set:N = \l_resume_experience_title_tl,
     start    .tl_set:N = \l_resume_experience_start_tl,
     end      .tl_set:N = \l_resume_experience_end_tl,
-    end      .initial:n = Present,
 }
 \NewDocumentEnvironment{resumeexperience}{}{
     \bool_set_true:N \l_resume_is_first_experience_bool
@@ -131,7 +130,7 @@
         \tl_clear:N \l_resume_experience_location_tl
         \tl_clear:N \l_resume_experience_title_tl
         \tl_clear:N \l_resume_experience_start_tl
-        \tl_set:Nn  \l_resume_experience_end_tl{Present}
+        \tl_clear:N \l_resume_experience_end_tl
         \keys_set:nn{resume/experience}{##1}
         \bool_if:NTF \l_resume_is_first_experience_bool {
             \bool_set_false:N \l_resume_is_first_experience_bool
@@ -141,7 +140,7 @@
         \textbf{\l_resume_experience_company_tl} \hfill
         \l_resume_experience_location_tl \\
         \l_resume_experience_title_tl \hfill
-        \l_resume_experience_start_tl\;--\;\l_resume_experience_end_tl
+        \l_resume_experience_start_tl--\l_resume_experience_end_tl
         \begin{itemize}
             ##2
         \end{itemize}
@@ -154,58 +153,49 @@
 \tl_new:N \g_resume_education_school_tl
 \tl_new:N \g_resume_education_location_tl
 \tl_new:N \g_resume_education_degree_tl
-\tl_new:N \g_resume_education_major_tl
 \tl_new:N \g_resume_education_gpa_tl
 \tl_new:N \g_resume_education_gpa_max_tl
 \tl_new:N \g_resume_education_start_tl
 \tl_new:N \g_resume_education_end_tl
-\tl_new:N \g_resume_education_points_tl
 \keys_define:nn{resume/education}{
     school   .tl_gset:N = \g_resume_education_school_tl,
     location .tl_gset:N = \g_resume_education_location_tl,
     degree   .tl_gset:N = \g_resume_education_degree_tl,
-    major    .tl_gset:N = \g_resume_education_major_tl,
     gpa      .tl_gset:N = \g_resume_education_gpa_tl,
     gpa_max  .tl_gset:N = \g_resume_education_gpa_max_tl,
     gpa_max  .initial:n = 4.00,
     start    .tl_gset:N = \g_resume_education_start_tl,
     end      .tl_gset:N = \g_resume_education_end_tl,
-    points   .tl_gset:N = \g_resume_education_points_tl,
 }
 \NewDocumentEnvironment{resumeeducation}{}{
     \bool_gset_true:N \g_resume_is_first_education_bool
-    \NewDocumentCommand{\education}{m}{
+    \NewDocumentCommand{\education}{O{} +m}{
         \tl_gclear:N \g_resume_education_school_tl
         \tl_gclear:N \g_resume_education_location_tl
         \tl_gclear:N \g_resume_education_degree_tl
-        \tl_gclear:N \g_resume_education_major_tl
         \tl_gclear:N \g_resume_education_gpa_tl
         \tl_gset:Nn  \g_resume_education_gpa_max_tl{4.00}
         \tl_gclear:N \g_resume_education_start_tl
         \tl_gclear:N \g_resume_education_end_tl
-        \tl_gclear:N \g_resume_education_points_tl
         \keys_set:nn{resume/education}{##1}
         \bool_if:NTF \g_resume_is_first_education_bool {
             \bool_gset_false:N \g_resume_is_first_education_bool
         }{
-            \tabularnewline[\l_resume_subsection_separator_tl]
+            \vspace{\l_resume_subsection_separator_tl}
         }
-        \textbf{\g_resume_education_school_tl} & &
-        \g_resume_education_location_tl \tabularnewline
-        \g_resume_education_degree_tl\;in\;\g_resume_education_major_tl &
-        GPA:\;\g_resume_education_gpa_tl/\g_resume_education_gpa_max_tl &
-        \g_resume_education_start_tl\;--\;\g_resume_education_end_tl
-        \tl_if_empty:NF \g_resume_education_points_tl {
-            \tabularnewline
-            \multicolumn{3}{l}{\g_resume_education_points_tl}
+        \makebox[0.5\textwidth][l]{\textbf{\g_resume_education_school_tl}}%
+        \makebox[0.5\textwidth][r]{\g_resume_education_location_tl}\par
+        \makebox[0.5\textwidth][l]{\g_resume_education_degree_tl}%
+        \makebox[0.2\textwidth][c]{GPA:~ \g_resume_education_gpa_tl/\g_resume_education_gpa_max_tl}%
+        \makebox[0.3\textwidth][r]{\g_resume_education_start_tl--\g_resume_education_end_tl}\par
+        \tl_if_blank:nF{##2}{
+            \begin{itemize}
+                ##2
+            \end{itemize}
         }
     }
-    \NewDocumentCommand{\educationpoint}{m}{\,\,\textbullet\ \:\!##1}
     \section{Education}
-    \begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} c @{\extracolsep{\fill}} r}
-}{
-    \end{tabular*}
-}
+}{}
 
 % skill
 \tl_new:N \l_resume_skill_group_tl
@@ -219,5 +209,5 @@
         \textbf{\l_resume_skill_group_tl}:\,##2
         \par
     }
-    \section{Technical\;Skills}
+    \section{Technical~ Skills}
 }{}

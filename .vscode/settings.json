@@ -1,10 +1,20 @@
 {
+    "cSpell.ignorePaths": [
+        ".github/workflows/*.yml",
+        "src/latex/*.cls",
+        "package.json",
+        "package-lock.json",
+    ],
+    "cSpell.words": [
+        "aragorn1025",
+        "Taoyuan",
+    ],
     "latex-workshop.latex.autoBuild.run": "onFileChange",
     "latex-workshop.latex.recipes": [
         {
             "name": "latexmk",
             "tools": [
-                "latexmk"
+                "latexmk",
             ]
         }
     ],
@@ -18,11 +28,11 @@
                 "-file-line-error",
                 "-xelatex",
                 "-outdir=preview",
-                "%DOC%"
+                "%DOC%",
             ],
-            "env": {}
+            "env": {},
         }
     ],
     "latex-workshop.synctex.afterBuild.enabled": true,
-    "latex-workshop.view.pdf.viewer": "tab"
+    "latex-workshop.view.pdf.viewer": "tab",
 }
