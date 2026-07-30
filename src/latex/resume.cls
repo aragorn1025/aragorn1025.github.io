@@ -94,8 +94,8 @@
         \href{mailto:\l_resume_email_tl}{\l_resume_email_tl}\,\,|\,\,
         \l_resume_phone_tl\,\,|\,\,
         \l_resume_location_tl\\
-        \href{https://linkedin.com/in/\l_resume_linkedin_tl}{linkedin.com/in/\l_resume_linkedin_tl}\,\,|\,\,
-        \href{https://github.com/\l_resume_github_tl}{github.com/\l_resume_github_tl}
+        \href{https\c_colon_str//linkedin.com/in/\l_resume_linkedin_tl}{linkedin.com/in/\l_resume_linkedin_tl}\,\,|\,\,
+        \href{https\c_colon_str//github.com/\l_resume_github_tl}{github.com/\l_resume_github_tl}
         \tl_if_empty:NF \l_resume_note_tl {
             \,\,|\,\,\l_resume_note_tl
         }\\
@@ -186,7 +186,7 @@
         \makebox[0.5\textwidth][l]{\textbf{\g_resume_education_school_tl}}%
         \makebox[0.5\textwidth][r]{\g_resume_education_location_tl}\par
         \makebox[0.5\textwidth][l]{\g_resume_education_degree_tl}%
-        \makebox[0.2\textwidth][c]{GPA:\;\g_resume_education_gpa_tl/\g_resume_education_gpa_max_tl}%
+        \makebox[0.2\textwidth][c]{GPA:~ \g_resume_education_gpa_tl/\g_resume_education_gpa_max_tl}%
         \makebox[0.3\textwidth][r]{\g_resume_education_start_tl--\g_resume_education_end_tl}\par
         \tl_if_blank:nF{##2}{
             \begin{itemize}
@@ -209,5 +209,5 @@
         \textbf{\l_resume_skill_group_tl}:\,##2
         \par
     }
-    \section{Technical\;Skills}
+    \section{Technical~ Skills}
 }{}
