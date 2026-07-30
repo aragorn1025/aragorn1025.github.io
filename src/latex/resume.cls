@@ -154,7 +154,6 @@
 \tl_new:N \g_resume_education_school_tl
 \tl_new:N \g_resume_education_location_tl
 \tl_new:N \g_resume_education_degree_tl
-\tl_new:N \g_resume_education_major_tl
 \tl_new:N \g_resume_education_gpa_tl
 \tl_new:N \g_resume_education_gpa_max_tl
 \tl_new:N \g_resume_education_start_tl
@@ -164,7 +163,6 @@
     school   .tl_gset:N = \g_resume_education_school_tl,
     location .tl_gset:N = \g_resume_education_location_tl,
     degree   .tl_gset:N = \g_resume_education_degree_tl,
-    major    .tl_gset:N = \g_resume_education_major_tl,
     gpa      .tl_gset:N = \g_resume_education_gpa_tl,
     gpa_max  .tl_gset:N = \g_resume_education_gpa_max_tl,
     gpa_max  .initial:n = 4.00,
@@ -178,7 +176,6 @@
         \tl_gclear:N \g_resume_education_school_tl
         \tl_gclear:N \g_resume_education_location_tl
         \tl_gclear:N \g_resume_education_degree_tl
-        \tl_gclear:N \g_resume_education_major_tl
         \tl_gclear:N \g_resume_education_gpa_tl
         \tl_gset:Nn  \g_resume_education_gpa_max_tl{4.00}
         \tl_gclear:N \g_resume_education_start_tl
@@ -192,7 +189,7 @@
         }
         \textbf{\g_resume_education_school_tl} & &
         \g_resume_education_location_tl \tabularnewline
-        \g_resume_education_degree_tl\;in\;\g_resume_education_major_tl &
+        \g_resume_education_degree_tl &
         GPA:\;\g_resume_education_gpa_tl/\g_resume_education_gpa_max_tl &
         \g_resume_education_start_tl\;--\;\g_resume_education_end_tl
         \tl_if_empty:NF \g_resume_education_points_tl {
