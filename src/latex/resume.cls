@@ -122,7 +122,6 @@
     title    .tl_set:N = \l_resume_experience_title_tl,
     start    .tl_set:N = \l_resume_experience_start_tl,
     end      .tl_set:N = \l_resume_experience_end_tl,
-    end      .initial:n = Present,
 }
 \NewDocumentEnvironment{resumeexperience}{}{
     \bool_set_true:N \l_resume_is_first_experience_bool
@@ -131,7 +130,7 @@
         \tl_clear:N \l_resume_experience_location_tl
         \tl_clear:N \l_resume_experience_title_tl
         \tl_clear:N \l_resume_experience_start_tl
-        \tl_set:Nn  \l_resume_experience_end_tl{Present}
+        \tl_clear:N \l_resume_experience_end_tl
         \keys_set:nn{resume/experience}{##1}
         \bool_if:NTF \l_resume_is_first_experience_bool {
             \bool_set_false:N \l_resume_is_first_experience_bool
