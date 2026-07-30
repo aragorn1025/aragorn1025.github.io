@@ -43,6 +43,11 @@
 \titleformat{\section}{\bfseries\large\uppercase}{}{0em}{\uhfill}
 \titlespacing{\section}{0pt}{\l_resume_section_separator_tl}{*0}
 
+% no hyphenation
+\hyphenpenalty=10000
+\tolerance=10000
+\setlength{\emergencystretch}{3em}
+
 % unordered list
 \RequirePackage{enumitem}
 \setlist[itemize]{
@@ -53,40 +58,47 @@
     leftmargin=10pt
 }
 
+% links
+\usepackage[bookmarks=false]{hyperref}
+\hypersetup{hidelinks}
+
 % paragraph indent
 \setlength{\parindent}{0pt}
 \setlength{\tabcolsep}{0pt}
 
-% title
+% header
 \tl_new:N \l_resume_name_tl
 \tl_new:N \l_resume_email_tl
 \tl_new:N \l_resume_phone_tl
 \tl_new:N \l_resume_linkedin_tl
 \tl_new:N \l_resume_github_tl
 \tl_new:N \l_resume_location_tl
-\tl_new:N \l_resume_relocation_tl
-\keys_define:nn{resume/title}{
-    name       .tl_set:N = \l_resume_name_tl,
-    email      .tl_set:N = \l_resume_email_tl,
-    phone      .tl_set:N = \l_resume_phone_tl,
-    linkedin   .tl_set:N = \l_resume_linkedin_tl,
-    github     .tl_set:N = \l_resume_github_tl,
-    location   .tl_set:N = \l_resume_location_tl,
-    relocation .tl_set:N = \l_resume_relocation_tl,
+\tl_new:N \l_resume_note_tl
+\keys_define:nn{resume/header}{
+    name     .tl_set:N = \l_resume_name_tl,
+    email    .tl_set:N = \l_resume_email_tl,
+    phone    .tl_set:N = \l_resume_phone_tl,
+    linkedin .tl_set:N = \l_resume_linkedin_tl,
+    github   .tl_set:N = \l_resume_github_tl,
+    location .tl_set:N = \l_resume_location_tl,
+    note     .tl_set:N = \l_resume_note_tl,
 }
-\NewDocumentCommand{\resumetitle}{m}
+\NewDocumentCommand{\resumeheader}{m}
 {
-    \keys_set:nn{resume/title}{#1}
+    \tl_clear:N \l_resume_note_tl
+    \keys_set:nn{resume/header}{#1}
     {
         \centering
         {\huge\bfseries \l_resume_name_tl}\\
         \vspace{\l_resume_subsection_separator_tl}
-        \l_resume_email_tl\,\,|\,\,
+        \href{mailto:\l_resume_email_tl}{\l_resume_email_tl}\,\,|\,\,
         \l_resume_phone_tl\,\,|\,\,
         \l_resume_location_tl\\
-        LinkedIn:\;\l_resume_linkedin_tl\,\,|\,\,
-        GitHub:\;\l_resume_github_tl\,\,|\,\,
-        Open\;to\;\l_resume_relocation_tl\;Relocation\\
+        \href{https://linkedin.com/in/\l_resume_linkedin_tl}{linkedin.com/in/\l_resume_linkedin_tl}\,\,|\,\,
+        \href{https://github.com/\l_resume_github_tl}{github.com/\l_resume_github_tl}
+        \tl_if_empty:NF \l_resume_note_tl {
+            \,\,|\,\,\l_resume_note_tl
+        }\\
         \par
         \vspace{-\l_resume_subsection_separator_tl}
     }
@@ -147,6 +159,7 @@
 \tl_new:N \g_resume_education_gpa_max_tl
 \tl_new:N \g_resume_education_start_tl
 \tl_new:N \g_resume_education_end_tl
+\tl_new:N \g_resume_education_points_tl
 \keys_define:nn{resume/education}{
     school   .tl_gset:N = \g_resume_education_school_tl,
     location .tl_gset:N = \g_resume_education_location_tl,
@@ -157,7 +170,7 @@
     gpa_max  .initial:n = 4.00,
     start    .tl_gset:N = \g_resume_education_start_tl,
     end      .tl_gset:N = \g_resume_education_end_tl,
-    end      .initial:n = Present,
+    points   .tl_gset:N = \g_resume_education_points_tl,
 }
 \NewDocumentEnvironment{resumeeducation}{}{
     \bool_gset_true:N \g_resume_is_first_education_bool
@@ -169,7 +182,8 @@
         \tl_gclear:N \g_resume_education_gpa_tl
         \tl_gset:Nn  \g_resume_education_gpa_max_tl{4.00}
         \tl_gclear:N \g_resume_education_start_tl
-        \tl_gset:Nn  \g_resume_education_end_tl{Present}
+        \tl_gclear:N \g_resume_education_end_tl
+        \tl_gclear:N \g_resume_education_points_tl
         \keys_set:nn{resume/education}{##1}
         \bool_if:NTF \g_resume_is_first_education_bool {
             \bool_gset_false:N \g_resume_is_first_education_bool
@@ -181,7 +195,12 @@
         \g_resume_education_degree_tl\;in\;\g_resume_education_major_tl &
         GPA:\;\g_resume_education_gpa_tl/\g_resume_education_gpa_max_tl &
         \g_resume_education_start_tl\;--\;\g_resume_education_end_tl
+        \tl_if_empty:NF \g_resume_education_points_tl {
+            \tabularnewline
+            \multicolumn{3}{l}{\g_resume_education_points_tl}
+        }
     }
+    \NewDocumentCommand{\educationpoint}{m}{\,\,\textbullet\ \:\!##1}
     \section{Education}
     \begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} c @{\extracolsep{\fill}} r}
 }{
