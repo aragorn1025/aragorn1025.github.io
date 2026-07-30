@@ -140,7 +140,7 @@
         \textbf{\l_resume_experience_company_tl} \hfill
         \l_resume_experience_location_tl \\
         \l_resume_experience_title_tl \hfill
-        \l_resume_experience_start_tl\;--\;\l_resume_experience_end_tl
+        \l_resume_experience_start_tl--\l_resume_experience_end_tl
         \begin{itemize}
             ##2
         \end{itemize}
@@ -190,7 +190,7 @@
         \g_resume_education_location_tl \tabularnewline
         \g_resume_education_degree_tl &
         GPA:\;\g_resume_education_gpa_tl/\g_resume_education_gpa_max_tl &
-        \g_resume_education_start_tl\;--\;\g_resume_education_end_tl
+        \g_resume_education_start_tl--\g_resume_education_end_tl
         \tl_if_empty:NF \g_resume_education_points_tl {
             \tabularnewline
             \multicolumn{3}{l}{\g_resume_education_points_tl}
