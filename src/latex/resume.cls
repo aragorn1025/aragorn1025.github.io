@@ -43,6 +43,11 @@
 \titleformat{\section}{\bfseries\large\uppercase}{}{0em}{\uhfill}
 \titlespacing{\section}{0pt}{\l_resume_section_separator_tl}{*0}
 
+% no hyphenation
+\hyphenpenalty=10000
+\tolerance=10000
+\setlength{\emergencystretch}{3em}
+
 % unordered list
 \RequirePackage{enumitem}
 \setlist[itemize]{
