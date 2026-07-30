@@ -61,26 +61,27 @@
 \setlength{\parindent}{0pt}
 \setlength{\tabcolsep}{0pt}
 
-% title
+% header
 \tl_new:N \l_resume_name_tl
 \tl_new:N \l_resume_email_tl
 \tl_new:N \l_resume_phone_tl
 \tl_new:N \l_resume_linkedin_tl
 \tl_new:N \l_resume_github_tl
 \tl_new:N \l_resume_location_tl
-\tl_new:N \l_resume_relocation_tl
-\keys_define:nn{resume/title}{
-    name       .tl_set:N = \l_resume_name_tl,
-    email      .tl_set:N = \l_resume_email_tl,
-    phone      .tl_set:N = \l_resume_phone_tl,
-    linkedin   .tl_set:N = \l_resume_linkedin_tl,
-    github     .tl_set:N = \l_resume_github_tl,
-    location   .tl_set:N = \l_resume_location_tl,
-    relocation .tl_set:N = \l_resume_relocation_tl,
+\tl_new:N \l_resume_note_tl
+\keys_define:nn{resume/header}{
+    name     .tl_set:N = \l_resume_name_tl,
+    email    .tl_set:N = \l_resume_email_tl,
+    phone    .tl_set:N = \l_resume_phone_tl,
+    linkedin .tl_set:N = \l_resume_linkedin_tl,
+    github   .tl_set:N = \l_resume_github_tl,
+    location .tl_set:N = \l_resume_location_tl,
+    note     .tl_set:N = \l_resume_note_tl,
 }
-\NewDocumentCommand{\resumetitle}{m}
+\NewDocumentCommand{\resumeheader}{m}
 {
-    \keys_set:nn{resume/title}{#1}
+    \tl_clear:N \l_resume_note_tl
+    \keys_set:nn{resume/header}{#1}
     {
         \centering
         {\huge\bfseries \l_resume_name_tl}\\
@@ -89,8 +90,10 @@
         \l_resume_phone_tl\,\,|\,\,
         \l_resume_location_tl\\
         \href{https://linkedin.com/in/\l_resume_linkedin_tl}{linkedin.com/in/\l_resume_linkedin_tl}\,\,|\,\,
-        \href{https://github.com/\l_resume_github_tl}{github.com/\l_resume_github_tl}\,\,|\,\,
-        Open\;to\;\l_resume_relocation_tl\;Relocation\\
+        \href{https://github.com/\l_resume_github_tl}{github.com/\l_resume_github_tl}
+        \tl_if_empty:NF \l_resume_note_tl {
+            \,\,|\,\,\l_resume_note_tl
+        }\\
         \par
         \vspace{-\l_resume_subsection_separator_tl}
     }
