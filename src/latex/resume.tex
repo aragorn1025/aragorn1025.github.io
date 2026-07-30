@@ -44,24 +44,23 @@
         start    = {May 2022},
         end      = {Jan 2025},
     ]{
-        \item Designed and developed 65+ RESTful APIs (30.9\% of the platform)
-        using FastAPI, PostgreSQL, Redis, Celery, and MinIO for a B2B PAM platform.
-        Delivered backend functionality including
-        authentication, RBAC, licensing, reporting, and resource management.
-        \item Redesigned a 300+ line authentication pipeline
-        using the Chain of Responsibility pattern,
-        decomposing it into 50+ reusable components.
-        Reduced implementation time for new authentication features from weeks to hours
-        while supporting multiple identity providers, MFA, SSO, JWT/JWKs, and refresh tokens.
-        \item Improved backend reliability by developing a Redis-based distributed locking module
-        with configurable TTL, retry mechanisms, and context manager support,
-        ensuring safe concurrent execution across concurrent workloads handled by API servers and Celery workers.
+        \item Designed and developed core backend features,
+        including authentication, RBAC, licensing, metrics, reporting, and resource management,
+        for a B2B privileged access management platform 
+        using FastAPI, PostgreSQL, Redis, Celery, and MinIO.
+        \item Cut integration time for a new auth feature from about 2 weeks to under a day
+        by refactoring a 300-line monolithic auth flow into a Chain-of-Responsibility pipeline
+        supporting MFA, JWT/JWKs, bcrypt password authentication, LDAP, and SSO with Microsoft Entra ID.
+        \item Eliminated 1--2 concurrency-related over-allocation incidents every two weeks
+        by designing a Redis-based distributed lock module with configurable TTL, retry mechanisms, and context manager support,
+        ensuring atomic resource validation across 4 API server workers and 2 Celery workers.
         \item Reduced CI/CD execution time from 18 to under 3 minutes
         by optimizing multi-stage Docker image builds, reusable build artifacts, and testing workflows,
         reducing developer wait time and accelerating development workflows.
-        \item Initiated developer technical sharing sessions, organized a Kubernetes study group, and host 20+ backend API/database schema design reviews.
-        Standardized backend documentation for API errors and background jobs,
-        improving frontend integration and long-term maintainability.
+        \item Championed engineer team culture improvements
+        by gaining management support for technical sharing sessions for a 20+ developer team and latest for two years,
+        and organizing an after-hours Kubernetes study group to boost knowledge sharing acroos developer team;
+        identified long-neglected engineering documentation and established a maintenance workflow for technical maintenance.
     }
 
     \experience[
@@ -71,8 +70,10 @@
         start    = {Jan 2022},
         end      = {Apr 2022},
     ]{
-        \item Built an internal deployment system using Vue.js, React, and Go Gin, integrating Jira, Jenkins, and GitLab.
-        Reduced routine release effort from 60–120 minutes to under 5 minutes, enabling PM self-service and removing routine SRE dependency.
+        \item Built an internal deployment system for a 70+ developer and PM team
+        using Vue.js, React, and Go Gin, integrating Jira, Jenkins, and GitLab.
+        Enabled PM self-service and removed routine SRE dependency through automated release workflows,
+        reducing routine release effort from 60–120 minutes to under 5 minutes for daily releases.
     }
 
     \experience[
