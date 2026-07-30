@@ -151,6 +151,7 @@
 \tl_new:N \g_resume_education_gpa_max_tl
 \tl_new:N \g_resume_education_start_tl
 \tl_new:N \g_resume_education_end_tl
+\tl_new:N \g_resume_education_points_tl
 \keys_define:nn{resume/education}{
     school   .tl_gset:N = \g_resume_education_school_tl,
     location .tl_gset:N = \g_resume_education_location_tl,
@@ -162,6 +163,7 @@
     start    .tl_gset:N = \g_resume_education_start_tl,
     end      .tl_gset:N = \g_resume_education_end_tl,
     end      .initial:n = Present,
+    points   .tl_gset:N = \g_resume_education_points_tl,
 }
 \NewDocumentEnvironment{resumeeducation}{}{
     \bool_gset_true:N \g_resume_is_first_education_bool
@@ -174,6 +176,7 @@
         \tl_gset:Nn  \g_resume_education_gpa_max_tl{4.00}
         \tl_gclear:N \g_resume_education_start_tl
         \tl_gset:Nn  \g_resume_education_end_tl{Present}
+        \tl_gclear:N \g_resume_education_points_tl
         \keys_set:nn{resume/education}{##1}
         \bool_if:NTF \g_resume_is_first_education_bool {
             \bool_gset_false:N \g_resume_is_first_education_bool
@@ -185,7 +188,12 @@
         \g_resume_education_degree_tl\;in\;\g_resume_education_major_tl &
         GPA:\;\g_resume_education_gpa_tl/\g_resume_education_gpa_max_tl &
         \g_resume_education_start_tl\;--\;\g_resume_education_end_tl
+        \tl_if_empty:NF \g_resume_education_points_tl {
+            \tabularnewline
+            \multicolumn{3}{l}{\g_resume_education_points_tl}
+        }
     }
+    \NewDocumentCommand{\educationpoint}{m}{\,\,\textbullet\ \:\!##1}
     \section{Education}
     \begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} c @{\extracolsep{\fill}} r}
 }{
