@@ -46,25 +46,23 @@
         start    = {May 2022},
         end      = {Jan 2025},
     ]{
-        \item Designed and developed core backend features,
-        including authentication, RBAC, licensing, metrics, reporting, and resource management,
-        for a B2B privileged access management platform
-        using FastAPI, PostgreSQL, Redis, Celery, and MinIO.
-        \item Cut integration time for a new auth feature from about 2 weeks to under a day
-        by refactoring a 300-line monolithic auth flow into a Chain-of-Responsibility pipeline
-        supporting MFA, JWT/JWKs, bcrypt password authentication, LDAP, and SSO with Microsoft Entra ID.
-        \item Eliminated over-allocation race conditions by designing a Redis-based distributed lock
-        with configurable TTL, retry mechanisms, and context manager support,
-        ensuring atomic license checks across 4 API server workers and 2 Celery workers
-        and reducing UAT incidents from 1--2 per week to 0.
-        \item Reduced CI/CD execution time from 18 to under 3 minutes
-        by optimizing multi-stage Docker image builds, reusable build artifacts, and testing workflows,
-        reducing developer wait time and accelerating development workflows.
-        \item Championed engineering culture and cross-functional workflow
-        by instituting bi-weekly tech talks for a 25+-developer team across 2 years,
-        hosting 20+ backend design reviews,
-        integrating outdated documentation into review workflows to streamline PM and frontend alignment,
-        and leading an after-hours Kubernetes study group.
+        \item Owned core backend services,
+        for a enterprise on-premises privileged access management platform
+        designed for serving about 50 managed resources,
+        via FastAPI, PostgreSQL, Redis, Celery:
+        authentication, RBAC, license enforcement, audit reporting, and resource management,
+        \item Eliminated license over-allocation race conditions (\textbf{1--2 per week, surfaced in UAT})
+        by designing a Redis-based distributed lock with configurable TTL and retry mechanisms, and context manager support,
+        making license checks atomic across concurrent API and Celery workers.
+        \item Cut the time to add or change an authentication method from about 2 weeks to \textbf{under a day}
+        by refactoring a 300-line monolithic auth flow into a composable Chain-of-Responsibility pipeline
+        covering MFA, JWT/JWKs, bcrypt, LDAP, and SSO.
+        \item Reduced CI/CD execution time from \textbf{18 minutes to under 3}
+        by designing multi-stage Docker builds with layered caching, leveraging an internal registry,
+        and optimizing test database migration lifecycle.
+        \item Optimized engineering workflows by hosting 20+ API/schema design reviews
+        and instituting a mandatory integration checklist, fostering seamless collaboration across backend, frontend, and PM.
+        \item Championed knowledge sharing by organizing bi-weekly tech talks over 2 years for a 25+ cross-functional team.
     }
 
     \experience[
