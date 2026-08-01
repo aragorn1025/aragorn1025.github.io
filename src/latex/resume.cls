@@ -186,7 +186,7 @@
         \makebox[0.5\textwidth][l]{\textbf{\g_resume_education_school_tl}}%
         \makebox[0.5\textwidth][r]{\g_resume_education_location_tl}\par
         \makebox[0.5\textwidth][l]{\g_resume_education_degree_tl}%
-        \makebox[0.2\textwidth][c]{GPA:~ \g_resume_education_gpa_tl/\g_resume_education_gpa_max_tl}%
+        \makebox[0.2\textwidth][c]{\tl_if_empty:NF \g_resume_education_gpa_tl{GPA:~ \g_resume_education_gpa_tl/\g_resume_education_gpa_max_tl}}%
         \makebox[0.3\textwidth][r]{\g_resume_education_start_tl--\g_resume_education_end_tl}\par
         \tl_if_blank:nF{##2}{
             \begin{itemize}
