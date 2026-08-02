@@ -73,7 +73,6 @@ const ExperienceSection: React.FunctionComponent = () => {
             </div>
           </div>
           <BarTitle
-            mainLevel={3}
             barLevel={3}
           />
           <div className="timeline">

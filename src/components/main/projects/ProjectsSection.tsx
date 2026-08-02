@@ -20,9 +20,7 @@ const ProjectsSection: React.FunctionComponent = () => {
         />
         <div>
           <BarTitle
-            subLevel={6}
             barLevel={3}
-            toUpperCase
           />
           <div className="row g-3">
             <div className="col-12 col-md-6 col-xl-4">
