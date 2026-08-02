@@ -5,8 +5,8 @@
 		"isActive": true
 	},
 	{
-		"name": "about",
-		"iconClassName": "book"
+		"name": "Summary",
+		"iconClassName": "person-bounding-box"
 	},
 	{
 		"name": "skills",
@@ -19,9 +19,5 @@
 	{
 		"name": "portfolio",
 		"iconClassName": "grid"
-	},
-	{
-		"name": "contact",
-		"iconClassName": "person-bounding-box"
 	}
 ]
