@@ -1,0 +1,34 @@
+.card {
+  transition: border-color 0.5s ease-in-out;
+  background-color: rgba(var(--rgb-dark), 0.25);
+  color: rgba(var(--rgb-light), var(--bs-text-opacity));
+}
+
+.card:hover {
+  border-color: rgba(var(--rgb-theme), 0.75);
+}
+
+.card img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.card .cardBody .cardTitle {
+  margin-bottom: 0;
+  padding-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card .cardBody p.cardText {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.card .cardBody a.cardButton {
+  background-color: rgba(var(--rgb-theme), 1);
+  color: rgba(var(--rgb-light), var(--bs-text-opacity));
+}
