@@ -16,8 +16,8 @@
 		"iconClassName": "pen"
 	},
 	{
-		"name": "resume",
-        "displayName": "Resume",
+		"name": "experience",
+        "displayName": "Experience",
 		"iconClassName": "card-checklist"
 	},
 	{
