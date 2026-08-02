@@ -40,29 +40,29 @@
     }
 
     \experience[
-        company  = {Pentium Network Technology Ltd.},
+        company  = {Pentium Network Technology},
         location = {Taipei, Taiwan},
         title    = {Software Developer, R\&D},
         start    = {May 2022},
         end      = {Jan 2025},
     ]{
         \item Owned core backend services,
-        for an enterprise on-premises privileged access management platform
-        designed for serving about 50 managed resources,
-        via FastAPI, PostgreSQL, Redis, Celery:
-        authentication, RBAC, license enforcement, audit reporting, and resource management.
-        \item Eliminated license over-allocation race conditions (\textbf{1--2 per week, surfaced in UAT})
-        by designing a Redis-based distributed lock with configurable TTL and retry mechanisms, and context manager support,
-        making license checks atomic across concurrent API and Celery workers.
-        \item Cut the time to add or change an authentication method from about 2 weeks to \textbf{under a day}
-        by refactoring a 300-line monolithic auth flow into a composable Chain-of-Responsibility pipeline
-        covering MFA, JWT/JWKs, bcrypt, LDAP, and SSO.
-        \item Reduced CI/CD execution time from \textbf{18 minutes to under 3}
-        by designing multi-stage Docker builds with layered caching, leveraging an internal registry,
-        and optimizing test database migration lifecycle.
-        \item Optimized engineering workflows by hosting 20+ API/schema design reviews
-        and instituting a mandatory integration checklist, fostering seamless collaboration across backend, frontend, and PM.
-        \item Championed knowledge sharing by organizing bi-weekly tech talks over 2 years for a 25+ cross-functional team.
+        including authentication, RBAC, licensing, audit reporting, and resource management
+        for an enterprise on-premises PAM platform,
+        using FastAPI and PostgreSQL.
+        \item Eliminated race conditions in license allocation (\textbf{previously 1--2/week, surfaced in UAT})
+        by designing a Redis-based distributed lock,
+        ensuring  atomic license checks across concurrent API and Celery workers.
+        \item Cut the time to add or change an authentication method from about \textbf{2 weeks to <8 hours}
+        by refactoring a monolithic auth flow into a composable Chain-of-Responsibility pipeline
+        supporting MFA, LDAP, and SSO.
+        \item Reduced CI/CD run time from \textbf{18 to <3 minutes}
+        by restructuring multi-stage Docker builds with an internal registry,
+        and consolidating DB migrations per test tier.
+        \item Contributed to team engineering practices
+        by authoring design docs and facilitating 20+ cross-functional review sessions,
+        resolving outdated documentation gaps within standard workflows,
+        and proposing bi-weekly team tech talks.
     }
 
     \experience[
