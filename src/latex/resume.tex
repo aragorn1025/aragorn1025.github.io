@@ -46,17 +46,14 @@
         start    = {May 2022},
         end      = {Jan 2025},
     ]{
-        \item Owned core backend services,
-        including authentication, RBAC, licensing, audit reporting, and resource management
-        for an enterprise on-premises PAM platform,
-        using FastAPI and PostgreSQL.
-        \item Eliminated race conditions in license allocation (\textbf{previously 1--2/week, surfaced in UAT})
-        by designing a Redis-based distributed lock,
-        ensuring  atomic license checks across concurrent API and Celery workers.
-        \item Cut the time to add or change an authentication method from about \textbf{2 weeks to <8 hours}
+        \item Owned auth for a PAM platform (FastAPI, PostgreSQL);
+        cut the time to change auth logic from about \textbf{2 weeks to <8 hours}
         by refactoring a monolithic auth flow into a composable Chain-of-Responsibility pipeline
         supporting MFA, LDAP, and SSO.
-        \item Reduced CI/CD run time from \textbf{18 to <3 minutes}
+        \item Eliminated race conditions in license allocation (previously \textbf{1--2/week}, surfaced in UAT)
+        by designing a Redis-based distributed lock,
+        ensuring  atomic license checks across concurrent API and Celery workers.
+        \item Reduced CI/CD run time from 18 to <3 minutes
         by restructuring multi-stage Docker builds with an internal registry,
         and consolidating DB migrations per test tier.
         \item Authored API and schema design docs for team review, and reviewed peers' designs and code as part of the team's workflow;
