@@ -8,16 +8,21 @@
 	{
 		"name": "summary",
         "displayName": "Summary",
-		"iconClassName": "person-bounding-box"
+		"iconClassName": "person-fill"
 	},
 	{
 		"name": "experience",
         "displayName": "Experience",
 		"iconClassName": "card-checklist"
 	},
+    {
+        "name": "education",
+        "displayName": "Education",
+        "iconClassName": "book"
+    },
 	{
 		"name": "projects",
         "displayName": "Projects",
-		"iconClassName": "grid"
+		"iconClassName": "collection"
 	}
 ]

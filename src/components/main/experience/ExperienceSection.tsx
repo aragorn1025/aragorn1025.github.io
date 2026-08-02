@@ -16,64 +16,7 @@ const ExperienceSection: React.FunctionComponent = () => {
           <h6 className="ms-auto">{getLastUpdatedString(2026, 8, 1, 23)}</h6>
         </div>
         <div>
-          <div className="timeline mb-3 hidden">
-            <div className="timeline-block">
-              <div className="timeline-anchor">
-                <div className="timeline-tag">
-                  <div className="h5">2013 / 09 ~ 2018 / 06</div>
-                </div>
-                <div className="timeline-title">
-                  <h4>Bachelor</h4>
-                </div>
-              </div>
-              <div className="timeline-content">
-                <h5>
-                  Department of Computer Science & Information Engineering, National Central
-                  University, Taiwan
-                </h5>
-              </div>
-            </div>
-            <div className="timeline-block">
-              <div className="timeline-anchor">
-                <div className="timeline-tag">
-                  <div className="h5">2018 / 09 ~ 2020 / 07</div>
-                </div>
-                <div className="timeline-title">
-                  <h4>Master</h4>
-                </div>
-              </div>
-              <div className="timeline-content">
-                <h5>
-                  Department of Computer Science & Information Engineering, National Central
-                  University, Taiwan
-                </h5>
-                <ol>
-                  <li>
-                    Thesis:
-                    <br />
-                    The Application of the Generative Adversarial Network in the Reflection Removal
-                    Algorithm for Dashcam Images
-                    <br />
-                    <a
-                      className="button"
-                      href="http://140.113.39.130/cgi-bin/gs32/ncugsweb.cgi?o=dncucdr&s=id=%22GC107522052%22.&searchmode=basic"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      <span />
-                      <span />
-                      <span />
-                      <span />
-                      <i className="bi bi-file-earmark-pdf" />
-                      &nbsp;Here
-                    </a>
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </div>
           <BarTitle
-            mainLevel={3}
             barLevel={3}
           />
           <div className="timeline">
@@ -83,11 +26,11 @@ const ExperienceSection: React.FunctionComponent = () => {
                   <div className="h5">Feb 2026–Present</div>
                 </div>
                 <div className="timeline-title">
-                  <h4>Computer Vision Developer</h4>
+                  <h4>Department of Crop and Soil Science, Oregon State University</h4>
+                  <h5>Computer Vision Developer</h5>
                 </div>
               </div>
               <div className="timeline-content">
-                <h5>Department of Crop and Soil Science, Oregon State University</h5>
                 <ul>
                   <li>
                     Built an image tiling pipeline with edge-object handling
@@ -107,11 +50,11 @@ const ExperienceSection: React.FunctionComponent = () => {
                   <div className="h5">May 2022–Jan 2025</div>
                 </div>
                 <div className="timeline-title">
-                  <h4>Software Developer</h4>
+                  <h4>Pentium Network Technology</h4>
+                  <h5>Software Developer</h5>
                 </div>
               </div>
               <div className="timeline-content">
-                <h5>Pentium Network Technology</h5>
                 <ul>
                   <li>
                     Owned auth for a PAM platform (FastAPI, PostgreSQL);
@@ -120,7 +63,7 @@ const ExperienceSection: React.FunctionComponent = () => {
                     supporting MFA, LDAP, and SSO.
                   </li>
                   <li>
-                    Eliminated race conditions in license allocation (previously 1–2/week, surfaced in UAT)
+                    Eliminated race conditions in license allocation (previously <b>1–2/week</b>, surfaced in UAT)
                     by designing a Redis-based distributed lock,
                     ensuring atomic license checks across concurrent API and Celery workers.
                   </li>
@@ -145,11 +88,11 @@ const ExperienceSection: React.FunctionComponent = () => {
                   <div className="h5">Jan 2022–Apr 2022</div>
                 </div>
                 <div className="timeline-title">
-                  <h4>Software Engineer</h4>
+                  <h4>M800 Taiwan</h4>
+                  <h5>Software Engineer</h5>
                 </div>
               </div>
               <div className="timeline-content">
-                <h5>M800 Taiwan</h5>
                 <ul>
                   <li>
                     Built a release-automation dashboard (Gin, React) integrating Jira, Jenkins, and GitLab;
@@ -165,11 +108,11 @@ const ExperienceSection: React.FunctionComponent = () => {
                   <div className="h5">Oct 2020–Sep 2021</div>
                 </div>
                 <div className="timeline-title">
-                  <h4>Software Engineer</h4>
+                  <h4>LEDA Creative Technology</h4>
+                  <h5>Software Engineer</h5>
                 </div>
               </div>
               <div className="timeline-content">
-                <h5>LEDA Creative Technology</h5>
                 <ul>
                   <li>
                     Built an MQTT-based model deployment pipeline
@@ -190,11 +133,11 @@ const ExperienceSection: React.FunctionComponent = () => {
                   <div className="h6">Intern</div>
                 </div>
                 <div className="timeline-title">
-                  <h4>Partner</h4>
+                  <h4>LEDA-creative Technology LTD.</h4>
+                  <h5>Partner</h5>
                 </div>
               </div>
               <div className="timeline-content">
-                <h5>LEDA-creative Technology LTD.</h5>
                 <ol>
                   <li>The edge detection for the cell scaffolds: Algorithm development.</li>
                   <li>Multiple Barcode & QRCode Detector.</li>
@@ -226,14 +169,14 @@ const ExperienceSection: React.FunctionComponent = () => {
                   <div className="h5">2020 / 02 ~ 2020 / 06</div>
                 </div>
                 <div className="timeline-title">
-                  <h4>Teaching Assistant</h4>
+                  <h4>
+                    Department of Computer Science & Information Engineering, National Central
+                    University, Taiwan
+                  </h4>
+                  <h5>Teaching Assistant</h5>
                 </div>
               </div>
               <div className="timeline-content">
-                <h5>
-                  Department of Computer Science & Information Engineering, National Central
-                  University, Taiwan
-                </h5>
                 <ol>
                   <li>To assist the professor to make the course run smoothly.</li>
                   <li>To invigilate the midterm exam, and mark and register scores.</li>
@@ -251,15 +194,15 @@ const ExperienceSection: React.FunctionComponent = () => {
                   <div className="h5">2017 / 04 ~ 2020 / 08</div>
                 </div>
                 <div className="timeline-title">
-                  <h4>Project Research Assistant</h4>
+                  <h4>
+                    Computational Intelligence and Human-Computer Interaction Lab (Professor Mu-Chun
+                    Su Lab), Department of Computer Science & Information Engineering, National
+                    Central University, Taiwan
+                  </h4>
+                  <h5>Project Research Assistant</h5>
                 </div>
               </div>
               <div className="timeline-content">
-                <h5>
-                  Computational Intelligence and Human-Computer Interaction Lab (Professor Mu-Chun
-                  Su Lab), Department of Computer Science & Information Engineering, National
-                  Central University, Taiwan
-                </h5>
                 <ol>
                   <li>
                     2018 National Microprocessor Application System Design and Innovation Contest:
@@ -442,11 +385,11 @@ const ExperienceSection: React.FunctionComponent = () => {
                   <div className="h6">Intern</div>
                 </div>
                 <div className="timeline-title">
-                  <h4>Network Management</h4>
+                  <h4>College of Liberal Arts, National Central University, Taiwan</h4>
+                  <h5>Network Management</h5>
                 </div>
               </div>
               <div className="timeline-content">
-                <h5>College of Liberal Arts, National Central University, Taiwan</h5>
                 <ol>
                   <li>To assist the office of the College of Liberal Arts with chores.</li>
                   <li>

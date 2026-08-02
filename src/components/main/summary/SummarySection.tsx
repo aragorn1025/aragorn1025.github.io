@@ -111,10 +111,7 @@ const SummarySection: React.FunctionComponent<SummarySectionProps> = ({
         />
         <div className="row">
           <BarTitle
-            mainLevel={3}
-            subLevel={6}
             barLevel={3}
-            toUpperCase
           />
           <div className="col-12 col-lg-4">
             <img

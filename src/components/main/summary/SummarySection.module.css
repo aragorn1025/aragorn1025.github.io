@@ -34,12 +34,10 @@ ul.info ul > li::before {
 
 ul.info li a {
   color: currentColor;
-  text-decoration: none;
 }
 
 ul.info li a:hover {
   color: currentColor;
-  text-decoration: underline;
 }
 
 article.autobiography {
