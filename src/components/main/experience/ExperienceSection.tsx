@@ -119,7 +119,7 @@ const ExperienceSection: React.FunctionComponent = () => {
                     supporting MFA, LDAP, and SSO.
                   </li>
                   <li>
-                    Eliminated race conditions in license allocation (previously 1–2/week, surfaced in UAT)
+                    Eliminated race conditions in license allocation (previously <b>1–2/week</b>, surfaced in UAT)
                     by designing a Redis-based distributed lock,
                     ensuring atomic license checks across concurrent API and Celery workers.
                   </li>
