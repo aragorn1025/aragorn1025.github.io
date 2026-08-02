@@ -1,23 +1,28 @@
 [
 	{
 		"name": "home",
+        "displayName": "Home",
 		"iconClassName": "house-door",
 		"isActive": true
 	},
 	{
-		"name": "Summary",
+		"name": "summary",
+        "displayName": "Summary",
 		"iconClassName": "person-bounding-box"
 	},
 	{
 		"name": "skills",
+        "displayName": "Skills",
 		"iconClassName": "pen"
 	},
 	{
 		"name": "resume",
+        "displayName": "Resume",
 		"iconClassName": "card-checklist"
 	},
 	{
 		"name": "portfolio",
+        "displayName": "Portfolio",
 		"iconClassName": "grid"
 	}
 ]

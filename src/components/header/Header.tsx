@@ -38,13 +38,14 @@ const Header: React.FunctionComponent = () => {
           id="navbars"
         >
           <ul className="navbar-nav">
-            {sections.map(({ name, iconClassName, isActive }) => (
+            {sections.map(({ name, displayName, iconClassName, isActive }) => (
               <li
                 key={name}
                 className="nav-item"
               >
                 <NavLink
                   name={name}
+                  displayName={displayName}
                   iconClassName={iconClassName}
                   isActive={isActive}
                 />

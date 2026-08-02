@@ -1,16 +1,17 @@
 import React from 'react';
 
 import './NavLink.css';
-import { capitalize } from '../../utils/utils';
 
 interface NavLinkProps {
   name: string;
+  displayName: string;
   iconClassName?: string;
   isActive?: boolean;
 }
 
 const NavLink: React.FunctionComponent<NavLinkProps> = ({
   name,
+  displayName,
   iconClassName,
   isActive = false,
 }) => {
@@ -18,10 +19,10 @@ const NavLink: React.FunctionComponent<NavLinkProps> = ({
     <a
       className={`nav-link${isActive ? ' active' : ''}`}
       aria-current={isActive ? 'page' : undefined}
-      href={`#${name.toLowerCase()}`}
+      href={`#${name}`}
     >
       {iconClassName !== undefined && <i className={`nav-icon bi bi-${iconClassName}`} />}
-      <div className="nav-text">{capitalize(name)}</div>
+      <div className="nav-text">{displayName}</div>
     </a>
   );
 };

@@ -104,7 +104,7 @@ const SummarySection: React.FunctionComponent<SummarySectionProps> = ({
   autobiography,
 }) => {
   return (
-    <section id="about">
+    <section id="summary">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
         <Title
           text={name}
