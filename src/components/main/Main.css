@@ -1,6 +1,7 @@
 :root {
   --h-header: 5.25rem; /* The height of the navigation header which should be calculated after the navigation header is changed. */
   --h-section-gap: 2rem; /* The height of the gap between sections. */
+  --x-timeline: 16rem;
   --w-timeline: 8px; /* The width of the timeline. */
   --r-timeline-point: 10px; /* The radius of the timeline point. */
   --timeline-sm-ml: calc(max(var(--w-timeline), var(--r-timeline-point) * (1 + 0.6) * 2));
@@ -157,7 +158,7 @@ svg.rotate-180 {
 .timeline .timeline-block {
   display: flex;
   flex-direction: column;
-  margin: 3rem 0;
+  margin: 1rem 0;
 }
 
 .timeline .timeline-block:hover {
@@ -261,68 +262,35 @@ svg.rotate-180 {
   }
 
   .timeline::before {
-    left: calc(50% - var(--w-timeline) / 2);
+    left: calc(var(--x-timeline) - var(--w-timeline) / 2);
     right: auto;
   }
 
-  .timeline .timeline-block:nth-child(odd) .timeline-anchor {
-    flex-direction: row-reverse;
-  }
-
-  .timeline .timeline-block:nth-child(even) .timeline-anchor {
+  .timeline .timeline-block .timeline-anchor {
     flex-direction: row;
   }
 
   .timeline .timeline-block .timeline-anchor .timeline-tag {
-    width: 50%;
-  }
-
-  .timeline .timeline-block:nth-child(odd) .timeline-anchor .timeline-tag {
-    padding: 0 0 0 calc(1rem + max(var(--w-timeline) / 2, var(--r-timeline-point) * 1.6));
-    flex-direction: row;
-  }
-
-  .timeline .timeline-block:nth-child(even) .timeline-anchor .timeline-tag {
+    width: var(--x-timeline);
     padding: 0 calc(1rem + max(var(--w-timeline) / 2, var(--r-timeline-point) * 1.6)) 0 0;
     flex-direction: row-reverse;
   }
 
-  .timeline .timeline-block:nth-child(odd) .timeline-anchor .timeline-tag::before {
-    left: calc(var(--r-timeline-point) * -1);
-    right: auto;
-  }
 
-  .timeline .timeline-block:nth-child(even) .timeline-anchor .timeline-tag::before {
+  .timeline .timeline-block .timeline-anchor .timeline-tag::before {
     left: auto;
     right: calc(var(--r-timeline-point) * -1);
   }
 
   .timeline .timeline-block .timeline-anchor .timeline-title {
-    width: 50%;
-  }
-
-  .timeline .timeline-block:nth-child(odd) .timeline-anchor .timeline-title {
-    padding: 0 calc(1rem + max(var(--w-timeline) / 2, var(--r-timeline-point) * 1.6)) 0 0;
-    text-align: right;
-  }
-
-  .timeline .timeline-block:nth-child(even) .timeline-anchor .timeline-title {
+    width: calc(100% - var(--x-timeline));
     padding: 0 0 0 calc(1rem + max(var(--w-timeline) / 2, var(--r-timeline-point) * 1.6));
     text-align: left;
   }
 
   .timeline .timeline-block .timeline-content {
-    width: 50%;
-  }
-
-  .timeline .timeline-block:nth-child(odd) .timeline-content {
-    margin: 0.5rem 50% 0 0;
-    padding: 0 calc(1rem + max(var(--w-timeline) / 2, var(--r-timeline-point) * 1.6)) 0 0;
-    text-align: right;
-  }
-
-  .timeline .timeline-block:nth-child(even) .timeline-content {
-    margin: 0.5rem 0 0 50%;
+    width: calc(100% - var(--x-timeline));
+    margin: 0.5rem 0 0 var(--x-timeline);
     padding: 0 0 0 calc(1rem + max(var(--w-timeline) / 2, var(--r-timeline-point) * 1.6));
     text-align: left;
   }
