@@ -20,7 +20,7 @@ const Header: React.FunctionComponent = () => {
           aria-hidden="true"
         >
           <i className="bi bi-layout-wtf" />
-          <div className="fs-3">Aragorn</div>
+          <div className="fs-3">Tz-Jie (Aragorn) Dai</div>
         </div>
         <button
           className="navbar-toggler"
@@ -38,13 +38,14 @@ const Header: React.FunctionComponent = () => {
           id="navbars"
         >
           <ul className="navbar-nav">
-            {sections.map(({ name, iconClassName, isActive }) => (
+            {sections.map(({ name, displayName, iconClassName, isActive }) => (
               <li
                 key={name}
                 className="nav-item"
               >
                 <NavLink
                   name={name}
+                  displayName={displayName}
                   iconClassName={iconClassName}
                   isActive={isActive}
                 />

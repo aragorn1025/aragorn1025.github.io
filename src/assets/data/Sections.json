@@ -1,27 +1,23 @@
 [
 	{
 		"name": "home",
+        "displayName": "Home",
 		"iconClassName": "house-door",
 		"isActive": true
 	},
 	{
-		"name": "about",
-		"iconClassName": "book"
+		"name": "summary",
+        "displayName": "Summary",
+		"iconClassName": "person-bounding-box"
 	},
 	{
-		"name": "skills",
-		"iconClassName": "pen"
-	},
-	{
-		"name": "resume",
+		"name": "experience",
+        "displayName": "Experience",
 		"iconClassName": "card-checklist"
 	},
 	{
-		"name": "portfolio",
+		"name": "projects",
+        "displayName": "Projects",
 		"iconClassName": "grid"
-	},
-	{
-		"name": "contact",
-		"iconClassName": "person-bounding-box"
 	}
 ]

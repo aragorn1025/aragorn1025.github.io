@@ -10,17 +10,16 @@ import portfolio20 from '../../../assets/images/portfolio_20.png';
 import BarTitle from '../../common/bar-title/BarTitle';
 import Title from '../../common/title/Title';
 
-const PortfolioSection: React.FunctionComponent = () => {
+const ProjectsSection: React.FunctionComponent = () => {
   return (
-    <section id="portfolio">
+    <section id="projects">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
         <Title
-          text="Portfolio"
+          text="Projects"
           toUpperCase
         />
         <div>
           <BarTitle
-            subText="My Works"
             subLevel={6}
             barLevel={3}
             toUpperCase
@@ -209,7 +208,7 @@ const PortfolioSection: React.FunctionComponent = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-6 col-xl-4">
+            <div className="hidden col-12 col-md-6 col-xl-4">
               <div className="card text-center">
                 <img
                   src={portfolio20}
@@ -246,4 +245,4 @@ const PortfolioSection: React.FunctionComponent = () => {
   );
 };
 
-export default PortfolioSection;
+export default ProjectsSection;

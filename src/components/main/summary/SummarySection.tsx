@@ -2,12 +2,10 @@ import React from 'react';
 
 import me from '../../../assets/images/me.jpg';
 import BarTitle from '../../common/bar-title/BarTitle';
-import QuotationBlock from '../../common/quote-block/QuotationBlock';
 import Title from '../../common/title/Title';
-import { capitalize } from '../../utils/utils';
 import getFunction from './Functions';
 
-import styles from './AboutSection.module.css';
+import styles from './SummarySection.module.css';
 
 interface AboutFunctionItem {
   name: string;
@@ -40,12 +38,8 @@ type AboutItem =
   | AboutFunctionItem[]
   | AboutLinkItem[];
 
-export interface AboutSectionProps {
+export interface SummarySectionProps {
   name: string;
-  quotation: {
-    sentence: string;
-    from?: string;
-  };
   info: {
     key: string;
     type: AboutItemType;
@@ -54,7 +48,7 @@ export interface AboutSectionProps {
   autobiography: string[];
 }
 
-const getAboutItem = (type: AboutItemType, value: AboutItem) => {
+const getSummaryItem = (type: AboutItemType, value: AboutItem) => {
   switch (type) {
     case 'number':
       return value as number;
@@ -104,23 +98,19 @@ const getAboutItem = (type: AboutItemType, value: AboutItem) => {
   }
 };
 
-const AboutSection: React.FunctionComponent<AboutSectionProps> = ({
+const SummarySection: React.FunctionComponent<SummarySectionProps> = ({
   name,
-  quotation,
   info,
   autobiography,
 }) => {
   return (
-    <section id="about">
+    <section id="summary">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
         <Title
-          text="About"
-          toUpperCase
+          text={name}
         />
         <div className="row">
           <BarTitle
-            mainText="Information"
-            subText="Learn more about me"
             mainLevel={3}
             subLevel={6}
             barLevel={3}
@@ -132,15 +122,13 @@ const AboutSection: React.FunctionComponent<AboutSectionProps> = ({
               src={me}
               alt={name}
             />
-            <QuotationBlock {...quotation} />
           </div>
           <div className="col-12 col-lg-8 pt-3 pt-lg-0">
-            <h3 className="mb-3 fw-bold text-capitalize">{name}</h3>
             <ul className={styles.info}>
               {info.map(({ key, type, value }) => (
                 <li key={key}>
-                  <b>{`${capitalize(key)} `}</b>
-                  {getAboutItem(type, value)}
+                  <b>{`${key} `}</b>
+                  {getSummaryItem(type, value)}
                 </li>
               ))}
             </ul>
@@ -156,4 +144,4 @@ const AboutSection: React.FunctionComponent<AboutSectionProps> = ({
   );
 };
 
-export default AboutSection;
+export default SummarySection;

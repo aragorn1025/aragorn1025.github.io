@@ -4,25 +4,19 @@ import BarTitle from '../../common/bar-title/BarTitle';
 import Title from '../../common/title/Title';
 import { getLastUpdatedString } from '../../utils/utils';
 
-const ResumeSection: React.FunctionComponent = () => {
+const ExperienceSection: React.FunctionComponent = () => {
   return (
-    <section id="resume">
+    <section id="experience">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
         <Title
-          text="Resume"
+          text="Experience"
           toUpperCase
         />
         <div className="d-flex">
-          <h6 className="ms-auto">{getLastUpdatedString(2023, 1, 3, 23)}</h6>
+          <h6 className="ms-auto">{getLastUpdatedString(2026, 8, 1, 23)}</h6>
         </div>
         <div>
-          <BarTitle
-            mainText="Education"
-            mainLevel={3}
-            barLevel={3}
-            toUpperCase
-          />
-          <div className="timeline mb-3">
+          <div className="timeline mb-3 hidden">
             <div className="timeline-block">
               <div className="timeline-anchor">
                 <div className="timeline-tag">
@@ -79,38 +73,179 @@ const ResumeSection: React.FunctionComponent = () => {
             </div>
           </div>
           <BarTitle
-            mainText="Experience"
             mainLevel={3}
             barLevel={3}
-            toUpperCase
           />
           <div className="timeline">
             <div className="timeline-block">
               <div className="timeline-anchor">
                 <div className="timeline-tag">
-                  <div className="h5">2014 / 07 ~ 2017 / 01</div>
-                  <div className="h6">Intern</div>
+                  <div className="h5">Feb 2026–Present</div>
                 </div>
                 <div className="timeline-title">
-                  <h4>Network Management</h4>
+                  <h4>Computer Vision Developer</h4>
                 </div>
               </div>
               <div className="timeline-content">
-                <h5>College of Liberal Arts, National Central University, Taiwan</h5>
-                <ol>
-                  <li>To assist the office of the College of Liberal Arts with chores.</li>
+                <h5>Department of Crop and Soil Science, Oregon State University</h5>
+                <ul>
                   <li>
-                    To troubleshoot the computer and network conditions of the College of Liberal
-                    Arts.
+                    Built an image tiling pipeline with edge-object handling
+                    to standardize weed-detection drone data into unified formats,
+                    boosting downstream model mAP50 from 0.664 to a peak 0.769.
                   </li>
                   <li>
-                    To check and record the network routes of the College of Liberal Arts.
-                    (including the first, second and third halls)
+                    Configured NAS storage and containerized GPU-accelerated training environments
+                    to guarantee reproducible workflows for a 4-person research team.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="timeline-block">
+              <div className="timeline-anchor">
+                <div className="timeline-tag">
+                  <div className="h5">May 2022–Jan 2025</div>
+                </div>
+                <div className="timeline-title">
+                  <h4>Software Developer</h4>
+                </div>
+              </div>
+              <div className="timeline-content">
+                <h5>Pentium Network Technology</h5>
+                <ul>
+                  <li>
+                    Owned auth for a PAM platform (FastAPI, PostgreSQL);
+                    cut the time to change auth logic from about <b>2 weeks to {"<"}8</b> hours
+                    by refactoring a monolithic auth flow into a composable Chain-of-Responsibility pipeline
+                    supporting MFA, LDAP, and SSO.
+                  </li>
+                  <li>
+                    Eliminated race conditions in license allocation (previously 1–2/week, surfaced in UAT)
+                    by designing a Redis-based distributed lock,
+                    ensuring atomic license checks across concurrent API and Celery workers.
+                  </li>
+                  <li>
+                    Reduced CI/CD run time from 18 to {"<"}3 minutes
+                    by restructuring multi-stage Docker builds with an internal registry,
+                    and consolidating DB migrations per test tier.
+                  </li>
+                  <li>
+                    Authored API and schema design docs for team review, and reviewed peers’ designs and code as part of the team’s workflow;
+                    also helped reinstate a missed document into the review process.
+                  </li>
+                  <li>
+                    Proposed and launched bi-weekly tech talks, driving knowledge-sharing across a 25+ person cross-functional team.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="timeline-block">
+              <div className="timeline-anchor">
+                <div className="timeline-tag">
+                  <div className="h5">Jan 2022–Apr 2022</div>
+                </div>
+                <div className="timeline-title">
+                  <h4>Software Engineer</h4>
+                </div>
+              </div>
+              <div className="timeline-content">
+                <h5>M800 Taiwan</h5>
+                <ul>
+                  <li>
+                    Built a release-automation dashboard (Gin, React) integrating Jira, Jenkins, and GitLab;
+                    cut release effort from <b>60–120 to {"<"}5 minutes</b> and
+                    enabling PMs to ship 1–5 daily releases without SRE dependency for a 70+ member team.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="timeline-block">
+              <div className="timeline-anchor">
+                <div className="timeline-tag">
+                  <div className="h5">Oct 2020–Sep 2021</div>
+                </div>
+                <div className="timeline-title">
+                  <h4>Software Engineer</h4>
+                </div>
+              </div>
+              <div className="timeline-content">
+                <h5>LEDA Creative Technology</h5>
+                <ul>
+                  <li>
+                    Built an MQTT-based model deployment pipeline
+                    that replaced manual USB transfers to industrial edge devices
+                    for customers across food-processing, electronics, and semiconductor industries.
+                  </li>
+                  <li>
+                    Packaged computer vision models into containerized, GPU-accelerated CLI-driven services with customized dataset loaders,
+                    enabling users to run training and inference via an AI platform.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="timeline-block" style={{ display: 'none' }}>
+              <div className="timeline-anchor">
+                <div className="timeline-tag">
+                  <div className="h5">2018 / 05 ~ 2020 / 08</div>
+                  <div className="h6">Intern</div>
+                </div>
+                <div className="timeline-title">
+                  <h4>Partner</h4>
+                </div>
+              </div>
+              <div className="timeline-content">
+                <h5>LEDA-creative Technology LTD.</h5>
+                <ol>
+                  <li>The edge detection for the cell scaffolds: Algorithm development.</li>
+                  <li>Multiple Barcode & QRCode Detector.</li>
+                  <li>
+                    Refactoring of the source codes of Mask R-CNN by PyTorch: maintainer and
+                    developer.
+                    <br />
+                    <a
+                      className="button"
+                      href="https://github.com/aragorn1025/mask-rcnn"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <i className="bi bi-github" />
+                      &nbsp;Here
+                    </a>
+                  </li>
+                  <li>The other cooperative projects that should be confidential.</li>
+                </ol>
+              </div>
+            </div>
+            <div className="timeline-block" style={{ display: 'none' }}>
+              <div className="timeline-anchor">
+                <div className="timeline-tag">
+                  <div className="h5">2020 / 02 ~ 2020 / 06</div>
+                </div>
+                <div className="timeline-title">
+                  <h4>Teaching Assistant</h4>
+                </div>
+              </div>
+              <div className="timeline-content">
+                <h5>
+                  Department of Computer Science & Information Engineering, National Central
+                  University, Taiwan
+                </h5>
+                <ol>
+                  <li>To assist the professor to make the course run smoothly.</li>
+                  <li>To invigilate the midterm exam, and mark and register scores.</li>
+                  <li>To arrange students for the second half of the semester to report papers.</li>
+                  <li>
+                    To assist students in the course to complete programming assignments, and mark
+                    and register scores.
                   </li>
                 </ol>
               </div>
             </div>
-            <div className="timeline-block">
+            <div className="timeline-block" style={{ display: 'none' }}>
               <div className="timeline-anchor">
                 <div className="timeline-tag">
                   <div className="h5">2017 / 04 ~ 2020 / 08</div>
@@ -300,169 +435,29 @@ const ResumeSection: React.FunctionComponent = () => {
                 </ol>
               </div>
             </div>
-            <div className="timeline-block">
+            <div className="timeline-block" style={{ display: 'none' }}>
               <div className="timeline-anchor">
                 <div className="timeline-tag">
-                  <div className="h5">2018 / 05 ~ 2020 / 08</div>
+                  <div className="h5">2014 / 07 ~ 2017 / 01</div>
                   <div className="h6">Intern</div>
                 </div>
                 <div className="timeline-title">
-                  <h4>Partner</h4>
+                  <h4>Network Management</h4>
                 </div>
               </div>
               <div className="timeline-content">
-                <h5>LEDA-creative Technology LTD.</h5>
+                <h5>College of Liberal Arts, National Central University, Taiwan</h5>
                 <ol>
-                  <li>The edge detection for the cell scaffolds: Algorithm development.</li>
-                  <li>Multiple Barcode & QRCode Detector.</li>
+                  <li>To assist the office of the College of Liberal Arts with chores.</li>
                   <li>
-                    Refactoring of the source codes of Mask R-CNN by PyTorch: maintainer and
-                    developer.
-                    <br />
-                    <a
-                      className="button"
-                      href="https://github.com/aragorn1025/mask-rcnn"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      <span />
-                      <span />
-                      <span />
-                      <span />
-                      <i className="bi bi-github" />
-                      &nbsp;Here
-                    </a>
+                    To troubleshoot the computer and network conditions of the College of Liberal
+                    Arts.
                   </li>
-                  <li>The other cooperative projects that should be confidential.</li>
-                </ol>
-              </div>
-            </div>
-            <div className="timeline-block">
-              <div className="timeline-anchor">
-                <div className="timeline-tag">
-                  <div className="h5">2020 / 02 ~ 2020 / 06</div>
-                </div>
-                <div className="timeline-title">
-                  <h4>Teaching Assistant</h4>
-                </div>
-              </div>
-              <div className="timeline-content">
-                <h5>
-                  Department of Computer Science & Information Engineering, National Central
-                  University, Taiwan
-                </h5>
-                <ol>
-                  <li>To assist the professor to make the course run smoothly.</li>
-                  <li>To invigilate the midterm exam, and mark and register scores.</li>
-                  <li>To arrange students for the second half of the semester to report papers.</li>
                   <li>
-                    To assist students in the course to complete programming assignments, and mark
-                    and register scores.
+                    To check and record the network routes of the College of Liberal Arts.
+                    (including the first, second and third halls)
                   </li>
                 </ol>
-              </div>
-            </div>
-            <div className="timeline-block">
-              <div className="timeline-anchor">
-                <div className="timeline-tag">
-                  <div className="h5">2020 / 10 ~ 2021 / 09</div>
-                </div>
-                <div className="timeline-title">
-                  <h4>Data Scientist / Software Engineer</h4>
-                </div>
-              </div>
-              <div className="timeline-content">
-                <h5>LEDA-creative Technology LTD.</h5>
-                <ol>
-                  <li>
-                    To develop and maintain SeaDeep, an AI training platform. It&apos;s necessary to
-                    discuss the development requirements with the project manager, and communicate
-                    with the frontend engineers for planning API. After that, I should combine the
-                    main algorithms and the backend framework. Furthermore, it&apos;s also important
-                    to master technologies such as database, Docker / Kubernetes virtualization, GPU
-                    / CUDA acceleration, so that can schedule an AI training project through simple
-                    operations when using this platform.
-                  </li>
-                  <li>
-                    To develop and maintain a few micro-service tools. In addition to APIs for
-                    developers, it also provides a user-friendly UI / UX when necessary.
-                  </li>
-                  <li>
-                    To mentor interns (most of them don&apos;t know how to write a program at the
-                    beginning) to research special topic. The content includes the basic concepts of
-                    AI, micro-services, simple image processing, etc. I also combined their idea
-                    with backend / frontend frameworks, so that they can not only implement their
-                    special topics but also learn the software development.
-                    <br />
-                    <a
-                      className="button"
-                      href="https://www.youtube.com/playlist?list=PLauXCvRn7tv75mc3mJQA9ApX67nM1dad8"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      <span />
-                      <span />
-                      <span />
-                      <span />
-                      <i className="bi bi-youtube" />
-                      &nbsp;Here
-                    </a>
-                  </li>
-                  <li>
-                    To assist project managers to develop various projects. It&apos;s important to
-                    discuss with them for meeting customer needs as much as possible.
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div className="timeline-block">
-              <div className="timeline-anchor">
-                <div className="timeline-tag">
-                  <div className="h5">2022 / 01 ~ 2022 / 04</div>
-                </div>
-                <div className="timeline-title">
-                  <h4>Software Engineer</h4>
-                </div>
-              </div>
-              <div className="timeline-content">
-                <h5>M800 Taiwan Limited</h5>
-                <ol>
-                  <li>
-                    To develop the internal webpages (named as Tiffany), which assists product
-                    managers more easily to deploy and release on the page according to the internal
-                    git flow. The main programming languages used include Go (Gin) and JavaScript
-                    (React, Vue.js).
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div className="timeline-block">
-              <div className="timeline-anchor">
-                <div className="timeline-tag">
-                  <div className="h5">2022 / 05 ~ Now</div>
-                </div>
-                <div className="timeline-title">
-                  <h4>Software Developer</h4>
-                </div>
-              </div>
-              <div className="timeline-content">
-                <h5>Pentium Network Technology Ltd.</h5>
-                <ol>
-                  <li>
-                    To develop and maintain MAVIS, a hybrid multi-cloud IT PAM tool, which could
-                    help IT team to manage their access permission to their servers and record all
-                    the action by developers. In this team, I work as a backend developer and the
-                    main programming languages used include Python and TypeScript.
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div className="timeline-block">
-              <div className="timeline-anchor">
-                <div className="timeline-tag mb-0" />
-                <div className="timeline-title">
-                  <h3 className="">To be continue...</h3>
-                </div>
               </div>
             </div>
           </div>
@@ -472,4 +467,4 @@ const ResumeSection: React.FunctionComponent = () => {
   );
 };
 
-export default ResumeSection;
+export default ExperienceSection;

@@ -1,0 +1,86 @@
+{
+	"name": "Tz-Jie (Aragorn) Dai",
+	"info": [
+        {
+            "key": "Email",
+            "type": "link",
+            "value": {
+                "text": "tzjie.dai@gmail.com",
+                "reference": "mailto:tzjie.dai@gmail.com"
+            }
+        },
+        {
+            "key": "Phone",
+            "type": "link",
+            "value": {
+                "text": "+1 458-210-7380",
+                "reference": "tel:+14582107380"
+            }
+        },
+		{
+			"key": "Location",
+			"type": "string",
+			"value": "Corvallis, OR, USA"
+		},
+        {
+            "key": "Resume",
+            "type": "link",
+            "value": {
+                "text": "View my resume",
+                "reference": "https://aragorn1025.github.io/Aragorn_Dai_Resume.pdf"
+            }
+        },
+        {
+            "key": "LinkedIn",
+            "type": "link",
+            "value": {
+                "text": "Go to Aragorn's LinkedIn",
+                "reference": "https://www.linkedin.com/in/aragorn1025"
+            }
+        },
+        {
+            "key": "GitHub",
+            "type": "link",
+            "value": {
+                "text": "Go to Aragorn's GitHub",
+                "reference": "https://github.com/aragorn1025"
+            }
+        },
+        {
+			"key": "Personal Website",
+			"type": "link",
+			"value": {
+				"reference": "https://aragorn1025.github.io/"
+			}
+		},
+		{
+			"key": "Education",
+			"type": "string",
+			"value": "Oregon State University, OR, USA"
+		},
+		{
+			"key": "Degree",
+			"type": "string",
+			"value": "M.S. in Computer Science (minor in Artificial Intelligence;  expected graduation June 2027)"
+		},
+        {
+            "key": "GPA",
+            "type": "string",
+            "value": "4.00/4.00"
+        },
+        {
+			"key": "Skills",
+			"type": "array(string)",
+			"value": [
+				"Languages: Python, Go, SQL, TypeScript, Bash",
+				"Backend: FastAPI, Flask, Gin, PostgreSQL, Redis, SQLAlchemy, Celery, MinIO, RESTful APIs, async processing",
+				"Auth & Security: OAuth2, SSO, LDAP, MFA, JWT/JWKs, Bcrypt, RBAC",
+				"Infrastructure: Docker, Kubernetes, Git, GitHub Actions, CI/CD, Linux, pytest",
+				"AI & CV: PyTorch, OpenCV, NumPy, W&B"
+			]
+		}
+	],
+	"autobiography": [
+		"Backend Software Engineer with 4+ years designing and improving production backend systems in Python—resolving race conditions via distributed locking, refactoring a monolithic auth flow into a composable pipeline, and cutting CI/CD run time by 80%+. Currently an M.S. CS student at Oregon State University, expected graduation June 2027."
+	]
+}
