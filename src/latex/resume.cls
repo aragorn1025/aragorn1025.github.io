@@ -9,8 +9,9 @@
 \tl_new:N \l_resume_subsection_separator_tl
 \tl_new:N \l_resume_item_separator_tl
 \keys_define:nn{resume}{
-    font_size            .tl_set:N  = \l_resume_font_size_tl,
-    font_size            .initial:n = 10pt,
+    10pt                 .code:n    = {\tl_set:Nn \l_resume_font_size_tl {10pt}},
+    11pt                 .code:n    = {\tl_set:Nn \l_resume_font_size_tl {11pt}},
+    12pt                 .code:n    = {\tl_set:Nn \l_resume_font_size_tl {12pt}},
     margin               .tl_set:N  = \l_resume_margin_tl,
     margin               .initial:n = 0.35in,
     section_separator    .tl_set:N  = \l_resume_section_separator_tl,
@@ -32,9 +33,7 @@
 \thispagestyle{empty}
 
 % font
-\RequirePackage{fontspec}
-\defaultfontfeatures{Ligatures=TeX}
-\setmainfont{Liberation Sans}
+\usepackage[sfdefault]{noto}
 
 % title
 \RequirePackage{titlesec}
