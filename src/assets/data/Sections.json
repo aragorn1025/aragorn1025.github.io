@@ -15,6 +15,11 @@
         "displayName": "Experience",
 		"iconClassName": "card-checklist"
 	},
+    {
+        "name": "education",
+        "displayName": "Education",
+        "iconClassName": "book"
+    },
 	{
 		"name": "projects",
         "displayName": "Projects",

@@ -174,8 +174,10 @@ svg.rotate-180 {
 .timeline .timeline-block .timeline-anchor .timeline-tag {
   display: inline-flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   position: relative;
-  align-items: stretch;
+  align-items: center;
   margin: 0 0 0.5rem 0;
   gap: 0.5rem;
 }
@@ -233,6 +235,10 @@ svg.rotate-180 {
 }
 
 .timeline .timeline-block .timeline-anchor .timeline-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   color: rgba(var(--rgb-yellow), var(--bs-text-opacity));
   text-align: left;
 }
@@ -273,7 +279,6 @@ svg.rotate-180 {
   .timeline .timeline-block .timeline-anchor .timeline-tag {
     width: var(--x-timeline);
     padding: 0 calc(1rem + max(var(--w-timeline) / 2, var(--r-timeline-point) * 1.6)) 0 0;
-    flex-direction: row-reverse;
   }
 
 
