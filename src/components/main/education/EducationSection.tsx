@@ -48,7 +48,7 @@ const EducationSection: React.FunctionComponent = () => {
                 <ul>
                   <li>
                     Co-invented an AI-assisted medication verification system on NVIDIA Jetson TX2, cutting pharmacist workload by
-                    an estimated 25%—awarded a Taiwan Patent and a Gold Medal at Taiwan Innotech Expo 2020.
+                    an estimated <b>25%</b>—awarded a Taiwan Patent and a Gold Medal at Taiwan Innotech Expo 2020.
                   </li>
                   <li className="hidden">
                     Thesis:
