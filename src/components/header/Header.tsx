@@ -20,7 +20,7 @@ const Header: React.FunctionComponent = () => {
           aria-hidden="true"
         >
           <i className="bi bi-layout-wtf" />
-          <div className="fs-3">Aragorn</div>
+          <div className="fs-3">Tz-Jie (Aragorn) Dai</div>
         </div>
         <button
           className="navbar-toggler"
