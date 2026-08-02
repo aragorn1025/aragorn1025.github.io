@@ -1,9 +1,9 @@
 \documentclass[
-    font_size            = {10pt},
+    10pt,
     margin               = {0.5in},
-    section_separator    = {1em},
-    subsection_separator = {0.5em},
-    item_separator       = {0.05em},
+    section_separator    = {1.2em},
+    subsection_separator = {0.6em},
+    item_separator       = {0.1em},
 ]{resume}
 
 \begin{document}
@@ -14,128 +14,127 @@
     phone    = {\href{tel:14582107380}{+1 458-210-7380}},
     linkedin = {aragorn1025},
     github   = {aragorn1025},
-    location = {Corvallis, OR, US},
+    location = {Corvallis, OR, USA},
     note     = {F-1, STEM OPT eligible (36 months)},
 }
 
 \begin{resumesummary}
-    Software Engineer with 4+ years building production API systems in Python and Go,
-    including authentication and access control, distributed task processing, and CI/CD infrastructure.
-    Currently pursuing an M.S. in Computer Science at Oregon State University, expected to graduate in Jun 2027.
+    Backend Software Engineer with 4+ years designing and improving production backend systems in Python---%
+    resolving race conditions via distributed locking, refactoring a monolithic auth flow into a composable pipeline, and cutting CI/CD run time by 80\%+.
+    Currently an M.S. CS student at Oregon State University, expected graduation June 2027.
 \end{resumesummary}
 
 \begin{resumeexperience}
     \experience[
-        company  = {Oregon State University (OSU)},
+        company  = {Oregon State University},
         location = {Corvallis, OR, USA},
         title    = {Computer Vision Developer, Department of Crop and Soil Science},
         start    = {Feb 2026},
         end      = {Present},
     ]{
-        \item Built the training and evaluation pipeline for drone-based weed detection in real crop fields,
-        including server with GPU infrastructure setup , dataset preprocessing, and standardized inference workflows;
-        reached mAP50 0.769.
+        \item Built an image tiling pipeline with edge-object handling
+        to standardize weed-detection drone data into unified formats,
+        boosting downstream model mAP50 from \textbf{0.664 to a peak 0.769}.
+        \item Configured NAS storage and containerized GPU-accelerated training environments
+        to guarantee reproducible workflows for a 4-person research team.
     }
 
     \experience[
-        company  = {Pentium Network Technology Ltd.},
+        company  = {Pentium Network Technology},
         location = {Taipei, Taiwan},
-        title    = {Software Developer, Department of Research and Development},
+        title    = {Software Developer, R\&D},
         start    = {May 2022},
         end      = {Jan 2025},
     ]{
-        \item Designed and developed core backend features,
-        including authentication, RBAC, licensing, metrics, reporting, and resource management,
-        for a B2B privileged access management platform
-        using FastAPI, PostgreSQL, Redis, Celery, and MinIO.
-        \item Cut integration time for a new auth feature from about 2 weeks to under a day
-        by refactoring a 300-line monolithic auth flow into a Chain-of-Responsibility pipeline
-        supporting MFA, JWT/JWKs, bcrypt password authentication, LDAP, and SSO with Microsoft Entra ID.
-        \item Eliminated over-allocation race conditions by designing a Redis-based distributed lock
-        with configurable TTL, retry mechanisms, and context manager support,
-        ensuring atomic license checks across 4 API server workers and 2 Celery workers
-        and reducing UAT incidents from 1--2 per week to 0.
-        \item Reduced CI/CD execution time from 18 to under 3 minutes
-        by optimizing multi-stage Docker image builds, reusable build artifacts, and testing workflows,
-        reducing developer wait time and accelerating development workflows.
-        \item Championed engineering culture and cross-functional workflow
-        by instituting bi-weekly tech talks for a 25+-developer team across 2 years,
-        hosting 20+ backend design reviews,
-        integrating outdated documentation into review workflows to streamline PM and frontend alignment,
-        and leading an after-hours Kubernetes study group.
+        \item Owned auth for a PAM platform (FastAPI, PostgreSQL);
+        cut the time to change auth logic from about \textbf{2 weeks to <8 hours}
+        by refactoring a monolithic auth flow into a composable Chain-of-Responsibility pipeline
+        supporting MFA, LDAP, and SSO.
+        \item Eliminated race conditions in license allocation (previously \textbf{1--2/week}, surfaced in UAT)
+        by designing a Redis-based distributed lock,
+        ensuring  atomic license checks across concurrent API and Celery workers.
+        \item Reduced CI/CD run time from 18 to <3 minutes
+        by restructuring multi-stage Docker builds with an internal registry,
+        and consolidating DB migrations per test tier.
+        \item Authored API and schema design docs for team review, and reviewed peers' designs and code as part of the team's workflow;
+        also helped reinstate a missed document into the review process.
+        \item Proposed and launched bi-weekly tech talks, driving knowledge-sharing across a 25+ person cross-functional team.
     }
 
     \experience[
-        company  = {M800 Taiwan Limited},
+        company  = {M800 Taiwan},
         location = {Taipei, Taiwan},
-        title    = {Software Engineer, Department of Research and Development},
+        title    = {Software Engineer, R\&D},
         start    = {Jan 2022},
         end      = {Apr 2022},
     ]{
-        \item Built an internal deployment system for a 70+ developer and PM team
-        using Vue.js, React, and Go Gin, integrating Jira, Jenkins, and GitLab.
-        Enabled PM self-service and removed routine SRE dependency through automated release workflows,
-        reducing routine release effort from 60--120 minutes to under 5 minutes for daily releases.
+        \item Built a release-automation dashboard (Gin, React) integrating Jira, Jenkins, and GitLab;
+        cut release effort from \textbf{60--120 to <5 minutes} and
+        enabling PMs to ship 1--5 daily releases without SRE dependency for a 70+ member team.
     }
 
     \experience[
-        company  = {LEDA-creative Technology LTD.},
+        company  = {LEDA Creative Technology},
         location = {Taoyuan, Taiwan},
-        title    = {Software Engineer, Department of Research and Development},
+        title    = {Software Engineer, R\&D},
         start    = {Oct 2020},
         end      = {Sep 2021},
     ]{
-        \item Developed model integration components for an AI training platform
-        by containerizing GPU-accelerated computer vision models, building CLI interfaces,
-        and implementing custom LabelMe dataset loaders.
-        \item Implemented MQTT-based automated model deployment workflow,
-        eliminating manual model export and USB transfer to industrial edge devices.
-        Supported computer vision solutions in food processing, electronics, and semiconductor manufacturing.
+        \item Built an MQTT-based model deployment pipeline
+        that replaced manual USB transfers to industrial edge devices
+        for customers across food-processing, electronics, and semiconductor industries.
+        \item Packaged computer vision models into containerized, GPU-accelerated CLI-driven services with customized dataset loaders,
+        enabling users to run training and inference via an AI platform.
     }
 \end{resumeexperience}
 
 \begin{resumeeducation}
     \education[
-        school   = {Oregon State University (OSU)},
+        school   = {Oregon State University},
         location = {Corvallis, OR, USA},
-        degree   = {M.S. in Computer Science (Minor in Artificial Intelligence)},
+        degree   = {M.S. in Computer Science (minor in Artificial Intelligence)},
         gpa      = {4.00},
         start    = {Sep 2025},
-        end      = {Jun 2027 (Expected)},
+        end      = {Jun 2027 (expected)},
     ]{}
 
     \education[
-        school   = {National Central University (NCU)},
+        school   = {National Central University},
         location = {Taoyuan, Taiwan},
         degree   = {M.S. in Computer Science and Information Engineering},
         gpa      = {3.53},
         start    = {Sep 2018},
         end      = {Jun 2020},
     ]{
-        \item Developed an AI-assisted medication verification system with a NVIDIA Jetson TX2 edge device,
-        projected to reduce pharmacist workload by 25\%.
-        Co-invented Patent TW202201424A and won Gold Medal at Taiwan Innotech Expo 2020.
+        \item Co-invented an AI-assisted medication verification system on NVIDIA Jetson TX2,
+        cutting pharmacist workload by an estimated \textbf{25\%}---%
+        awarded a Taiwan Patent and a Gold Medal at Taiwan Innotech Expo 2020.
     }
 
     \education[
-        school   = {National Central University (NCU)},
+        school   = {National Central University},
         location = {Taoyuan, Taiwan},
         degree   = {B.S. in Computer Science and Information Engineering},
-        gpa      = {3.15},
         start    = {Sep 2013},
         end      = {Jun 2018},
     ]{}
 \end{resumeeducation}
 
 \begin{resumeskill}
-    \skill[group = Languages \& Frameworks]{
-        Python, Go, Java, C++, TypeScript, SQL, Bash, FastAPI, Flask, Gin, React
+    \skill[group = Languages]{
+        Python, Go, SQL, TypeScript, Bash
     }
-    \skill[group = Backend Systems]{
-        RESTful APIs, Async Processing, Redis, Celery, PostgreSQL, SQLAlchemy, Linux, Docker, Kubernetes
+    \skill[group = Backend]{
+        FastAPI, Flask, Gin, PostgreSQL, Redis, SQLAlchemy, Celery, MinIO, RESTful APIs, async processing
     }
-    \skill[group = Software Engineering \& AI]{
-        Git, GitHub Actions, pytest, CI/CD, Computer Vision, Deep Learning, PyTorch, OpenCV
+    \skill[group = Auth \& Security]{
+        OAuth2, SSO, LDAP, MFA, JWT/JWKs, Bcrypt, RBAC
+    }
+    \skill[group = Infrastructure]{
+        Docker, Kubernetes, Git, GitHub Actions, CI/CD, Linux, pytest
+    }
+    \skill[group = AI \& CV]{
+        PyTorch, OpenCV, NumPy, W\&B
     }
 \end{resumeskill}
 

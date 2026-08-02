@@ -9,8 +9,9 @@
 \tl_new:N \l_resume_subsection_separator_tl
 \tl_new:N \l_resume_item_separator_tl
 \keys_define:nn{resume}{
-    font_size            .tl_set:N  = \l_resume_font_size_tl,
-    font_size            .initial:n = 10pt,
+    10pt                 .code:n    = {\tl_set:Nn \l_resume_font_size_tl {10pt}},
+    11pt                 .code:n    = {\tl_set:Nn \l_resume_font_size_tl {11pt}},
+    12pt                 .code:n    = {\tl_set:Nn \l_resume_font_size_tl {12pt}},
     margin               .tl_set:N  = \l_resume_margin_tl,
     margin               .initial:n = 0.35in,
     section_separator    .tl_set:N  = \l_resume_section_separator_tl,
@@ -32,9 +33,7 @@
 \thispagestyle{empty}
 
 % font
-\RequirePackage{fontspec}
-\defaultfontfeatures{Ligatures=TeX}
-\setmainfont{Liberation Sans}
+\usepackage[sfdefault]{noto}
 
 % title
 \RequirePackage{titlesec}
@@ -186,7 +185,7 @@
         \makebox[0.5\textwidth][l]{\textbf{\g_resume_education_school_tl}}%
         \makebox[0.5\textwidth][r]{\g_resume_education_location_tl}\par
         \makebox[0.5\textwidth][l]{\g_resume_education_degree_tl}%
-        \makebox[0.2\textwidth][c]{GPA:~ \g_resume_education_gpa_tl/\g_resume_education_gpa_max_tl}%
+        \makebox[0.2\textwidth][c]{\tl_if_empty:NF \g_resume_education_gpa_tl{GPA:~ \g_resume_education_gpa_tl/\g_resume_education_gpa_max_tl}}%
         \makebox[0.3\textwidth][r]{\g_resume_education_start_tl--\g_resume_education_end_tl}\par
         \tl_if_blank:nF{##2}{
             \begin{itemize}
