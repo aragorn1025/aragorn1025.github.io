@@ -1,30 +1,35 @@
-name: deployment
+name: deploy-website
 
 on:
   push:
+    branches: ["main"]
+    paths-ignore:
+      - 'Dockerfile'
+  workflow_run:
+    workflows: ["build-image"]
+    types:
+      - completed
     branches: ["main"]
 
 env:
   NAME: "Aragorn_Dai"
 
 jobs:
-  build:
+  build-website:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    container:
+      image: ghcr.io/${{ github.repository }}:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v7
       - name: Setup Node
         uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
       - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            fonts-noto \
-            texlive-fonts-extra \
-            texlive-fonts-recommended \
-            texlive-plain-generic \
-            texlive-xetex
-          sudo fc-cache -f -v
           npm ci
       - name: Build Website
         run: npm run build
@@ -34,7 +39,6 @@ jobs:
           xelatex -interaction=nonstopmode -halt-on-error resume.tex
       - name: Copy Resume PDF
         run: |
-          mkdir -p dist/resume
           cp src/latex/resume.pdf "dist/${{ env.NAME }}_Resume.pdf"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
@@ -42,7 +46,7 @@ jobs:
           path: dist
 
   deploy:
-    needs: build
+    needs: build-website
     permissions:
       pages: write
       id-token: write
