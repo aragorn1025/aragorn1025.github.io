@@ -6,7 +6,7 @@ on:
 
 env:
   IMAGE_NAME: ${{ github.repository }}
-  AUTHOR_NAME: "Aragorn Dai"
+  AUTHOR_NAME: "Aragorn_Dai"
 
 jobs:
   check-dockerfile:
