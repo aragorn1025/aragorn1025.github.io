@@ -11,11 +11,6 @@
 		"iconClassName": "person-bounding-box"
 	},
 	{
-		"name": "skills",
-        "displayName": "Skills",
-		"iconClassName": "pen"
-	},
-	{
 		"name": "experience",
         "displayName": "Experience",
 		"iconClassName": "card-checklist"

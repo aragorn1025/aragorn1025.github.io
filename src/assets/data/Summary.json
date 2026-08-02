@@ -67,7 +67,18 @@
             "key": "GPA",
             "type": "string",
             "value": "4.00/4.00"
-        }
+        },
+        {
+			"key": "Skills",
+			"type": "array(string)",
+			"value": [
+				"Languages: Python, Go, SQL, TypeScript, Bash",
+				"Backend: FastAPI, Flask, Gin, PostgreSQL, Redis, SQLAlchemy, Celery, MinIO, RESTful APIs, async processing",
+				"Auth & Security: OAuth2, SSO, LDAP, MFA, JWT/JWKs, Bcrypt, RBAC",
+				"Infrastructure: Docker, Kubernetes, Git, GitHub Actions, CI/CD, Linux, pytest",
+				"AI & CV: PyTorch, OpenCV, NumPy, W&B"
+			]
+		}
 	],
 	"autobiography": [
 		"Backend Software Engineer with 4+ years designing and improving production backend systems in Python—resolving race conditions via distributed locking, refactoring a monolithic auth flow into a composable pipeline, and cutting CI/CD run time by 80%+. Currently an M.S. CS student at Oregon State University, expected graduation June 2027."
