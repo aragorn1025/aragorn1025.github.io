@@ -8,7 +8,7 @@
 	{
 		"name": "summary",
         "displayName": "Summary",
-		"iconClassName": "person-bounding-box"
+		"iconClassName": "person-fill"
 	},
 	{
 		"name": "experience",
@@ -23,6 +23,6 @@
 	{
 		"name": "projects",
         "displayName": "Projects",
-		"iconClassName": "grid"
+		"iconClassName": "collection"
 	}
 ]
