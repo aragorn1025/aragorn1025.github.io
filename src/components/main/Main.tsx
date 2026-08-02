@@ -6,7 +6,7 @@ import summaryProps from '../../assets/data/Summary.json';
 import './Main.css';
 import ExperienceSection from './experience/ExperienceSection';
 import HomeSection from './home/HomeSection';
-import PortfolioSection from './portfolio/PortfolioSection';
+import ProjectsSection from './projects/ProjectsSection';
 import SummarySection, { SummarySectionProps } from './summary/SummarySection';
 
 const Main: React.FunctionComponent = () => {
@@ -15,7 +15,7 @@ const Main: React.FunctionComponent = () => {
       <HomeSection {...homeProps} />
       <SummarySection {...(summaryProps as SummarySectionProps)} />
       <ExperienceSection />
-      <PortfolioSection />
+      <ProjectsSection />
     </main>
   );
 };

@@ -16,8 +16,8 @@
 		"iconClassName": "card-checklist"
 	},
 	{
-		"name": "portfolio",
-        "displayName": "Portfolio",
+		"name": "projects",
+        "displayName": "Projects",
 		"iconClassName": "grid"
 	}
 ]
