@@ -33,7 +33,7 @@
 \thispagestyle{empty}
 
 % font
-\usepackage[sfdefault]{noto}
+\RequirePackage[sfdefault]{noto}
 
 % title
 \RequirePackage{titlesec}
