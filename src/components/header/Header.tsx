@@ -8,7 +8,7 @@ import NavLink from './nav-link/NavLink';
 const Header: React.FunctionComponent = () => {
   return (
     <header
-      className="navbar navbar-expand-sm navbar-dark bg-dark fixed-top"
+      className="navbar navbar-expand-md navbar-dark bg-dark fixed-top"
       aria-label="Navigation bar"
     >
       <div className="container">
