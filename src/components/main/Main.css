@@ -262,6 +262,12 @@ svg.rotate-180 {
   color: rgba(var(--rgb-yellow), var(--bs-text-opacity));
 }
 
+@media (max-width: 991px) {
+  .timeline .timeline-block .timeline-anchor .timeline-tag {
+    justify-content: flex-start;
+  }
+}
+
 @media (min-width: 992px) {
   .timeline {
     padding: 1rem 0;
