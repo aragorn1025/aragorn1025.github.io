@@ -2,9 +2,25 @@ import React from 'react';
 
 import BarTitle from '../../common/bar-title/BarTitle';
 import Title from '../../common/title/Title';
-import { getLastUpdatedTime } from '../../utils/utils';
+import { getLastUpdatedTime, LastUpdatedTime } from '../../utils/utils';
 
-const EducationSection: React.FunctionComponent = () => {
+interface EducationItem {
+  school: string;
+  location: string;
+  degree: string;
+  gpa: string;
+  start: string;
+  end: string;
+  tags?: string[];
+  points?: string[];
+}
+
+export interface EducationSectionProps {
+  lastUpdatedTime: LastUpdatedTime;
+  items: EducationItem[];
+}
+
+const EducationSection: React.FunctionComponent<EducationSectionProps> = ({ lastUpdatedTime, items }) => {
   return (
     <section id="education">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
@@ -13,77 +29,36 @@ const EducationSection: React.FunctionComponent = () => {
           toUpperCase
         />
         <div className="d-flex">
-          <h6 className="ms-auto">{getLastUpdatedTime({year: 2026, month: 8, day: 1, hour: 23})}</h6>
+          <h6 className="ms-auto">{getLastUpdatedTime(lastUpdatedTime)}</h6>
         </div>
         <div>
-          <BarTitle
-            barLevel={3}
-          />
+          <BarTitle barLevel={3} />
           <div className="timeline mb-3">
-            <div className="timeline-block">
-              <div className="timeline-anchor">
-                <div className="timeline-tag">
-                  <div className="h5">09/2025–06/2027</div>
-                  <div className="h6">(expected)</div>
+            {
+              items.map(({ school, location, degree, gpa, start, end, tags, points }) =>
+                <div className="timeline-block">
+                  <div className="timeline-anchor">
+                    <div className="timeline-tag">
+                      <div className="h5">{start}–{end}</div>
+                      {tags !== undefined && tags.map((tag) => <div className="h6">{tag}</div>)}
+                    </div>
+                    <div className="timeline-title">
+                      <h4>{school}, {location}</h4>
+                      <h5>{degree}{gpa !== undefined && `, GPA: ${gpa}`}</h5>
+                    </div>
+                  </div>
+                  {
+                    points !== undefined && (
+                      <div className="timeline-content">
+                        <ul>
+                          {points.map((point) => (<li dangerouslySetInnerHTML={{ __html: point }} />))}
+                        </ul>
+                      </div>
+                    )
+                  }
                 </div>
-                <div className="timeline-title">
-                  <h4>M.S. in Computer Science (minor in Artificial Intelligence)</h4>
-                  <h5>GPA: 4.00/4.00</h5>
-                </div>
-              </div>
-              <div className="timeline-content">
-              </div>
-            </div>
-            <div className="timeline-block">
-              <div className="timeline-anchor">
-                <div className="timeline-tag">
-                  <div className="h5">09/2018–06/2020</div>
-                </div>
-                <div className="timeline-title">
-                  <h4>M.S. in Computer Science and Information Engineering</h4>
-                  <h5>GPA: 3.53/4.00</h5>
-                </div>
-              </div>
-              <div className="timeline-content">
-                <ul>
-                  <li>
-                    Co-invented an AI-assisted medication verification system on NVIDIA Jetson TX2, cutting pharmacist workload by
-                    an estimated <b>25%</b>—awarded a Taiwan Patent and a Gold Medal at Taiwan Innotech Expo 2020.
-                  </li>
-                  <li className="hidden">
-                    Thesis:
-                    <br />
-                    The Application of the Generative Adversarial Network in the Reflection Removal
-                    Algorithm for Dashcam Images
-                    <br />
-                    <a
-                      className="button"
-                      href="http://140.113.39.130/cgi-bin/gs32/ncugsweb.cgi?o=dncucdr&s=id=%22GC107522052%22.&searchmode=basic"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      <span />
-                      <span />
-                      <span />
-                      <span />
-                      <i className="bi bi-file-earmark-pdf" />
-                      &nbsp;Here
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="timeline-block">
-              <div className="timeline-anchor">
-                <div className="timeline-tag">
-                  <div className="h5">09/2013–06/2018</div>
-                </div>
-                <div className="timeline-title">
-                  <h4>B.S. in Computer Science and Information Engineering </h4>
-                </div>
-              </div>
-              <div className="timeline-content"></div>
-            </div>
+              )
+            }
           </div>
         </div>
       </div>

@@ -1,11 +1,12 @@
 import React from 'react';
 
+import educationProps from '../../assets/data/Education.json';
 import experienceProps from '../../assets/data/Experience.json';
 import homeProps from '../../assets/data/Home.json';
 import summaryProps from '../../assets/data/Summary.json';
 
 import './Main.css';
-import EducationSection from './education/EducationSection';
+import EducationSection, { EducationSectionProps } from './education/EducationSection';
 import ExperienceSection, { ExperienceSectionProps } from './experience/ExperienceSection';
 import HomeSection, { HomeSectionProps } from './home/HomeSection';
 import ProjectsSection from './projects/ProjectsSection';
@@ -17,7 +18,7 @@ const Main: React.FunctionComponent = () => {
       <HomeSection {...(homeProps as HomeSectionProps)} />
       <SummarySection {...(summaryProps as SummarySectionProps)} />
       <ExperienceSection {...(experienceProps as ExperienceSectionProps)} />
-      <EducationSection />
+      <EducationSection {...(educationProps as EducationSectionProps)} />
       <ProjectsSection />
     </main>
   );
