@@ -3,14 +3,8 @@ import React from 'react';
 import me from '../../../assets/images/me.jpg';
 import BarTitle from '../../common/bar-title/BarTitle';
 import Title from '../../common/title/Title';
-import getFunction from './Functions';
 
 import styles from './SummarySection.module.css';
-
-interface AboutFunctionItem {
-  name: string;
-  arguments?: object;
-}
 
 interface AboutLinkItem {
   reference: string;
@@ -21,21 +15,17 @@ interface AboutLinkItem {
 type AboutItemType =
   | 'number'
   | 'string'
-  | 'function'
   | 'link'
   | 'array(number)'
   | 'array(string)'
-  | 'array(function)'
   | 'array(link)';
 
 type AboutItem =
   | number
   | string
-  | AboutFunctionItem
   | AboutLinkItem
   | number[]
   | string[]
-  | AboutFunctionItem[]
   | AboutLinkItem[];
 
 export interface SummarySectionProps {
@@ -66,10 +56,6 @@ const getSummaryItem = (type: AboutItemType, value: AboutItem) => {
         </a>
       );
     }
-    case 'function': {
-      const item = value as AboutFunctionItem;
-      return getFunction(item.name)(item.arguments);
-    }
     case 'array(number)': {
       const items = value as number[];
       return (
@@ -91,7 +77,6 @@ const getSummaryItem = (type: AboutItemType, value: AboutItem) => {
       );
     }
     case 'array(link)':
-    case 'array(function)':
       throw new Error('The AboutItemType is not implemented yet.');
     default:
       throw new Error('Unknown type.');
