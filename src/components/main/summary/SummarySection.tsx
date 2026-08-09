@@ -35,7 +35,7 @@ export interface SummarySectionProps {
     type: SummaryItemType;
     value: SummaryItem;
   }[];
-  autobiography: string[];
+  summary: string[];
 }
 
 const getSummaryItem = (type: SummaryItemType, value: SummaryItem) => {
@@ -86,36 +86,27 @@ const getSummaryItem = (type: SummaryItemType, value: SummaryItem) => {
 const SummarySection: React.FunctionComponent<SummarySectionProps> = ({
   name,
   info,
-  autobiography,
+  summary,
 }) => {
   return (
     <section id="summary">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
-        <Title
-          text={name}
-        />
+        <Title text={name} />
         <div className="row">
-          <BarTitle
-            barLevel={3}
-          />
+          <BarTitle barLevel={3} />
           <div className="col-12 col-lg-4">
-            <img
-              className={styles.me}
-              src={me}
-              alt={name}
-            />
+            <img className={styles.me} src={me} alt={name} />
           </div>
           <div className="col-12 col-lg-8 pt-3 pt-lg-0">
             <ul className={styles.info}>
               {info.map(({ key, type, value }) => (
                 <li key={key}>
-                  <b>{`${key} `}</b>
-                  {getSummaryItem(type, value)}
+                  <b>{`${key} `}</b>{getSummaryItem(type, value)}
                 </li>
               ))}
             </ul>
-            <article className={styles.autobiography}>
-              {autobiography.map((paragraph) => (
+            <article className={styles.summary}>
+              {summary.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </article>

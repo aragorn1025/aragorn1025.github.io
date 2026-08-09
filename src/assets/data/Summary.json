@@ -26,7 +26,7 @@
             "key": "Resume",
             "type": "link",
             "value": {
-                "text": "Download",
+                "text": "aragorn1025.github.io/Aragorn_Dai_Resume.pdf",
                 "reference": "https://aragorn1025.github.io/Aragorn_Dai_Resume.pdf"
             }
         },
@@ -34,7 +34,7 @@
             "key": "LinkedIn",
             "type": "link",
             "value": {
-                "text": "Visit",
+                "text": "linkedin.com/in/aragorn1025",
                 "reference": "https://www.linkedin.com/in/aragorn1025"
             }
         },
@@ -42,7 +42,7 @@
             "key": "GitHub",
             "type": "link",
             "value": {
-                "text": "Visit",
+                "text": "github.com/aragorn1025",
                 "reference": "https://github.com/aragorn1025"
             }
         },
@@ -50,8 +50,8 @@
 			"key": "Personal Website",
 			"type": "link",
 			"value": {
-                "text": "Visit",
-				"reference": "https://aragorn1025.github.io/"
+                "text": "aragorn1025.github.io",
+				"reference": "https://aragorn1025.github.io"
 			}
 		},
         {
@@ -66,7 +66,7 @@
 			]
 		}
 	],
-	"autobiography": [
+	"summary": [
 		"Backend Software Engineer with 4+ years building and refining production backend systems in Python—resolving race conditions via distributed locking, refactoring a monolithic auth flow into a composable pipeline, and cutting CI/CD run time by 80%+. Currently an M.S. CS student at Oregon State University, expected graduation 06/2027."
 	]
 }

@@ -40,10 +40,10 @@ ul.info li a:hover {
   color: currentColor;
 }
 
-article.autobiography {
+article.summary {
   text-indent: 2em;
 }
 
-article.autobiography p:last-child {
+article.summary p:last-child {
   margin-bottom: 0;
 }
