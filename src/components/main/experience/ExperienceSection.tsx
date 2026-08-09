@@ -13,7 +13,7 @@ const ExperienceSection: React.FunctionComponent = () => {
           toUpperCase
         />
         <div className="d-flex">
-          <h6 className="ms-auto">{getLastUpdatedString(2026, 8, 1, 23)}</h6>
+          <h6 className="ms-auto">{getLastUpdatedString(2026, 8, 9, 5)}</h6>
         </div>
         <div>
           <BarTitle
@@ -35,7 +35,7 @@ const ExperienceSection: React.FunctionComponent = () => {
                   <li>
                     Built an image tiling pipeline with edge-object handling
                     to standardize weed-detection drone data into unified formats,
-                    boosting downstream model mAP50 from 0.664 to a peak 0.769.
+                    boosting downstream model mAP50 from <b>0.664 to a peak 0.772</b>.
                   </li>
                   <li>
                     Configured NAS storage and containerized GPU-accelerated training environments
@@ -73,7 +73,7 @@ const ExperienceSection: React.FunctionComponent = () => {
                     and consolidating DB migrations per test tier.
                   </li>
                   <li>
-                    Authored API and schema design docs for team review, and reviewed peers’ designs and code as part of the team’s workflow;
+                    Authored API and schema design docs and reviewed peers’ designs and code as part of an Agile team’s workflow;
                     also helped reinstate a missed document into the review process.
                   </li>
                   <li>
