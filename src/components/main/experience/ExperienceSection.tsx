@@ -23,7 +23,7 @@ const ExperienceSection: React.FunctionComponent = () => {
             <div className="timeline-block">
               <div className="timeline-anchor">
                 <div className="timeline-tag">
-                  <div className="h5">Feb 2026–Present</div>
+                  <div className="h5">02/2026–Present</div>
                 </div>
                 <div className="timeline-title">
                   <h4>Department of Crop and Soil Science, Oregon State University</h4>
@@ -47,7 +47,7 @@ const ExperienceSection: React.FunctionComponent = () => {
             <div className="timeline-block">
               <div className="timeline-anchor">
                 <div className="timeline-tag">
-                  <div className="h5">May 2022–Jan 2025</div>
+                  <div className="h5">05/2022–01/2025</div>
                 </div>
                 <div className="timeline-title">
                   <h4>Pentium Network Technology</h4>
@@ -85,7 +85,7 @@ const ExperienceSection: React.FunctionComponent = () => {
             <div className="timeline-block">
               <div className="timeline-anchor">
                 <div className="timeline-tag">
-                  <div className="h5">Jan 2022–Apr 2022</div>
+                  <div className="h5">01/2022–04/2022</div>
                 </div>
                 <div className="timeline-title">
                   <h4>M800 Taiwan</h4>
@@ -105,7 +105,7 @@ const ExperienceSection: React.FunctionComponent = () => {
             <div className="timeline-block">
               <div className="timeline-anchor">
                 <div className="timeline-tag">
-                  <div className="h5">Oct 2020–Sep 2021</div>
+                  <div className="h5">10/2020–09/2021</div>
                 </div>
                 <div className="timeline-title">
                   <h4>LEDA Creative Technology</h4>
@@ -129,12 +129,12 @@ const ExperienceSection: React.FunctionComponent = () => {
             <div className="timeline-block" style={{ display: 'none' }}>
               <div className="timeline-anchor">
                 <div className="timeline-tag">
-                  <div className="h5">2018 / 05 ~ 2020 / 08</div>
+                  <div className="h5">05/2018–08/2020</div>
                   <div className="h6">Intern</div>
                 </div>
                 <div className="timeline-title">
                   <h4>LEDA-creative Technology LTD.</h4>
-                  <h5>Partner</h5>
+                  <h5>Intern</h5>
                 </div>
               </div>
               <div className="timeline-content">
@@ -166,7 +166,7 @@ const ExperienceSection: React.FunctionComponent = () => {
             <div className="timeline-block" style={{ display: 'none' }}>
               <div className="timeline-anchor">
                 <div className="timeline-tag">
-                  <div className="h5">2020 / 02 ~ 2020 / 06</div>
+                  <div className="h5">02/2020–06/2020</div>
                 </div>
                 <div className="timeline-title">
                   <h4>
@@ -191,7 +191,7 @@ const ExperienceSection: React.FunctionComponent = () => {
             <div className="timeline-block" style={{ display: 'none' }}>
               <div className="timeline-anchor">
                 <div className="timeline-tag">
-                  <div className="h5">2017 / 04 ~ 2020 / 08</div>
+                  <div className="h5">04/2017–08/2020</div>
                 </div>
                 <div className="timeline-title">
                   <h4>
@@ -381,7 +381,7 @@ const ExperienceSection: React.FunctionComponent = () => {
             <div className="timeline-block" style={{ display: 'none' }}>
               <div className="timeline-anchor">
                 <div className="timeline-tag">
-                  <div className="h5">2014 / 07 ~ 2017 / 01</div>
+                  <div className="h5">07/2014–01/2017</div>
                   <div className="h6">Intern</div>
                 </div>
                 <div className="timeline-title">

@@ -1,7 +1,7 @@
 :root {
   --h-header: 5.25rem; /* The height of the navigation header which should be calculated after the navigation header is changed. */
   --h-section-gap: 2rem; /* The height of the gap between sections. */
-  --x-timeline: 16rem;
+  --x-timeline: 15rem;
   --w-timeline: 8px; /* The width of the timeline. */
   --r-timeline-point: 10px; /* The radius of the timeline point. */
   --timeline-sm-ml: calc(max(var(--w-timeline), var(--r-timeline-point) * (1 + 0.6) * 2));
