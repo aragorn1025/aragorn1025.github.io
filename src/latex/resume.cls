@@ -88,8 +88,7 @@
     \keys_set:nn{resume/header}{#1}
     {
         \centering
-        {\huge\bfseries \l_resume_name_tl}\\
-        \vspace{\l_resume_subsection_separator_tl}
+        {\huge\bfseries \l_resume_name_tl}\\[\l_resume_item_separator_tl]
         \href{mailto:\l_resume_email_tl}{\l_resume_email_tl}\,\,|\,\,
         \l_resume_phone_tl\,\,|\,\,
         \l_resume_location_tl\\
@@ -98,8 +97,6 @@
         \tl_if_empty:NF \l_resume_note_tl {
             \,\,|\,\,\l_resume_note_tl
         }\\
-        \par
-        \vspace{-\l_resume_subsection_separator_tl}
     }
 }
 
@@ -139,7 +136,7 @@
         \textbf{\l_resume_experience_company_tl} \hfill
         \l_resume_experience_location_tl \\
         \l_resume_experience_title_tl \hfill
-        \l_resume_experience_start_tl--\l_resume_experience_end_tl
+        \l_resume_experience_start_tl--\l_resume_experience_end_tl \par
         \begin{itemize}
             ##2
         \end{itemize}
@@ -182,11 +179,11 @@
         }{
             \vspace{\l_resume_subsection_separator_tl}
         }
-        \makebox[0.5\textwidth][l]{\textbf{\g_resume_education_school_tl}}%
-        \makebox[0.5\textwidth][r]{\g_resume_education_location_tl}\par
-        \makebox[0.5\textwidth][l]{\g_resume_education_degree_tl}%
-        \makebox[0.2\textwidth][c]{\tl_if_empty:NF \g_resume_education_gpa_tl{GPA:~ \g_resume_education_gpa_tl/\g_resume_education_gpa_max_tl}}%
-        \makebox[0.3\textwidth][r]{\g_resume_education_start_tl--\g_resume_education_end_tl}\par
+        \textbf{\g_resume_education_school_tl} \hfill
+        \g_resume_education_location_tl \\
+        \g_resume_education_degree_tl
+        \tl_if_empty:NF \g_resume_education_gpa_tl{,~ GPA:~ \g_resume_education_gpa_tl/\g_resume_education_gpa_max_tl} \hfill
+        \g_resume_education_start_tl--\g_resume_education_end_tl \par
         \tl_if_blank:nF{##2}{
             \begin{itemize}
                 ##2
@@ -205,8 +202,7 @@
     \NewDocumentCommand{\skill}{O{} m}{
         \tl_clear:N \l_resume_skill_group_tl
         \keys_set:nn{resume/skill}{##1}
-        \textbf{\l_resume_skill_group_tl}:\,##2
-        \par
+        \textbf{\l_resume_skill_group_tl}:\,##2 \par
     }
     \section{Technical~ Skills}
 }{}
