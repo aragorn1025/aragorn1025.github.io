@@ -6,13 +6,13 @@ import Title from '../../common/title/Title';
 
 import styles from './SummarySection.module.css';
 
-interface AboutLinkItem {
+interface SummaryLinkItem {
   reference: string;
   text?: string;
   className?: string;
 }
 
-type AboutItemType =
+type SummaryItemType =
   | 'number'
   | 'string'
   | 'link'
@@ -20,32 +20,32 @@ type AboutItemType =
   | 'array(string)'
   | 'array(link)';
 
-type AboutItem =
+type SummaryItem =
   | number
   | string
-  | AboutLinkItem
+  | SummaryLinkItem
   | number[]
   | string[]
-  | AboutLinkItem[];
+  | SummaryLinkItem[];
 
 export interface SummarySectionProps {
   name: string;
   info: {
     key: string;
-    type: AboutItemType;
-    value: AboutItem;
+    type: SummaryItemType;
+    value: SummaryItem;
   }[];
   autobiography: string[];
 }
 
-const getSummaryItem = (type: AboutItemType, value: AboutItem) => {
+const getSummaryItem = (type: SummaryItemType, value: SummaryItem) => {
   switch (type) {
     case 'number':
       return value as number;
     case 'string':
       return value as string;
     case 'link': {
-      const item = value as AboutLinkItem;
+      const item = value as SummaryLinkItem;
       return (
         <a
           href={item.reference}
@@ -77,7 +77,7 @@ const getSummaryItem = (type: AboutItemType, value: AboutItem) => {
       );
     }
     case 'array(link)':
-      throw new Error('The AboutItemType is not implemented yet.');
+      throw new Error('TODO: Not implemented error.');
     default:
       throw new Error('Unknown type.');
   }
