@@ -23,7 +23,7 @@ const EducationSection: React.FunctionComponent = () => {
             <div className="timeline-block">
               <div className="timeline-anchor">
                 <div className="timeline-tag">
-                  <div className="h5">Sep 2025–Jun 2027</div>
+                  <div className="h5">09/2025–06/2027</div>
                   <div className="h6">(expected)</div>
                 </div>
                 <div className="timeline-title">
@@ -37,7 +37,7 @@ const EducationSection: React.FunctionComponent = () => {
             <div className="timeline-block">
               <div className="timeline-anchor">
                 <div className="timeline-tag">
-                  <div className="h5">Sep 2018–Jun 2020</div>
+                  <div className="h5">09/2018–06/2020</div>
                 </div>
                 <div className="timeline-title">
                   <h4>M.S. in Computer Science and Information Engineering</h4>
@@ -76,7 +76,7 @@ const EducationSection: React.FunctionComponent = () => {
             <div className="timeline-block">
               <div className="timeline-anchor">
                 <div className="timeline-tag">
-                  <div className="h5">Sep 2013–Jun 2018</div>
+                  <div className="h5">09/2013–06/2018</div>
                 </div>
                 <div className="timeline-title">
                   <h4>B.S. in Computer Science and Information Engineering </h4>
