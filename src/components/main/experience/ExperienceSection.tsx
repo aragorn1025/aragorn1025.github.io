@@ -13,7 +13,7 @@ const ExperienceSection: React.FunctionComponent = () => {
           toUpperCase
         />
         <div className="d-flex">
-          <h6 className="ms-auto">{getLastUpdatedString(2026, 8, 1, 23)}</h6>
+          <h6 className="ms-auto">{getLastUpdatedString(2026, 8, 9, 5)}</h6>
         </div>
         <div>
           <BarTitle
@@ -35,7 +35,7 @@ const ExperienceSection: React.FunctionComponent = () => {
                   <li>
                     Built an image tiling pipeline with edge-object handling
                     to standardize weed-detection drone data into unified formats,
-                    boosting downstream model mAP50 from 0.664 to a peak 0.769.
+                    boosting downstream model mAP50 from 0.664 to a peak 0.772.
                   </li>
                   <li>
                     Configured NAS storage and containerized GPU-accelerated training environments
