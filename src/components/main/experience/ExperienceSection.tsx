@@ -73,7 +73,7 @@ const ExperienceSection: React.FunctionComponent = () => {
                     and consolidating DB migrations per test tier.
                   </li>
                   <li>
-                    Authored API and schema design docs for team review, and reviewed peers’ designs and code as part of the team’s workflow;
+                    Authored API and schema design docs and reviewed peers’ designs and code as part of an Agile team’s workflow;
                     also helped reinstate a missed document into the review process.
                   </li>
                   <li>
