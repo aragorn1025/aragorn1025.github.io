@@ -2,7 +2,7 @@ import React from 'react';
 
 import BarTitle from '../../common/bar-title/BarTitle';
 import Title from '../../common/title/Title';
-import { getLastUpdatedString } from '../../utils/utils';
+import { getLastUpdatedTime } from '../../utils/utils';
 
 const SkillsSection: React.FunctionComponent = () => {
   return (
@@ -13,7 +13,7 @@ const SkillsSection: React.FunctionComponent = () => {
           toUpperCase
         />
         <div className="d-flex">
-          <h6 className="ms-auto">{getLastUpdatedString(2023, 1, 3, 23)}</h6>
+          <h6 className="ms-auto">{getLastUpdatedTime({year: 2023, month: 1, day: 3, hour: 23})}</h6>
         </div>
         <div className="row">
           <div className="col-12 col-xl-6">
