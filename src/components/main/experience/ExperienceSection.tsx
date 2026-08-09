@@ -134,7 +134,7 @@ const ExperienceSection: React.FunctionComponent = () => {
                 </div>
                 <div className="timeline-title">
                   <h4>LEDA-creative Technology LTD.</h4>
-                  <h5>Partner</h5>
+                  <h5>Intern</h5>
                 </div>
               </div>
               <div className="timeline-content">
