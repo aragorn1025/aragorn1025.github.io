@@ -12,10 +12,12 @@ jobs:
   check-dockerfile:
     runs-on: ubuntu-latest
     outputs:
-      changed: ${{ steps.filter.outputs.dockerfile }}
+      is_changed: ${{ steps.filter.outputs.dockerfile }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - name: Check if Dockerfile has changed
         uses: dorny/paths-filter@v4
         id: filter
@@ -24,9 +26,49 @@ jobs:
             dockerfile:
               - 'Dockerfile'
 
-  build-image:
+  check-image:
     needs: check-dockerfile
-    if: needs.check-dockerfile.outputs.changed == 'true'
+    if: needs.check-dockerfile.outputs.is_changed == 'false'
+    runs-on: ubuntu-latest
+    permissions:
+      packages: read
+    outputs:
+      is_existing: ${{ steps.check.outputs.is_existing }}
+    steps:
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check if image exists on GHCR
+        id: check
+        run: |
+          if docker manifest inspect ghcr.io/${{ env.IMAGE_NAME }}:latest > /dev/null 2>&1; then
+            echo "is_existing=true" >> $GITHUB_OUTPUT
+          else
+            echo "is_existing=false" >> $GITHUB_OUTPUT
+          fi
+
+  decide-if-build-image:
+    needs: [check-dockerfile, check-image]
+    if: always()
+    runs-on: ubuntu-latest
+    outputs:
+      is_build_image: ${{ steps.decide.outputs.is_build_image }}
+    steps:
+      - name: Decide if build image
+        id: decide
+        run: |
+          if [[ "${{ needs.check-dockerfile.outputs.is_changed }}" == "true" ]] || [[ "${{ needs.check-image.outputs.is_existing }}" == "false" ]]; then
+            echo "is_build_image=true" >> $GITHUB_OUTPUT
+          else
+            echo "is_build_image=false" >> $GITHUB_OUTPUT
+          fi
+
+  build-image:
+    needs: decide-if-build-image
+    if: always() && needs.decide-if-build-image.outputs.is_build_image == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -51,7 +93,7 @@ jobs:
           no-cache: true
 
   build-website:
-    needs: [check-dockerfile, build-image]
+    needs: build-image
     if: always() && (needs.build-image.result == 'success' || needs.build-image.result == 'skipped')
     runs-on: ubuntu-latest
     container:
