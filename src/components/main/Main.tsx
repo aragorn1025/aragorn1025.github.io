@@ -6,14 +6,14 @@ import summaryProps from '../../assets/data/Summary.json';
 import './Main.css';
 import EducationSection from './education/EducationSection';
 import ExperienceSection from './experience/ExperienceSection';
-import HomeSection from './home/HomeSection';
+import HomeSection, { HomeSectionProps } from './home/HomeSection';
 import ProjectsSection from './projects/ProjectsSection';
 import SummarySection, { SummarySectionProps } from './summary/SummarySection';
 
 const Main: React.FunctionComponent = () => {
   return (
     <main className="bg-dark bg-opacity-50 text-dark text-opacity-50">
-      <HomeSection {...homeProps} />
+      <HomeSection {...(homeProps as HomeSectionProps)} />
       <SummarySection {...(summaryProps as SummarySectionProps)} />
       <ExperienceSection />
       <EducationSection />
