@@ -14,7 +14,7 @@ RUN apt-get update \
         xz-utils \
     \
  && tlmgr init-usertree \
- && tlmgr --usermode option repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2025/tlnet-final \
+ && tlmgr --usermode option repository ctan \
  && tlmgr --usermode install \
         enumitem \
         geometry \
