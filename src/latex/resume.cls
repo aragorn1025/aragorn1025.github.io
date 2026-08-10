@@ -3,15 +3,11 @@
 
 % arguments
 \RequirePackage{l3keys2e}
-\tl_new:N \l_resume_font_size_tl
 \tl_new:N \l_resume_margin_tl
 \tl_new:N \l_resume_section_separator_tl
 \tl_new:N \l_resume_item_separator_tl
 \tl_new:N \l_resume_point_separator_tl
 \keys_define:nn{resume}{
-    10pt              .code:n    = {\tl_set:Nn \l_resume_font_size_tl {10pt}},
-    11pt              .code:n    = {\tl_set:Nn \l_resume_font_size_tl {11pt}},
-    12pt              .code:n    = {\tl_set:Nn \l_resume_font_size_tl {12pt}},
     margin            .tl_set:N  = \l_resume_margin_tl,
     margin            .initial:n = 0.5in,
     section_separator .tl_set:N  = \l_resume_section_separator_tl,
@@ -20,11 +16,13 @@
     item_separator    .initial:n = 0.4em,
     point_separator   .tl_set:N  = \l_resume_point_separator_tl,
     point_separator   .initial:n = 0.1em,
+    unknown           .code:n    = \PassOptionsToClass{\CurrentOption}{article}
 }
 \ProcessKeysOptions{resume}
 
 % class
-\LoadClass[letterpaper, \l_resume_font_size_tl]{article}
+\PassOptionsToClass{letterpaper}{article}
+\LoadClass{article}
 
 % margin
 \RequirePackage[margin=\l_resume_margin_tl]{geometry}
