@@ -3,11 +3,20 @@
 	"bracketSameLine": false,
 	"bracketSpacing": true,
 	"endOfLine": "lf",
-	"printWidth": 100,
+	"printWidth": 120,
 	"semi": true,
-	"singleAttributePerLine": true,
 	"singleQuote": true,
 	"tabWidth": 2,
 	"trailingComma": "all",
-	"useTabs": false
+	"useTabs": false,
+	"overrides": [
+		{
+			"files": [".prettierrc", "*.json"],
+			"excludeFiles": ["package.json", "package-lock.json", "tsconfig.json", "tsconfig.node.json"],
+			"options": {
+				"tabWidth": 4,
+				"useTabs": true
+			}
+		}
+	]
 }
