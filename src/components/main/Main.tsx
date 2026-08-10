@@ -3,13 +3,14 @@ import React from 'react';
 import educationProps from '../../assets/data/Education.json';
 import experienceProps from '../../assets/data/Experience.json';
 import homeProps from '../../assets/data/Home.json';
+import projectsProps from '../../assets/data/Projects.json';
 import summaryProps from '../../assets/data/Summary.json';
 
 import './Main.css';
 import EducationSection, { EducationSectionProps } from './education/EducationSection';
 import ExperienceSection, { ExperienceSectionProps } from './experience/ExperienceSection';
 import HomeSection, { HomeSectionProps } from './home/HomeSection';
-import ProjectsSection from './projects/ProjectsSection';
+import ProjectsSection, { ProjectSectionProps } from './projects/ProjectsSection';
 import SummarySection, { SummarySectionProps } from './summary/SummarySection';
 
 const Main: React.FunctionComponent = () => {
@@ -19,7 +20,7 @@ const Main: React.FunctionComponent = () => {
       <SummarySection {...(summaryProps as SummarySectionProps)} />
       <ExperienceSection {...(experienceProps as ExperienceSectionProps)} />
       <EducationSection {...(educationProps as EducationSectionProps)} />
-      <ProjectsSection />
+      <ProjectsSection {...(projectsProps as ProjectSectionProps)} />
     </main>
   );
 };
