@@ -16,29 +16,19 @@ const ProjectsSection: React.FunctionComponent = () => {
   return (
     <section id="projects">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
-        <Title
-          text="Projects"
-          toUpperCase
-        />
+        <Title text="Projects" toUpperCase />
         <div>
-          <BarTitle
-            barLevel={3}
-          />
+          <BarTitle barLevel={3} />
           <div className="row g-3">
             <div className="col-12 col-md-6 col-xl-4">
               <div className={`${styles.card} card text-center`}>
-                <img
-                  src={portfolio00}
-                  className="card-img-top"
-                  alt="uml_editor.png"
-                />
+                <img src={portfolio00} className="card-img-top" alt="uml_editor.png" />
                 <div className={`${styles.cardBody} card-body`}>
                   <h5 className={`${styles.cardTitle} card-title`}>UML editor</h5>
                   <p className={`${styles.cardText} card-text`}>
-                    This is a simple UML editor, which was implemented in the course Object-oriented
-                    Programming. I learned the three most important concepts in the course:
-                    encapsulation, inheritance, polymorphism, and wish I could write better codes in
-                    the future.
+                    This is a simple UML editor, which was implemented in the course Object-oriented Programming. I
+                    learned the three most important concepts in the course: encapsulation, inheritance, polymorphism,
+                    and wish I could write better codes in the future.
                     <br />
                     <br />
                     <br />
@@ -57,18 +47,13 @@ const ProjectsSection: React.FunctionComponent = () => {
             </div>
             <div className="col-12 col-md-6 col-xl-4 d-none">
               <div className={`${styles.card} card text-center`}>
-                <img
-                  src={portfolio01}
-                  className="card-img-top"
-                  alt="perceptron.png"
-                />
+                <img src={portfolio01} className="card-img-top" alt="perceptron.png" />
                 <div className={`${styles.cardBody} card-body`}>
                   <h5 className={`${styles.cardTitle} card-title`}>Perceptron</h5>
                   <p className={`${styles.cardText} card-text`}>
-                    A perceptron is the smallest unit of the neural network. It is a binary
-                    classifier used to divide linear separable data into two parts. Here&apos;s a
-                    percrptorn I implemented in Java, so that we can observe the changes in each
-                    epoch of the training of the perceptron.
+                    A perceptron is the smallest unit of the neural network. It is a binary classifier used to divide
+                    linear separable data into two parts. Here&apos;s a percrptorn I implemented in Java, so that we can
+                    observe the changes in each epoch of the training of the perceptron.
                     <br />
                     <br />
                     <br />
@@ -87,18 +72,14 @@ const ProjectsSection: React.FunctionComponent = () => {
             </div>
             <div className="col-12 col-md-6 col-xl-4">
               <div className={`${styles.card} card text-center`}>
-                <img
-                  src={portfolio04}
-                  className="card-img-top"
-                  alt="autonomous_car.png"
-                />
+                <img src={portfolio04} className="card-img-top" alt="autonomous_car.png" />
                 <div className={`${styles.cardBody} card-body`}>
                   <h5 className={`${styles.cardTitle} card-title`}>Autonomous Car</h5>
                   <p className={`${styles.cardText} card-text`}>
-                    There are many well-designed algorithms to control a autonomous car, and the
-                    fuzzy system is one of them. By fuzzifiers, fuzzy inference engines, and
-                    defuzzifiers, a rule-based control system will be built. Here&apos;s a fuzzy
-                    system for the autonomous car I implemented in Java. Let&apos;s take a look.
+                    There are many well-designed algorithms to control a autonomous car, and the fuzzy system is one of
+                    them. By fuzzifiers, fuzzy inference engines, and defuzzifiers, a rule-based control system will be
+                    built. Here&apos;s a fuzzy system for the autonomous car I implemented in Java. Let&apos;s take a
+                    look.
                     <br />
                     <br />
                     <br />
@@ -117,19 +98,14 @@ const ProjectsSection: React.FunctionComponent = () => {
             </div>
             <div className="col-12 col-md-6 col-xl-4">
               <div className={`${styles.card} card text-center`}>
-                <img
-                  src={portfolio10}
-                  className="card-img-top"
-                  alt="patent_medicine_identification_system.png"
-                />
+                <img src={portfolio10} className="card-img-top" alt="patent_medicine_identification_system.png" />
                 <div className={`${styles.cardBody} card-body`}>
                   <h5 className={`${styles.cardTitle} card-title`}>Patent - Medicine Identification System</h5>
                   <p className={`${styles.cardText} card-text`}>
-                    Due to the large workload of the pharmacy, wrong drug distribution would
-                    sometimes occurs. As a result, we cooperated with the hospital and invented this
-                    device, using technologies such as AI / DL to identify pills, and compare with
-                    the medicine list. It is hoped that the invention can help pharmacists reduce
-                    medicine errors.
+                    Due to the large workload of the pharmacy, wrong drug distribution would sometimes occurs. As a
+                    result, we cooperated with the hospital and invented this device, using technologies such as AI / DL
+                    to identify pills, and compare with the medicine list. It is hoped that the invention can help
+                    pharmacists reduce medicine errors.
                     <br />
                     <br />
                     <br />
@@ -148,19 +124,14 @@ const ProjectsSection: React.FunctionComponent = () => {
             </div>
             <div className="col-12 col-md-6 col-xl-4">
               <div className={`${styles.card} card text-center`}>
-                <img
-                  src={portfolio11}
-                  className="card-img-top"
-                  alt="mask_rcnn.png"
-                />
+                <img src={portfolio11} className="card-img-top" alt="mask_rcnn.png" />
                 <div className={`${styles.cardBody} card-body`}>
                   <h5 className={`${styles.cardTitle} card-title`}>Mask R-CNN</h5>
                   <p className={`${styles.cardText} card-text`}>
-                    The instance segmentation can mark the target object at the pixel level. As a
-                    consequence, it is widely used in many fields. We referred to the official
-                    PyTorch documents and reconstructed the source codes of Mask R-CNN. So that we
-                    can train an AI to complete a instance segmentation task with the data labeled
-                    by LabelMe.
+                    The instance segmentation can mark the target object at the pixel level. As a consequence, it is
+                    widely used in many fields. We referred to the official PyTorch documents and reconstructed the
+                    source codes of Mask R-CNN. So that we can train an AI to complete a instance segmentation task with
+                    the data labeled by LabelMe.
                     <br />
                     <br />
                     <br />
@@ -179,19 +150,14 @@ const ProjectsSection: React.FunctionComponent = () => {
             </div>
             <div className="col-12 col-md-6 col-xl-4">
               <div className={`${styles.card} card text-center`}>
-                <img
-                  src={portfolio12}
-                  className="card-img-top"
-                  alt="thesis_reflection_removal.png"
-                />
+                <img src={portfolio12} className="card-img-top" alt="thesis_reflection_removal.png" />
                 <div className={`${styles.cardBody} card-body`}>
                   <h5 className={`${styles.cardTitle} card-title`}>Thesis - Reflection Removal</h5>
                   <p className={`${styles.cardText} card-text`}>
-                    If the dashcam image is disturbed by reflections on the glass, some object
-                    detection algorithms may be affected. Therefore, we tried to remove the
-                    reflection by Generative Adversarial Network and improve its precision. The
-                    result is not good enough, but we still propose a new method to compare the
-                    effects of GAN objectively.
+                    If the dashcam image is disturbed by reflections on the glass, some object detection algorithms may
+                    be affected. Therefore, we tried to remove the reflection by Generative Adversarial Network and
+                    improve its precision. The result is not good enough, but we still propose a new method to compare
+                    the effects of GAN objectively.
                     <br />
                     <br />
                     <br />
@@ -210,18 +176,13 @@ const ProjectsSection: React.FunctionComponent = () => {
             </div>
             <div className="hidden col-12 col-md-6 col-xl-4">
               <div className={`${styles.card} card text-center`}>
-                <img
-                  src={portfolio20}
-                  className="card-img-top"
-                  alt="course_programminga_and_basic_ai.png"
-                />
+                <img src={portfolio20} className="card-img-top" alt="course_programminga_and_basic_ai.png" />
                 <div className={`${styles.cardBody} card-body`}>
                   <h5 className={`${styles.cardTitle} card-title`}>Course - Programming & Basic AI</h5>
                   <p className={`${styles.cardText} card-text`}>
-                    AI has become more important these years. Therefore, I was asked to teach
-                    interns what is the AI in my first job. This is the course recorded at that
-                    time, which contains the basic AI concepts, as well as some programming language
-                    foundations. Wish you will like it.
+                    AI has become more important these years. Therefore, I was asked to teach interns what is the AI in
+                    my first job. This is the course recorded at that time, which contains the basic AI concepts, as
+                    well as some programming language foundations. Wish you will like it.
                     <br />
                     <br />
                     <br />

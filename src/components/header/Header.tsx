@@ -7,10 +7,7 @@ import NavLink from './nav-link/NavLink';
 
 const Header: React.FunctionComponent = () => {
   return (
-    <header
-      className="navbar navbar-expand-md navbar-dark bg-dark fixed-top"
-      aria-label="Navigation bar"
-    >
+    <header className="navbar navbar-expand-md navbar-dark bg-dark fixed-top" aria-label="Navigation bar">
       <div className="container">
         <div
           className="navbar-brand"
@@ -33,22 +30,11 @@ const Header: React.FunctionComponent = () => {
         >
           <span className="navbar-toggler-icon" />
         </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbars"
-        >
+        <div className="collapse navbar-collapse" id="navbars">
           <ul className="navbar-nav">
             {sections.map(({ name, displayName, iconClassName, isActive }) => (
-              <li
-                key={name}
-                className="nav-item"
-              >
-                <NavLink
-                  name={name}
-                  displayName={displayName}
-                  iconClassName={iconClassName}
-                  isActive={isActive}
-                />
+              <li key={name} className="nav-item">
+                <NavLink name={name} displayName={displayName} iconClassName={iconClassName} isActive={isActive} />
               </li>
             ))}
           </ul>

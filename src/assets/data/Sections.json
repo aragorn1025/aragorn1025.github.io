@@ -1,28 +1,28 @@
 [
 	{
 		"name": "home",
-        "displayName": "Home",
+		"displayName": "Home",
 		"iconClassName": "house-door",
 		"isActive": true
 	},
 	{
 		"name": "summary",
-        "displayName": "Summary",
+		"displayName": "Summary",
 		"iconClassName": "person-fill"
 	},
 	{
 		"name": "experience",
-        "displayName": "Experience",
+		"displayName": "Experience",
 		"iconClassName": "card-checklist"
 	},
-    {
-        "name": "education",
-        "displayName": "Education",
-        "iconClassName": "book"
-    },
+	{
+		"name": "education",
+		"displayName": "Education",
+		"iconClassName": "book"
+	},
 	{
 		"name": "projects",
-        "displayName": "Projects",
+		"displayName": "Projects",
 		"iconClassName": "collection"
 	}
 ]

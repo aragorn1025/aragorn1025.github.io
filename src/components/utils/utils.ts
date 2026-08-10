@@ -42,7 +42,7 @@ interface LastUpdatedTime {
   hour: number;
 }
 
-const getLastUpdatedTime = ({year, month, day, hour}: LastUpdatedTime): string => {
+const getLastUpdatedTime = ({ year, month, day, hour }: LastUpdatedTime): string => {
   const date = new Date(year, month - 1, day, hour, 0, 0);
   return `Last updated at ${getDateString(date)} (${getDayDiffString(date)} ago).`;
 };

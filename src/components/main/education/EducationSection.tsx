@@ -24,41 +24,43 @@ const EducationSection: React.FunctionComponent<EducationSectionProps> = ({ last
   return (
     <section id="education">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
-        <Title
-          text="Education"
-          toUpperCase
-        />
+        <Title text="Education" toUpperCase />
         <div className="d-flex">
           <h6 className="ms-auto">{getLastUpdatedTime(lastUpdatedTime)}</h6>
         </div>
         <div>
           <BarTitle barLevel={3} />
           <div className="timeline mb-3">
-            {
-              items.map(({ school, location, degree, gpa, start, end, tags, points }) =>
-                <div className="timeline-block">
-                  <div className="timeline-anchor">
-                    <div className="timeline-tag">
-                      <div className="h5">{start}–{end}</div>
-                      {tags !== undefined && tags.map((tag) => <div className="h6">{tag}</div>)}
+            {items.map(({ school, location, degree, gpa, start, end, tags, points }) => (
+              <div className="timeline-block">
+                <div className="timeline-anchor">
+                  <div className="timeline-tag">
+                    <div className="h5">
+                      {start}–{end}
                     </div>
-                    <div className="timeline-title">
-                      <h4>{school}, {location}</h4>
-                      <h5>{degree}{gpa !== undefined && `, GPA: ${gpa}`}</h5>
-                    </div>
+                    {tags !== undefined && tags.map((tag) => <div className="h6">{tag}</div>)}
                   </div>
-                  {
-                    points !== undefined && (
-                      <div className="timeline-content">
-                        <ul>
-                          {points.map((point) => (<li dangerouslySetInnerHTML={{ __html: point }} />))}
-                        </ul>
-                      </div>
-                    )
-                  }
+                  <div className="timeline-title">
+                    <h4>
+                      {school}, {location}
+                    </h4>
+                    <h5>
+                      {degree}
+                      {gpa !== undefined && `, GPA: ${gpa}`}
+                    </h5>
+                  </div>
                 </div>
-              )
-            }
+                {points !== undefined && (
+                  <div className="timeline-content">
+                    <ul>
+                      {points.map((point) => (
+                        <li dangerouslySetInnerHTML={{ __html: point }} />
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>

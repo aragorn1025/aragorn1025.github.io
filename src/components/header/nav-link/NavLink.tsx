@@ -9,12 +9,7 @@ interface NavLinkProps {
   isActive?: boolean;
 }
 
-const NavLink: React.FunctionComponent<NavLinkProps> = ({
-  name,
-  displayName,
-  iconClassName,
-  isActive = false,
-}) => {
+const NavLink: React.FunctionComponent<NavLinkProps> = ({ name, displayName, iconClassName, isActive = false }) => {
   return (
     <a
       className={`nav-link${isActive ? ' active' : ''}`}

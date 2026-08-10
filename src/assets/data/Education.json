@@ -1,37 +1,37 @@
 {
-    "lastUpdatedTime": {
-        "year": 2026,
-        "month": 8,
-        "day": 1,
-        "hour": 23
-    },
-    "items": [
-        {
-            "school": "Oregon State University",
-            "location": "Corvallis, OR, USA",
-            "degree": "Master of Science in Computer Science (minor in Artificial Intelligence)",
-            "gpa": "4.00/4.00",
-            "start": "09/2025",
-            "end": "06/2027",
-            "tags": ["Expected"]
-        },
-        {
-            "school": "National Central University",
-            "location": "Taoyuan, Taiwan",
-            "degree": "Master of Science in Computer Science and Information Engineering",
-            "gpa": "3.53/4.00",
-            "start": "09/2018",
-            "end": "06/2020",
-            "points": [
-                "Co-invented an AI-assisted medication verification system on NVIDIA Jetson TX2, cutting pharmacist workload by an estimated <b>25%</b>—awarded a Taiwan Patent and a Gold Medal at Taiwan Innotech Expo 2020."
-            ]
-        },
-        {
-            "school": "National Central University",
-            "location": "Taoyuan, Taiwan",
-            "degree": "Bachelor of Science in Computer Science and Information Engineering",
-            "start": "09/2013",
-            "end": "06/2018"
-        }
-    ]
+	"lastUpdatedTime": {
+		"year": 2026,
+		"month": 8,
+		"day": 1,
+		"hour": 23
+	},
+	"items": [
+		{
+			"school": "Oregon State University",
+			"location": "Corvallis, OR, USA",
+			"degree": "Master of Science in Computer Science (minor in Artificial Intelligence)",
+			"gpa": "4.00/4.00",
+			"start": "09/2025",
+			"end": "06/2027",
+			"tags": ["Expected"]
+		},
+		{
+			"school": "National Central University",
+			"location": "Taoyuan, Taiwan",
+			"degree": "Master of Science in Computer Science and Information Engineering",
+			"gpa": "3.53/4.00",
+			"start": "09/2018",
+			"end": "06/2020",
+			"points": [
+				"Co-invented an AI-assisted medication verification system on NVIDIA Jetson TX2, cutting pharmacist workload by an estimated <b>25%</b>—awarded a Taiwan Patent and a Gold Medal at Taiwan Innotech Expo 2020."
+			]
+		},
+		{
+			"school": "National Central University",
+			"location": "Taoyuan, Taiwan",
+			"degree": "Bachelor of Science in Computer Science and Information Engineering",
+			"start": "09/2013",
+			"end": "06/2018"
+		}
+	]
 }

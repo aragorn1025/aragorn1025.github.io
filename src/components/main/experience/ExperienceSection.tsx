@@ -31,28 +31,34 @@ const ExperienceSection: React.FunctionComponent<ExperienceSectionProps> = ({ la
         <>
           <BarTitle barLevel={3} />
           <div className="timeline">
-            {
-              items.map(({ isHidden = false, company, location, title, tags, start, end, points }) => 
+            {items.map(
+              ({ isHidden = false, company, location, title, tags, start, end, points }) =>
                 !isHidden && (
-                <div className="timeline-block">
-                  <div className="timeline-anchor">
-                    <div className="timeline-tag">
-                      <div className="h5">{start}–{end}</div>
-                      {tags !== undefined && tags.map((tag) => <div className="h6">{tag}</div>)}
+                  <div className="timeline-block">
+                    <div className="timeline-anchor">
+                      <div className="timeline-tag">
+                        <div className="h5">
+                          {start}–{end}
+                        </div>
+                        {tags !== undefined && tags.map((tag) => <div className="h6">{tag}</div>)}
+                      </div>
+                      <div className="timeline-title">
+                        <h4>
+                          {company}, {location}
+                        </h4>
+                        <h5>{title}</h5>
+                      </div>
                     </div>
-                    <div className="timeline-title">
-                      <h4>{company}, {location}</h4>
-                      <h5>{title}</h5>
+                    <div className="timeline-content">
+                      <ul>
+                        {points.map((point) => (
+                          <li dangerouslySetInnerHTML={{ __html: point }} />
+                        ))}
+                      </ul>
                     </div>
                   </div>
-                  <div className="timeline-content">
-                    <ul>
-                      {points.map((point) => (<li dangerouslySetInnerHTML={{ __html: point }} />))}
-                    </ul>
-                  </div>
-                </div>
-              ))
-            }
+                ),
+            )}
           </div>
         </>
       </div>

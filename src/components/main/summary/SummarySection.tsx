@@ -12,21 +12,9 @@ interface SummaryLinkItem {
   className?: string;
 }
 
-type SummaryItemType =
-  | 'number'
-  | 'string'
-  | 'link'
-  | 'array(number)'
-  | 'array(string)'
-  | 'array(link)';
+type SummaryItemType = 'number' | 'string' | 'link' | 'array(number)' | 'array(string)' | 'array(link)';
 
-type SummaryItem =
-  | number
-  | string
-  | SummaryLinkItem
-  | number[]
-  | string[]
-  | SummaryLinkItem[];
+type SummaryItem = number | string | SummaryLinkItem | number[] | string[] | SummaryLinkItem[];
 
 export interface SummarySectionProps {
   name: string;
@@ -47,11 +35,7 @@ const getSummaryItem = (type: SummaryItemType, value: SummaryItem) => {
     case 'link': {
       const item = value as SummaryLinkItem;
       return (
-        <a
-          href={item.reference}
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={item.reference} target="_blank" rel="noreferrer">
           {item.text === undefined ? item.reference : item.text}
         </a>
       );
@@ -83,11 +67,7 @@ const getSummaryItem = (type: SummaryItemType, value: SummaryItem) => {
   }
 };
 
-const SummarySection: React.FunctionComponent<SummarySectionProps> = ({
-  name,
-  info,
-  summary,
-}) => {
+const SummarySection: React.FunctionComponent<SummarySectionProps> = ({ name, info, summary }) => {
   return (
     <section id="summary">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
@@ -101,7 +81,8 @@ const SummarySection: React.FunctionComponent<SummarySectionProps> = ({
             <ul className={styles.info}>
               {info.map(({ key, type, value }) => (
                 <li key={key}>
-                  <b>{`${key} `}</b>{getSummaryItem(type, value)}
+                  <b>{`${key} `}</b>
+                  {getSummaryItem(type, value)}
                 </li>
               ))}
             </ul>

@@ -1,60 +1,60 @@
 {
 	"name": "Tz-Jie (Aragorn) Dai",
 	"info": [
-        {
-            "key": "Email",
-            "type": "link",
-            "value": {
-                "text": "tzjie.dai@gmail.com",
-                "reference": "mailto:tzjie.dai@gmail.com"
-            }
-        },
-        {
-            "key": "Phone",
-            "type": "link",
-            "value": {
-                "text": "+1 458-210-7380",
-                "reference": "tel:+14582107380"
-            }
-        },
+		{
+			"key": "Email",
+			"type": "link",
+			"value": {
+				"text": "tzjie.dai@gmail.com",
+				"reference": "mailto:tzjie.dai@gmail.com"
+			}
+		},
+		{
+			"key": "Phone",
+			"type": "link",
+			"value": {
+				"text": "+1 458-210-7380",
+				"reference": "tel:+14582107380"
+			}
+		},
 		{
 			"key": "Location",
 			"type": "string",
 			"value": "Corvallis, OR, USA"
 		},
-        {
-            "key": "Resume",
-            "type": "link",
-            "value": {
-                "text": "aragorn1025.github.io/Aragorn_Dai_Resume.pdf",
-                "reference": "https://aragorn1025.github.io/Aragorn_Dai_Resume.pdf"
-            }
-        },
-        {
-            "key": "LinkedIn",
-            "type": "link",
-            "value": {
-                "text": "linkedin.com/in/aragorn1025",
-                "reference": "https://www.linkedin.com/in/aragorn1025"
-            }
-        },
-        {
-            "key": "GitHub",
-            "type": "link",
-            "value": {
-                "text": "github.com/aragorn1025",
-                "reference": "https://github.com/aragorn1025"
-            }
-        },
-        {
+		{
+			"key": "Resume",
+			"type": "link",
+			"value": {
+				"text": "aragorn1025.github.io/Aragorn_Dai_Resume.pdf",
+				"reference": "https://aragorn1025.github.io/Aragorn_Dai_Resume.pdf"
+			}
+		},
+		{
+			"key": "LinkedIn",
+			"type": "link",
+			"value": {
+				"text": "linkedin.com/in/aragorn1025",
+				"reference": "https://www.linkedin.com/in/aragorn1025"
+			}
+		},
+		{
+			"key": "GitHub",
+			"type": "link",
+			"value": {
+				"text": "github.com/aragorn1025",
+				"reference": "https://github.com/aragorn1025"
+			}
+		},
+		{
 			"key": "Personal Website",
 			"type": "link",
 			"value": {
-                "text": "aragorn1025.github.io",
+				"text": "aragorn1025.github.io",
 				"reference": "https://aragorn1025.github.io"
 			}
 		},
-        {
+		{
 			"key": "Skills",
 			"type": "array(string)",
 			"value": [
