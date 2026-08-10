@@ -3,9 +3,9 @@ const capitalize = (text: string) => {
 };
 
 const getDateString = (date: Date) => {
-  const m = `0${date.getMonth() + 1}`.slice(-2);
-  const d = `0${date.getDate()}`.slice(-2);
-  const y = date.getFullYear();
+  const m = `0${date.getUTCMonth() + 1}`.slice(-2);
+  const d = `0${date.getUTCDate()}`.slice(-2);
+  const y = date.getUTCFullYear();
   return `${m}-${d}-${y}`;
 };
 
@@ -43,7 +43,8 @@ interface LastUpdatedTime {
 }
 
 const getLastUpdatedTime = ({ year, month, day, hour }: LastUpdatedTime): string => {
-  const date = new Date(year, month - 1, day, hour, 0, 0);
+  const utcTimestamp = Date.UTC(year, month - 1, day, hour, 0, 0);
+  const date = new Date(utcTimestamp);
   return `Last updated at ${getDateString(date)} (${getDayDiffString(date)} ago).`;
 };
 

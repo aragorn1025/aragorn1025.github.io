@@ -10,7 +10,7 @@ const SkillsSection: React.FunctionComponent = () => {
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
         <Title text="Skills" toUpperCase />
         <div className="d-flex">
-          <h6 className="ms-auto">{getLastUpdatedTime({ year: 2023, month: 1, day: 3, hour: 23 })}</h6>
+          <h6 className="ms-auto">{getLastUpdatedTime({ year: 2023, month: 1, day: 3, hour: 15 })}</h6>
         </div>
         <div className="row">
           <div className="col-12 col-xl-6">
