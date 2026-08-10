@@ -26,7 +26,7 @@
 			"key": "Resume",
 			"type": "link",
 			"value": {
-				"text": "aragorn1025.github.io/Aragorn_Dai_Resume.pdf",
+				"text": "Download",
 				"reference": "https://aragorn1025.github.io/Aragorn_Dai_Resume.pdf"
 			}
 		},
@@ -56,13 +56,13 @@
 		},
 		{
 			"key": "Skills",
-			"type": "array(string)",
+			"type": "array(html)",
 			"value": [
-				"Languages: Python, Go, SQL, TypeScript, Bash",
-				"Backend: FastAPI, Flask, Gin, PostgreSQL, Redis, SQLAlchemy, Celery, MinIO, RESTful APIs, async processing",
-				"Auth & Security: OAuth2, SSO, LDAP, MFA, JWT/JWKs, Bcrypt, RBAC",
-				"Infrastructure: Docker, Kubernetes, Git, GitHub Actions, CI/CD, Linux, pytest",
-				"AI & CV: PyTorch, OpenCV, NumPy, W&B"
+				"<b>Languages</b>: Python, Go, SQL, TypeScript, Bash",
+				"<b>Backend</b>: FastAPI, Flask, Gin, PostgreSQL, Redis, SQLAlchemy, Celery, MinIO, RESTful APIs, async processing",
+				"<b>Auth & Security</b>: OAuth2, SSO, LDAP, MFA, JWT/JWKs, Bcrypt, RBAC",
+				"<b>Infrastructure</b>: Docker, Kubernetes, Git, GitHub Actions, CI/CD, Linux, pytest",
+				"<b>AI & CV</b>: PyTorch, OpenCV, NumPy, W&B"
 			]
 		}
 	],

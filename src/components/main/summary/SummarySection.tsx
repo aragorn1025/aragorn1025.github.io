@@ -12,7 +12,8 @@ interface SummaryLinkItem {
   className?: string;
 }
 
-type SummaryItemType = 'number' | 'string' | 'link' | 'array(number)' | 'array(string)' | 'array(link)';
+type SummaryItemType =
+  'number' | 'string' | 'html' | 'link' | 'array(number)' | 'array(string)' | 'array(html)' | 'array(link)';
 
 type SummaryItem = number | string | SummaryLinkItem | number[] | string[] | SummaryLinkItem[];
 
@@ -32,6 +33,8 @@ const getSummaryItem = (type: SummaryItemType, value: SummaryItem) => {
       return value as number;
     case 'string':
       return value as string;
+    case 'html':
+      return <span dangerouslySetInnerHTML={{ __html: value as string }} />;
     case 'link': {
       const item = value as SummaryLinkItem;
       return (
@@ -45,7 +48,7 @@ const getSummaryItem = (type: SummaryItemType, value: SummaryItem) => {
       return (
         <ul>
           {items.map((element: number) => (
-            <li key={element}>{element}</li>
+            <li>{element}</li>
           ))}
         </ul>
       );
@@ -55,7 +58,19 @@ const getSummaryItem = (type: SummaryItemType, value: SummaryItem) => {
       return (
         <ul>
           {items.map((element: string) => (
-            <li key={element}>{element}</li>
+            <li>{element}</li>
+          ))}
+        </ul>
+      );
+    }
+    case 'array(html)': {
+      const items = value as string[];
+      return (
+        <ul>
+          {items.map((element: string) => (
+            <li>
+              <div dangerouslySetInnerHTML={{ __html: element }} />
+            </li>
           ))}
         </ul>
       );
@@ -80,7 +95,7 @@ const SummarySection: React.FunctionComponent<SummarySectionProps> = ({ name, in
           <div className="col-12 col-lg-8 pt-3 pt-lg-0">
             <ul className={styles.info}>
               {info.map(({ key, type, value }) => (
-                <li key={key}>
+                <li>
                   <b>{`${key} `}</b>
                   {getSummaryItem(type, value)}
                 </li>
@@ -88,7 +103,7 @@ const SummarySection: React.FunctionComponent<SummarySectionProps> = ({ name, in
             </ul>
             <article className={styles.summary}>
               {summary.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p>{paragraph}</p>
               ))}
             </article>
           </div>
