@@ -60,8 +60,8 @@
 }
 
 % links
-\usepackage[bookmarks=false]{hyperref}
-\hypersetup{hidelinks}
+\RequirePackage[hidelinks]{hyperref}
+\urlstyle{same}
 
 % paragraph indent
 \setlength{\parindent}{0pt}
