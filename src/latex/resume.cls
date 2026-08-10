@@ -6,20 +6,20 @@
 \tl_new:N \l_resume_font_size_tl
 \tl_new:N \l_resume_margin_tl
 \tl_new:N \l_resume_section_separator_tl
-\tl_new:N \l_resume_subsection_separator_tl
 \tl_new:N \l_resume_item_separator_tl
+\tl_new:N \l_resume_point_separator_tl
 \keys_define:nn{resume}{
-    10pt                 .code:n    = {\tl_set:Nn \l_resume_font_size_tl {10pt}},
-    11pt                 .code:n    = {\tl_set:Nn \l_resume_font_size_tl {11pt}},
-    12pt                 .code:n    = {\tl_set:Nn \l_resume_font_size_tl {12pt}},
-    margin               .tl_set:N  = \l_resume_margin_tl,
-    margin               .initial:n = 0.35in,
-    section_separator    .tl_set:N  = \l_resume_section_separator_tl,
-    section_separator    .initial:n = 1em,
-    subsection_separator .tl_set:N  = \l_resume_subsection_separator_tl,
-    subsection_separator .initial:n = 0.5em,
-    item_separator       .tl_set:N  = \l_resume_item_separator_tl,
-    item_separator       .initial:n = 0em,
+    10pt              .code:n    = {\tl_set:Nn \l_resume_font_size_tl {10pt}},
+    11pt              .code:n    = {\tl_set:Nn \l_resume_font_size_tl {11pt}},
+    12pt              .code:n    = {\tl_set:Nn \l_resume_font_size_tl {12pt}},
+    margin            .tl_set:N  = \l_resume_margin_tl,
+    margin            .initial:n = 0.35in,
+    section_separator .tl_set:N  = \l_resume_section_separator_tl,
+    section_separator .initial:n = 1em,
+    item_separator    .tl_set:N  = \l_resume_item_separator_tl,
+    item_separator    .initial:n = 0.5em,
+    point_separator   .tl_set:N  = \l_resume_point_separator_tl,
+    point_separator   .initial:n = 0em,
 }
 \ProcessKeysOptions{resume}
 
@@ -50,8 +50,8 @@
 % unordered list
 \RequirePackage{enumitem}
 \setlist[itemize]{
-    topsep=\l_resume_item_separator_tl,
-    itemsep=\l_resume_item_separator_tl,
+    topsep=\l_resume_point_separator_tl,
+    itemsep=\l_resume_point_separator_tl,
     parsep=0em,
     labelsep=3pt,
     leftmargin=10pt
@@ -88,7 +88,7 @@
     \keys_set:nn{resume/header}{#1}
     {
         \centering
-        {\huge\bfseries \l_resume_name_tl}\\[\l_resume_item_separator_tl]
+        {\huge\bfseries \l_resume_name_tl}\\[\l_resume_point_separator_tl]
         \href{mailto:\l_resume_email_tl}{\l_resume_email_tl}\,\,|\,\,
         \l_resume_phone_tl\,\,|\,\,
         \l_resume_location_tl\\
@@ -131,7 +131,7 @@
         \bool_if:NTF \l_resume_is_first_experience_bool {
             \bool_set_false:N \l_resume_is_first_experience_bool
         }{
-            \vspace{\l_resume_subsection_separator_tl}
+            \vspace{\l_resume_item_separator_tl}
         }
         \textbf{\l_resume_experience_company_tl} \hfill
         \l_resume_experience_location_tl \\
@@ -177,7 +177,7 @@
         \bool_if:NTF \g_resume_is_first_education_bool {
             \bool_gset_false:N \g_resume_is_first_education_bool
         }{
-            \vspace{\l_resume_subsection_separator_tl}
+            \vspace{\l_resume_item_separator_tl}
         }
         \textbf{\g_resume_education_school_tl} \hfill
         \g_resume_education_location_tl \\
