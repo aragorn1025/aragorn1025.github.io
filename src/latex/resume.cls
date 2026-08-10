@@ -90,7 +90,7 @@
     \keys_set:nn{resume/header}{#1}
     {
         \centering
-        {\huge\bfseries \l_resume_name_tl}\\[\l_resume_point_separator_tl]
+        {\huge\bfseries \l_resume_name_tl}\\[\l_resume_item_separator_tl]
         \href{mailto:\l_resume_email_tl}{\l_resume_email_tl}\,\,|\,\,
         \l_resume_phone_tl\,\,|\,\,
         \l_resume_location_tl\\
