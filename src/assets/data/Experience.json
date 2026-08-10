@@ -7,9 +7,10 @@
 	},
 	"items": [
 		{
+			"title": "Computer Vision Developer",
 			"company": "Oregon State University",
-			"location": "Corvallis, OR, USA",
-			"title": "Computer Vision Developer, Department of Crop and Soil Science",
+			"department": "Department of Crop and Soil Science",
+			"city": "Corvallis, OR, USA",
 			"tags": ["On-campus"],
 			"start": "02/2026",
 			"end": "Present",
@@ -19,9 +20,10 @@
 			]
 		},
 		{
+			"title": "Software Developer",
 			"company": "Pentium Network Technology",
-			"location": "Taipei, Taiwan",
-			"title": "Software Developer, R&D",
+			"department": "Research & Development",
+			"city": "Taipei, Taiwan",
 			"start": "05/2022",
 			"end": "01/2025",
 			"points": [
@@ -33,9 +35,10 @@
 			]
 		},
 		{
+			"title": "Software Engineer",
 			"company": "M800 Taiwan",
-			"location": "Taipei, Taiwan",
-			"title": "Software Engineer, R&D",
+			"department": "Research & Development",
+			"city": "Taipei, Taiwan",
 			"start": "01/2022",
 			"end": "04/2022",
 			"points": [
@@ -43,9 +46,10 @@
 			]
 		},
 		{
+			"title": "Software Engineer",
 			"company": "LEDA Creative Technology",
-			"location": "Taoyuan, Taiwan",
-			"title": "Software Engineer, R&D",
+			"department": "Research & Development",
+			"city": "Taoyuan, Taiwan",
 			"start": "10/2020",
 			"end": "09/2021",
 			"points": [
@@ -55,9 +59,10 @@
 		},
 		{
 			"isHidden": true,
+			"title": "Software Engineer",
 			"company": "LEDA Creative Technology",
-			"location": "Taoyuan, Taiwan",
-			"title": "Software Engineer, R&D",
+			"department": "Research & Development",
+			"city": "Taoyuan, Taiwan",
 			"tags": ["Intern"],
 			"start": "05/2018",
 			"end": "08/2020",
@@ -70,9 +75,10 @@
 		},
 		{
 			"isHidden": true,
+			"title": "Research Assistant",
 			"company": "National Central University",
-			"location": "Taoyuan, Taiwan",
-			"title": "Research Assistant, Computational Intelligence and Human-Computer Interaction Lab (Professor Mu-Chun Su Lab), Department of CSIE",
+			"department": "Computational Intelligence and Human-Computer Interaction Lab (Professor Mu-Chun Su Lab), Department of Computer Science & Information Engineering",
+			"city": "Taoyuan, Taiwan",
 			"tags": ["TA/RA"],
 			"start": "04/2017",
 			"end": "08/2020",
@@ -86,9 +92,10 @@
 		},
 		{
 			"isHidden": true,
+			"title": "Teaching Assistant",
 			"company": "National Central University",
-			"location": "Taoyuan, Taiwan",
-			"title": "Teaching Assistant, Department of CSIE",
+			"department": "Department of Computer Science & Information Engineering",
+			"city": "Taoyuan, Taiwan",
 			"tags": ["TA/RA"],
 			"start": "02/2020",
 			"end": "06/2020",
@@ -101,9 +108,10 @@
 		},
 		{
 			"isHidden": true,
+			"title": "Student Network Administrator",
 			"company": "National Central University",
-			"location": "Taoyuan, Taiwan",
-			"title": "Student Network Administrator, College of Liberal Arts",
+			"department": "College of Liberal Arts",
+			"city": "Taoyuan, Taiwan",
 			"tags": ["On-campus"],
 			"start": "07/2014",
 			"end": "01/2017",

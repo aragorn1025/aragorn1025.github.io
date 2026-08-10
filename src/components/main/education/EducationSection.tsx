@@ -5,10 +5,10 @@ import Title from '../../common/title/Title';
 import { getLastUpdatedTime, LastUpdatedTime } from '../../utils/utils';
 
 interface EducationItem {
-  school: string;
-  location: string;
   degree: string;
-  gpa: string;
+  gpa?: string;
+  school: string;
+  city: string;
   start: string;
   end: string;
   tags?: string[];
@@ -31,7 +31,7 @@ const EducationSection: React.FunctionComponent<EducationSectionProps> = ({ last
         <div>
           <BarTitle barLevel={3} />
           <div className="timeline mb-3">
-            {items.map(({ school, location, degree, gpa, start, end, tags, points }) => (
+            {items.map(({ degree, gpa, school, city, start, end, tags, points }) => (
               <div className="timeline-block">
                 <div className="timeline-anchor">
                   <div className="timeline-tag">
@@ -41,13 +41,11 @@ const EducationSection: React.FunctionComponent<EducationSectionProps> = ({ last
                     {tags !== undefined && tags.map((tag) => <div className="h6">{tag}</div>)}
                   </div>
                   <div className="timeline-title">
-                    <h4>
-                      {school}, {location}
-                    </h4>
-                    <h5>
-                      {degree}
-                      {gpa !== undefined && `, GPA: ${gpa}`}
-                    </h5>
+                    <h4>{degree}</h4>
+                    <>
+                      {gpa !== undefined && `GPA: ${gpa} – `}
+                      {school} – {city}
+                    </>
                   </div>
                 </div>
                 {points !== undefined && (

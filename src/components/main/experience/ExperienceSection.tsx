@@ -6,9 +6,10 @@ import { getLastUpdatedTime, LastUpdatedTime } from '../../utils/utils';
 
 interface ExperienceItem {
   isHidden?: boolean;
-  company: string;
-  location: string;
   title: string;
+  company: string;
+  department: string;
+  city: string;
   tags?: string[];
   start: string;
   end: string;
@@ -32,7 +33,7 @@ const ExperienceSection: React.FunctionComponent<ExperienceSectionProps> = ({ la
           <BarTitle barLevel={3} />
           <div className="timeline">
             {items.map(
-              ({ isHidden = false, company, location, title, tags, start, end, points }) =>
+              ({ isHidden = false, title, company, department, city, tags, start, end, points }) =>
                 !isHidden && (
                   <div className="timeline-block">
                     <div className="timeline-anchor">
@@ -43,10 +44,10 @@ const ExperienceSection: React.FunctionComponent<ExperienceSectionProps> = ({ la
                         {tags !== undefined && tags.map((tag) => <div className="h6">{tag}</div>)}
                       </div>
                       <div className="timeline-title">
-                        <h4>
-                          {company}, {location}
-                        </h4>
-                        <h5>{title}</h5>
+                        <h4>{title}</h4>
+                        <>
+                          {company} – {department} – {city}
+                        </>
                       </div>
                     </div>
                     <div className="timeline-content">
