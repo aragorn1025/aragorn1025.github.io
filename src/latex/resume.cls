@@ -40,7 +40,9 @@
 \RequirePackage[normalem]{ulem}
 \NewDocumentCommand{\uhfill}{m}{\uline{#1\hfill}}
 \titleformat{\section}{\bfseries\large\uppercase}{}{0em}{\uhfill}
-\titlespacing{\section}{0pt}{\l_resume_section_separator_tl}{*0}
+\newlength{\resumesectionafter}
+\setlength{\resumesectionafter}{0.5\dimexpr\l_resume_item_separator_tl\relax}
+\titlespacing{\section}{0pt}{\l_resume_section_separator_tl}{\resumesectionafter}
 
 % no hyphenation
 \hyphenpenalty=10000
