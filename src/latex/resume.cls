@@ -194,14 +194,21 @@
 }{}
 
 % skill
+\bool_new:N \l_resume_is_first_skill_bool
 \tl_new:N \l_resume_skill_group_tl
 \keys_define:nn{resume/skill}{
     group .tl_set:N = \l_resume_skill_group_tl,
 }
 \NewDocumentEnvironment{resumeskill}{}{%
+    \bool_gset_true:N \l_resume_is_first_skill_bool
     \NewDocumentCommand{\skill}{O{} m}{
         \tl_clear:N \l_resume_skill_group_tl
         \keys_set:nn{resume/skill}{##1}
+        \bool_if:NTF \l_resume_is_first_skill_bool {
+            \bool_gset_false:N \l_resume_is_first_skill_bool
+        }{
+            \vspace{\l_resume_point_separator_tl}
+        }
         \textbf{\l_resume_skill_group_tl}:\,##2 \par
     }
     \section{Technical~ Skills}
