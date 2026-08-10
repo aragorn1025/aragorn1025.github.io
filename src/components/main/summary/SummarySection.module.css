@@ -1,9 +1,24 @@
-img.me {
-  display: flex;
+.meWrapper {
+  position: relative;
   width: 100%;
   max-width: 30rem;
+  aspect-ratio: 1 / 1;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
+}
+
+img.me {
+  --crop-t: 0px;
+  --crop-r: 0px;
+  --crop-b: 0px;
+  --crop-l: 0px;
+  position: absolute;
+  top: calc(-1 * var(--crop-t));
+  left: calc(-1 * var(--crop-l));
+  width: calc(100% + var(--crop-l) + var(--crop-r));
+  height: calc(100% + var(--crop-t) + var(--crop-b));
+  object-fit: cover;
 }
 
 ul.info,
@@ -40,10 +55,10 @@ ul.info li a:hover {
   color: currentColor;
 }
 
-article.autobiography {
+article.summary {
   text-indent: 2em;
 }
 
-article.autobiography p:last-child {
+article.summary p:last-child {
   margin-bottom: 0;
 }

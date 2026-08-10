@@ -1,81 +1,53 @@
 import React from 'react';
 
-import me from '../../../assets/images/me.jpg';
 import BarTitle from '../../common/bar-title/BarTitle';
 import Title from '../../common/title/Title';
-import getFunction from './Functions';
 
 import styles from './SummarySection.module.css';
 
-interface AboutFunctionItem {
-  name: string;
-  arguments?: object;
-}
-
-interface AboutLinkItem {
+interface SummaryLinkItem {
   reference: string;
   text?: string;
   className?: string;
 }
 
-type AboutItemType =
-  | 'number'
-  | 'string'
-  | 'function'
-  | 'link'
-  | 'array(number)'
-  | 'array(string)'
-  | 'array(function)'
-  | 'array(link)';
+type SummaryItemType =
+  'number' | 'string' | 'html' | 'link' | 'array(number)' | 'array(string)' | 'array(html)' | 'array(link)';
 
-type AboutItem =
-  | number
-  | string
-  | AboutFunctionItem
-  | AboutLinkItem
-  | number[]
-  | string[]
-  | AboutFunctionItem[]
-  | AboutLinkItem[];
+type SummaryItem = number | string | SummaryLinkItem | number[] | string[] | SummaryLinkItem[];
 
 export interface SummarySectionProps {
   name: string;
   info: {
     key: string;
-    type: AboutItemType;
-    value: AboutItem;
+    type: SummaryItemType;
+    value: SummaryItem;
   }[];
-  autobiography: string[];
+  summary: string[];
 }
 
-const getSummaryItem = (type: AboutItemType, value: AboutItem) => {
+const getSummaryItem = (type: SummaryItemType, value: SummaryItem) => {
   switch (type) {
     case 'number':
       return value as number;
     case 'string':
       return value as string;
+    case 'html':
+      return <span dangerouslySetInnerHTML={{ __html: value as string }} />;
     case 'link': {
-      const item = value as AboutLinkItem;
+      const item = value as SummaryLinkItem;
       return (
-        <a
-          href={item.reference}
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={item.reference} target="_blank" rel="noreferrer">
           {item.text === undefined ? item.reference : item.text}
         </a>
       );
-    }
-    case 'function': {
-      const item = value as AboutFunctionItem;
-      return getFunction(item.name)(item.arguments);
     }
     case 'array(number)': {
       const items = value as number[];
       return (
         <ul>
           {items.map((element: number) => (
-            <li key={element}>{element}</li>
+            <li>{element}</li>
           ))}
         </ul>
       );
@@ -85,53 +57,65 @@ const getSummaryItem = (type: AboutItemType, value: AboutItem) => {
       return (
         <ul>
           {items.map((element: string) => (
-            <li key={element}>{element}</li>
+            <li>{element}</li>
+          ))}
+        </ul>
+      );
+    }
+    case 'array(html)': {
+      const items = value as string[];
+      return (
+        <ul>
+          {items.map((element: string) => (
+            <li>
+              <div dangerouslySetInnerHTML={{ __html: element }} />
+            </li>
           ))}
         </ul>
       );
     }
     case 'array(link)':
-    case 'array(function)':
-      throw new Error('The AboutItemType is not implemented yet.');
+      throw new Error('TODO: Not implemented error.');
     default:
       throw new Error('Unknown type.');
   }
 };
 
-const SummarySection: React.FunctionComponent<SummarySectionProps> = ({
-  name,
-  info,
-  autobiography,
-}) => {
+const SummarySection: React.FunctionComponent<SummarySectionProps> = ({ name, info, summary }) => {
   return (
     <section id="summary">
       <div className="container bg-dark bg-opacity-75 text-light text-opacity-75 p-4">
-        <Title
-          text={name}
-        />
+        <Title text={name} />
         <div className="row">
-          <BarTitle
-            barLevel={3}
-          />
+          <BarTitle barLevel={3} />
           <div className="col-12 col-lg-4">
-            <img
-              className={styles.me}
-              src={me}
-              alt={name}
-            />
+            <div className={styles.meWrapper}>
+              <img
+                className={styles.me}
+                style={
+                  {
+                    '--crop-t': '750px',
+                    '--crop-r': '135px',
+                    '--crop-b': '600px',
+                  } as React.CSSProperties
+                }
+                src="/images/me.png"
+                alt={name}
+              />
+            </div>
           </div>
           <div className="col-12 col-lg-8 pt-3 pt-lg-0">
             <ul className={styles.info}>
               {info.map(({ key, type, value }) => (
-                <li key={key}>
+                <li>
                   <b>{`${key} `}</b>
                   {getSummaryItem(type, value)}
                 </li>
               ))}
             </ul>
-            <article className={styles.autobiography}>
-              {autobiography.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+            <article className={styles.summary}>
+              {summary.map((paragraph) => (
+                <p>{paragraph}</p>
               ))}
             </article>
           </div>

@@ -3,9 +3,9 @@ const capitalize = (text: string) => {
 };
 
 const getDateString = (date: Date) => {
-  const m = `0${date.getMonth() + 1}`.slice(-2);
-  const d = `0${date.getDate()}`.slice(-2);
-  const y = date.getFullYear();
+  const m = `0${date.getUTCMonth() + 1}`.slice(-2);
+  const d = `0${date.getUTCDate()}`.slice(-2);
+  const y = date.getUTCFullYear();
   return `${m}-${d}-${y}`;
 };
 
@@ -35,9 +35,17 @@ const getDayDiffString = (date: Date) => {
   return `${diff} year${diff <= 1 ? '' : 's'}`;
 };
 
-const getLastUpdatedString = (year: number, month: number, day: number, hour: number) => {
-  const date = new Date(year, month - 1, day, hour, 0, 0);
+interface LastUpdatedTime {
+  year: number;
+  month: number;
+  day: number;
+  hour: number;
+}
+
+const getLastUpdatedTime = ({ year, month, day, hour }: LastUpdatedTime): string => {
+  const utcTimestamp = Date.UTC(year, month - 1, day, hour, 0, 0);
+  const date = new Date(utcTimestamp);
   return `Last updated at ${getDateString(date)} (${getDayDiffString(date)} ago).`;
 };
 
-export { capitalize, getDateString, getDayDiffString, getLastUpdatedString };
+export { capitalize, getDateString, getDayDiffString, getLastUpdatedTime, type LastUpdatedTime };

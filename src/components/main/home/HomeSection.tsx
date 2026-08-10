@@ -2,17 +2,14 @@ import React from 'react';
 
 import styles from './HomeSection.module.css';
 
-interface HomeSectionProps {
+export interface HomeSectionProps {
   title: string;
   subtitle?: string;
 }
 
 const HomeSection: React.FunctionComponent<HomeSectionProps> = ({ title, subtitle }) => {
   return (
-    <section
-      id="home"
-      className="vh-100"
-    >
+    <section id="home" className="vh-100">
       <div className={styles.cover}>
         <div className={styles.mask}>
           <div className={styles.content}>

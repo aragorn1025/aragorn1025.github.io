@@ -1,0 +1,125 @@
+{
+	"lastUpdatedTime": {
+		"year": 2026,
+		"month": 8,
+		"day": 9,
+		"hour": 12
+	},
+	"items": [
+		{
+			"title": "Computer Vision Developer",
+			"company": "Oregon State University",
+			"department": "Department of Crop and Soil Science",
+			"city": "Corvallis, OR, USA",
+			"tags": ["On-campus"],
+			"start": "02/2026",
+			"end": "Present",
+			"points": [
+				"Built an image tiling pipeline with edge-object handling to standardize weed-detection drone data into unified formats, boosting downstream model mAP50 from <b>0.664 to a peak 0.772</b>.",
+				"Configured NAS storage and containerized GPU-accelerated training environments to guarantee reproducible workflows for a 4-person research team."
+			]
+		},
+		{
+			"title": "Software Developer",
+			"company": "Pentium Network Technology",
+			"department": "Research & Development",
+			"city": "Taipei, Taiwan",
+			"start": "05/2022",
+			"end": "01/2025",
+			"points": [
+				"Owned auth for a PAM platform (FastAPI, PostgreSQL); cut the time to change auth logic from about <b>2 weeks to <8 hours</b> by refactoring a monolithic auth flow into a composable Chain-of-Responsibility pipeline supporting MFA, LDAP, and SSO.",
+				"Eliminated race conditions in license allocation (previously <b>1–2/week</b>, surfaced in UAT) by designing a Redis-based distributed lock, ensuring atomic license checks across concurrent API and Celery workers.",
+				"Reduced CI/CD run time from 18 to <3 minutes by restructuring multi-stage Docker builds with an internal registry, and consolidating DB migrations per test tier.",
+				"Authored API and schema design docs and reviewed peers’ designs and code as part of an Agile team’s workflow; also helped reinstate a missed document into the review process.",
+				"Proposed and launched bi-weekly tech talks, driving knowledge-sharing across a 25+ person cross-functional team."
+			]
+		},
+		{
+			"title": "Software Engineer",
+			"company": "M800 Taiwan",
+			"department": "Research & Development",
+			"city": "Taipei, Taiwan",
+			"start": "01/2022",
+			"end": "04/2022",
+			"points": [
+				"Built a release-automation dashboard (Gin, React) integrating Jira, Jenkins, and GitLab; cut release effort from <b>60–120 to <5 minutes</b> and enabling PMs to ship 1–5 daily releases without SRE dependency for a 70+ member team."
+			]
+		},
+		{
+			"title": "Software Engineer",
+			"company": "LEDA Creative Technology",
+			"department": "Research & Development",
+			"city": "Taoyuan, Taiwan",
+			"start": "10/2020",
+			"end": "09/2021",
+			"points": [
+				"Built an MQTT-based model deployment pipeline that replaced manual USB transfers to industrial edge devices for customers across food-processing, electronics, and semiconductor industries.",
+				"Packaged computer vision models into containerized, GPU-accelerated CLI-driven services with customized dataset loaders, enabling users to run training and inference via an AI platform."
+			]
+		},
+		{
+			"isHidden": true,
+			"title": "Software Engineer",
+			"company": "LEDA Creative Technology",
+			"department": "Research & Development",
+			"city": "Taoyuan, Taiwan",
+			"tags": ["Intern"],
+			"start": "05/2018",
+			"end": "08/2020",
+			"points": [
+				"The edge detection for the cell scaffolds: Algorithm development.",
+				"Multiple Barcode & QRCode Detector.",
+				"Refactoring of the source codes of Mask R-CNN by PyTorch: maintainer and developer.",
+				"The other cooperative projects that should be confidential."
+			]
+		},
+		{
+			"isHidden": true,
+			"title": "Research Assistant",
+			"company": "National Central University",
+			"department": "Computational Intelligence and Human-Computer Interaction Lab (Professor Mu-Chun Su Lab), Department of Computer Science & Information Engineering",
+			"city": "Taoyuan, Taiwan",
+			"tags": ["TA/RA"],
+			"start": "04/2017",
+			"end": "08/2020",
+			"points": [
+				"2018 National Microprocessor Application System Design and Innovation Contest: Staff & Webpage Maintainer",
+				"\"Baspost–Correct your basketball posture!\": Teaching Assistant; 2019 Get Fresh! Category of Creative Implementation–<b>Merit Award</b>",
+				"\"Use Generative Adversarial Network to generate realistic mountain terrain\": Teaching Assistant; National Elementary and High Schools Science Fair–the <b>Second Prize</b>",
+				"\"Medicine Placement and Photography Apparatus, Medicine Identification Apparatus, and Medicine Identification System\": <b>Patent</b> co-inventor; 2020 Taiwan Innotech Expo Invention Contest–<b>Gold Medal Adward</b>",
+				"\"The Application of the Generative Adversarial Network in the Reflection Removal Algorithm for Dashcam Images\": Master Thesis"
+			]
+		},
+		{
+			"isHidden": true,
+			"title": "Teaching Assistant",
+			"company": "National Central University",
+			"department": "Department of Computer Science & Information Engineering",
+			"city": "Taoyuan, Taiwan",
+			"tags": ["TA/RA"],
+			"start": "02/2020",
+			"end": "06/2020",
+			"points": [
+				"To assist the professor to make the course run smoothly.",
+				"To invigilate the midterm exam, and mark and register scores.",
+				"To arrange students for the second half of the semester to report papers.",
+				"To assist students in the course to complete programming assignments, and mark and register scores."
+			]
+		},
+		{
+			"isHidden": true,
+			"title": "Student Network Administrator",
+			"company": "National Central University",
+			"department": "College of Liberal Arts",
+			"city": "Taoyuan, Taiwan",
+			"tags": ["On-campus"],
+			"start": "07/2014",
+			"end": "01/2017",
+			"points": [
+				"To assist the office of the College of Liberal Arts with chores.",
+				"To troubleshoot the computer and network conditions of the College of Liberal Arts.",
+				"To check and record the network routes of the College of Liberal Arts. (including the first, second and third halls)"
+			]
+		}
+	]
+}

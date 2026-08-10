@@ -287,7 +287,6 @@ svg.rotate-180 {
     padding: 0 calc(1rem + max(var(--w-timeline) / 2, var(--r-timeline-point) * 1.6)) 0 0;
   }
 
-
   .timeline .timeline-block .timeline-anchor .timeline-tag::before {
     left: auto;
     right: calc(var(--r-timeline-point) * -1);
