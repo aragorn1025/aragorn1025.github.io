@@ -1,6 +1,5 @@
 import React from 'react';
 
-import me from '../../../assets/images/me.jpg';
 import BarTitle from '../../common/bar-title/BarTitle';
 import Title from '../../common/title/Title';
 
@@ -90,7 +89,20 @@ const SummarySection: React.FunctionComponent<SummarySectionProps> = ({ name, in
         <div className="row">
           <BarTitle barLevel={3} />
           <div className="col-12 col-lg-4">
-            <img className={styles.me} src={me} alt={name} />
+            <div className={styles.meWrapper}>
+              <img
+                className={styles.me}
+                style={
+                  {
+                    '--crop-t': '750px',
+                    '--crop-r': '135px',
+                    '--crop-b': '600px',
+                  } as React.CSSProperties
+                }
+                src="/images/me.png"
+                alt={name}
+              />
+            </div>
           </div>
           <div className="col-12 col-lg-8 pt-3 pt-lg-0">
             <ul className={styles.info}>
