@@ -40,9 +40,7 @@
 \RequirePackage[normalem]{ulem}
 \NewDocumentCommand{\uhfill}{m}{\uline{#1\hfill}}
 \titleformat{\section}{\bfseries\large\uppercase}{}{0em}{\uhfill}
-\newlength{\resumesectionafter}
-\setlength{\resumesectionafter}{0.5\dimexpr\l_resume_item_separator_tl\relax}
-\titlespacing{\section}{0pt}{\l_resume_section_separator_tl}{\resumesectionafter}
+\titlespacing{\section}{0pt}{\l_resume_section_separator_tl}{*0}
 
 % no hyphenation
 \hyphenpenalty=10000
@@ -90,7 +88,7 @@
     \keys_set:nn{resume/header}{#1}
     {
         \centering
-        {\huge\bfseries \l_resume_name_tl}\\[\l_resume_item_separator_tl]
+        {\huge\bfseries \l_resume_name_tl}\\[\l_resume_point_separator_tl]
         \href{mailto:\l_resume_email_tl}{\l_resume_email_tl}\,\,|\,\,
         \l_resume_phone_tl\,\,|\,\,
         \l_resume_location_tl\\
@@ -108,7 +106,6 @@
 }{}
 
 % experience
-\bool_new:N \l_resume_is_first_experience_bool
 \tl_new:N \l_resume_experience_company_tl
 \tl_new:N \l_resume_experience_location_tl
 \tl_new:N \l_resume_experience_title_tl
@@ -122,7 +119,6 @@
     end      .tl_set:N = \l_resume_experience_end_tl,
 }
 \NewDocumentEnvironment{resumeexperience}{}{
-    \bool_set_true:N \l_resume_is_first_experience_bool
     \NewDocumentCommand{\experience}{O{} +m}{
         \tl_clear:N \l_resume_experience_company_tl
         \tl_clear:N \l_resume_experience_location_tl
@@ -130,11 +126,7 @@
         \tl_clear:N \l_resume_experience_start_tl
         \tl_clear:N \l_resume_experience_end_tl
         \keys_set:nn{resume/experience}{##1}
-        \bool_if:NTF \l_resume_is_first_experience_bool {
-            \bool_set_false:N \l_resume_is_first_experience_bool
-        }{
-            \vspace{\l_resume_item_separator_tl}
-        }
+        \vspace{\l_resume_item_separator_tl}
         \textbf{\l_resume_experience_company_tl} \hfill
         \l_resume_experience_location_tl \\
         \l_resume_experience_title_tl \hfill
@@ -147,7 +139,6 @@
 }{}
 
 % education
-\bool_new:N \g_resume_is_first_education_bool
 \tl_new:N \g_resume_education_school_tl
 \tl_new:N \g_resume_education_location_tl
 \tl_new:N \g_resume_education_degree_tl
@@ -166,7 +157,6 @@
     end      .tl_gset:N = \g_resume_education_end_tl,
 }
 \NewDocumentEnvironment{resumeeducation}{}{
-    \bool_gset_true:N \g_resume_is_first_education_bool
     \NewDocumentCommand{\education}{O{} +m}{
         \tl_gclear:N \g_resume_education_school_tl
         \tl_gclear:N \g_resume_education_location_tl
@@ -176,11 +166,7 @@
         \tl_gclear:N \g_resume_education_start_tl
         \tl_gclear:N \g_resume_education_end_tl
         \keys_set:nn{resume/education}{##1}
-        \bool_if:NTF \g_resume_is_first_education_bool {
-            \bool_gset_false:N \g_resume_is_first_education_bool
-        }{
-            \vspace{\l_resume_item_separator_tl}
-        }
+        \vspace{\l_resume_item_separator_tl}
         \textbf{\g_resume_education_school_tl} \hfill
         \g_resume_education_location_tl \\
         \g_resume_education_degree_tl
@@ -208,6 +194,7 @@
         \keys_set:nn{resume/skill}{##1}
         \bool_if:NTF \l_resume_is_first_skill_bool {
             \bool_gset_false:N \l_resume_is_first_skill_bool
+            \vspace{\l_resume_item_separator_tl}
         }{
             \vspace{\l_resume_point_separator_tl}
         }
