@@ -29,6 +29,7 @@
 			"points": [
 				"Owned auth for a PAM platform (FastAPI, PostgreSQL); cut the time to change auth logic from about <b>2 weeks to <8 hours</b> by refactoring a monolithic auth flow into a composable Chain-of-Responsibility pipeline supporting MFA, LDAP, and SSO.",
 				"Eliminated race conditions in license allocation (previously <b>1–2/week</b>, surfaced in UAT) by designing a Redis-based distributed lock, ensuring atomic license checks across concurrent API and Celery workers.",
+				"Built audit dashboard and reporting features; cut API latency from 450ms to 25ms via Redis caching, and offloaded report generation to Celery workers with MinIO file storage and Socket.IO completion notifications.",
 				"Reduced CI/CD run time from 18 to <3 minutes by restructuring multi-stage Docker builds with an internal registry, and consolidating DB migrations per test tier.",
 				"Authored API and schema design docs and reviewed peers’ designs and code as part of an Agile team’s workflow; also helped reinstate a missed document into the review process.",
 				"Proposed and launched bi-weekly tech talks, driving knowledge-sharing across a 25+ person cross-functional team."

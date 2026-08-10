@@ -1,9 +1,9 @@
 \documentclass[
     10pt,
-    margin               = {0.5in},
-    section_separator    = {1em},
-    subsection_separator = {0.5em},
-    item_separator       = {0.1em},
+    margin            = {0.5in},
+    section_separator = {1.6em},
+    item_separator    = {0.4em},
+    point_separator   = {0.15em},
 ]{resume}
 
 \begin{document}
@@ -17,12 +17,6 @@
     location = {Corvallis, OR, USA},
     note     = {F-1, STEM OPT eligible (36 months)},
 }
-
-\begin{resumesummary}
-    Backend Software Engineer with 4+ years building and refining production backend systems in Python---%
-    resolving race conditions via distributed locking, refactoring a monolithic auth flow into a composable pipeline, and cutting CI/CD run time by 80\%+.
-    Currently an M.S. CS student at Oregon State University, expected graduation 06/2027.
-\end{resumesummary}
 
 \begin{resumeexperience}
     \experience[
@@ -53,6 +47,10 @@
         \item Eliminated race conditions in license allocation (previously \textbf{1--2/week}, surfaced in UAT)
         by designing a Redis-based distributed lock,
         ensuring  atomic license checks across concurrent API and Celery workers.
+        \item Built audit dashboard and reporting features;
+        cut API latency from 450ms to 25ms via Redis caching,
+        and offloaded report generation to Celery workers
+        with MinIO file storage and Socket.IO completion notifications.
         \item Reduced CI/CD run time from 18 to <3 minutes
         by restructuring multi-stage Docker builds with an internal registry,
         and consolidating DB migrations per test tier.

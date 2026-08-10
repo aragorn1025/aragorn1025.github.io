@@ -6,20 +6,20 @@
 \tl_new:N \l_resume_font_size_tl
 \tl_new:N \l_resume_margin_tl
 \tl_new:N \l_resume_section_separator_tl
-\tl_new:N \l_resume_subsection_separator_tl
 \tl_new:N \l_resume_item_separator_tl
+\tl_new:N \l_resume_point_separator_tl
 \keys_define:nn{resume}{
-    10pt                 .code:n    = {\tl_set:Nn \l_resume_font_size_tl {10pt}},
-    11pt                 .code:n    = {\tl_set:Nn \l_resume_font_size_tl {11pt}},
-    12pt                 .code:n    = {\tl_set:Nn \l_resume_font_size_tl {12pt}},
-    margin               .tl_set:N  = \l_resume_margin_tl,
-    margin               .initial:n = 0.35in,
-    section_separator    .tl_set:N  = \l_resume_section_separator_tl,
-    section_separator    .initial:n = 1em,
-    subsection_separator .tl_set:N  = \l_resume_subsection_separator_tl,
-    subsection_separator .initial:n = 0.5em,
-    item_separator       .tl_set:N  = \l_resume_item_separator_tl,
-    item_separator       .initial:n = 0em,
+    10pt              .code:n    = {\tl_set:Nn \l_resume_font_size_tl {10pt}},
+    11pt              .code:n    = {\tl_set:Nn \l_resume_font_size_tl {11pt}},
+    12pt              .code:n    = {\tl_set:Nn \l_resume_font_size_tl {12pt}},
+    margin            .tl_set:N  = \l_resume_margin_tl,
+    margin            .initial:n = 0.35in,
+    section_separator .tl_set:N  = \l_resume_section_separator_tl,
+    section_separator .initial:n = 1em,
+    item_separator    .tl_set:N  = \l_resume_item_separator_tl,
+    item_separator    .initial:n = 0.5em,
+    point_separator   .tl_set:N  = \l_resume_point_separator_tl,
+    point_separator   .initial:n = 0em,
 }
 \ProcessKeysOptions{resume}
 
@@ -40,7 +40,9 @@
 \RequirePackage[normalem]{ulem}
 \NewDocumentCommand{\uhfill}{m}{\uline{#1\hfill}}
 \titleformat{\section}{\bfseries\large\uppercase}{}{0em}{\uhfill}
-\titlespacing{\section}{0pt}{\l_resume_section_separator_tl}{*0}
+\newlength{\resumesectionafter}
+\setlength{\resumesectionafter}{0.5\dimexpr\l_resume_item_separator_tl\relax}
+\titlespacing{\section}{0pt}{\l_resume_section_separator_tl}{\resumesectionafter}
 
 % no hyphenation
 \hyphenpenalty=10000
@@ -50,8 +52,8 @@
 % unordered list
 \RequirePackage{enumitem}
 \setlist[itemize]{
-    topsep=\l_resume_item_separator_tl,
-    itemsep=\l_resume_item_separator_tl,
+    topsep=\l_resume_point_separator_tl,
+    itemsep=\l_resume_point_separator_tl,
     parsep=0em,
     labelsep=3pt,
     leftmargin=10pt
@@ -131,7 +133,7 @@
         \bool_if:NTF \l_resume_is_first_experience_bool {
             \bool_set_false:N \l_resume_is_first_experience_bool
         }{
-            \vspace{\l_resume_subsection_separator_tl}
+            \vspace{\l_resume_item_separator_tl}
         }
         \textbf{\l_resume_experience_company_tl} \hfill
         \l_resume_experience_location_tl \\
@@ -177,7 +179,7 @@
         \bool_if:NTF \g_resume_is_first_education_bool {
             \bool_gset_false:N \g_resume_is_first_education_bool
         }{
-            \vspace{\l_resume_subsection_separator_tl}
+            \vspace{\l_resume_item_separator_tl}
         }
         \textbf{\g_resume_education_school_tl} \hfill
         \g_resume_education_location_tl \\
@@ -194,14 +196,21 @@
 }{}
 
 % skill
+\bool_new:N \l_resume_is_first_skill_bool
 \tl_new:N \l_resume_skill_group_tl
 \keys_define:nn{resume/skill}{
     group .tl_set:N = \l_resume_skill_group_tl,
 }
 \NewDocumentEnvironment{resumeskill}{}{%
+    \bool_gset_true:N \l_resume_is_first_skill_bool
     \NewDocumentCommand{\skill}{O{} m}{
         \tl_clear:N \l_resume_skill_group_tl
         \keys_set:nn{resume/skill}{##1}
+        \bool_if:NTF \l_resume_is_first_skill_bool {
+            \bool_gset_false:N \l_resume_is_first_skill_bool
+        }{
+            \vspace{\l_resume_point_separator_tl}
+        }
         \textbf{\l_resume_skill_group_tl}:\,##2 \par
     }
     \section{Technical~ Skills}
