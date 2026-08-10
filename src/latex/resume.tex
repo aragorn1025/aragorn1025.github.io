@@ -47,6 +47,10 @@
         \item Eliminated race conditions in license allocation (previously \textbf{1--2/week}, surfaced in UAT)
         by designing a Redis-based distributed lock,
         ensuring  atomic license checks across concurrent API and Celery workers.
+        \item Built audit dashboard and reporting features;
+        cut API latency from 450ms to 25ms via Redis caching,
+        and offloaded report generation to Celery workers
+        with MinIO file storage and Socket.IO completion notifications.
         \item Reduced CI/CD run time from 18 to <3 minutes
         by restructuring multi-stage Docker builds with an internal registry,
         and consolidating DB migrations per test tier.
