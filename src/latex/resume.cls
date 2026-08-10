@@ -30,7 +30,7 @@
 \RequirePackage[margin=\l_resume_margin_tl]{geometry}
 
 % remove page number
-\thispagestyle{empty}
+\pagestyle{empty}
 
 % font
 \RequirePackage[sfdefault]{noto}
