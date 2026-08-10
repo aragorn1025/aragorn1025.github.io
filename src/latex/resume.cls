@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}[2025/11/01]
-\ProvidesExplClass{resume}{2026/07/25}{1.0.0}{Aragorn's Resume Class}
+\ProvidesExplClass{resume}{2026/08/10}{6.0.0}{Aragorn's Resume Class}
 
 % arguments
 \RequirePackage{l3keys2e}
