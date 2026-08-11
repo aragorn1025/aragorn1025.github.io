@@ -11,6 +11,8 @@ env:
 jobs:
   check-dockerfile:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     outputs:
       is_changed: ${{ steps.filter.outputs.dockerfile }}
     steps:
@@ -54,6 +56,8 @@ jobs:
     needs: [check-dockerfile, check-image]
     if: always()
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     outputs:
       is_build_image: ${{ steps.decide.outputs.is_build_image }}
     steps:
