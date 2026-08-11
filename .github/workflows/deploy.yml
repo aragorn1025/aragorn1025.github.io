@@ -104,6 +104,8 @@ jobs:
     needs: build-image
     if: always() && (needs.build-image.result == 'success' || needs.build-image.result == 'skipped')
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     container:
       image: ghcr.io/${{ github.repository }}:latest
     steps:
