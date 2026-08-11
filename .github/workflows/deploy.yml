@@ -4,6 +4,10 @@ on:
   push:
     branches: ['main']
 
+permissions:
+  contents: read
+  packages: read
+
 env:
   IMAGE_NAME: ${{ github.repository }}
   AUTHOR_NAME: 'Aragorn_Dai'
@@ -11,6 +15,8 @@ env:
 jobs:
   check-dockerfile:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     outputs:
       is_changed: ${{ steps.filter.outputs.dockerfile }}
     steps:
@@ -24,6 +30,7 @@ jobs:
         with:
           filters: |
             dockerfile:
+              - '.github/workflows/deploy.yml'
               - 'Dockerfile'
 
   check-image:
@@ -54,6 +61,8 @@ jobs:
     needs: [check-dockerfile, check-image]
     if: always()
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     outputs:
       is_build_image: ${{ steps.decide.outputs.is_build_image }}
     steps:
@@ -96,6 +105,9 @@ jobs:
     needs: build-image
     if: always() && (needs.build-image.result == 'success' || needs.build-image.result == 'skipped')
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
     container:
       image: ghcr.io/${{ github.repository }}:latest
     steps:
