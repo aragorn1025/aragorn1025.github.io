@@ -4,6 +4,10 @@ on:
   push:
     branches: ['main']
 
+permissions:
+  contents: read
+  packages: read
+
 env:
   IMAGE_NAME: ${{ github.repository }}
   AUTHOR_NAME: 'Aragorn_Dai'
