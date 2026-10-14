@@ -6,110 +6,12 @@ on:
 
 permissions:
   contents: read
-  packages: read
-
-env:
-  IMAGE_NAME: ${{ github.repository }}
-  AUTHOR_NAME: 'Aragorn_Dai'
 
 jobs:
-  check-dockerfile:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    outputs:
-      is_changed: ${{ steps.filter.outputs.dockerfile }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
-      - name: Check if Dockerfile has changed
-        uses: dorny/paths-filter@v4
-        id: filter
-        with:
-          filters: |
-            dockerfile:
-              - '.github/workflows/deploy.yml'
-              - 'Dockerfile'
-
-  check-image:
-    needs: check-dockerfile
-    if: needs.check-dockerfile.outputs.is_changed == 'false'
-    runs-on: ubuntu-latest
-    permissions:
-      packages: read
-    outputs:
-      is_existing: ${{ steps.check.outputs.is_existing }}
-    steps:
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v4
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Check if image exists on GHCR
-        id: check
-        run: |
-          if docker manifest inspect ghcr.io/${{ env.IMAGE_NAME }}:latest > /dev/null 2>&1; then
-            echo "is_existing=true" >> $GITHUB_OUTPUT
-          else
-            echo "is_existing=false" >> $GITHUB_OUTPUT
-          fi
-
-  decide-if-build-image:
-    needs: [check-dockerfile, check-image]
-    if: always()
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    outputs:
-      is_build_image: ${{ steps.decide.outputs.is_build_image }}
-    steps:
-      - name: Decide if build image
-        id: decide
-        run: |
-          if [[ "${{ needs.check-dockerfile.outputs.is_changed }}" == "true" ]] || [[ "${{ needs.check-image.outputs.is_existing }}" == "false" ]]; then
-            echo "is_build_image=true" >> $GITHUB_OUTPUT
-          else
-            echo "is_build_image=false" >> $GITHUB_OUTPUT
-          fi
-
-  build-image:
-    needs: decide-if-build-image
-    if: always() && needs.decide-if-build-image.outputs.is_build_image == 'true'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v4
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v4
-      - name: Build and push
-        uses: docker/build-push-action@v7
-        with:
-          context: .
-          push: true
-          tags: ghcr.io/${{ env.IMAGE_NAME }}:latest
-          no-cache: true
-
   build-website:
-    needs: build-image
-    if: always() && (needs.build-image.result == 'success' || needs.build-image.result == 'skipped')
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: read
-    container:
-      image: ghcr.io/${{ github.repository }}:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -122,13 +24,6 @@ jobs:
         run: npm ci
       - name: Build Website
         run: npm run build
-      - name: Generate Resume PDF
-        working-directory: src/latex
-        run: |
-          xelatex -interaction=nonstopmode -halt-on-error resume.tex
-      - name: Copy Resume PDF
-        run: |
-          cp src/latex/resume.pdf "dist/${{ env.AUTHOR_NAME }}_Resume.pdf"
       - name: Upload static files as artifact
         uses: actions/upload-pages-artifact@v5
         with:
@@ -136,7 +31,6 @@ jobs:
 
   deploy-website:
     needs: build-website
-    if: always() && needs.build-website.result == 'success'
     permissions:
       pages: write
       id-token: write
